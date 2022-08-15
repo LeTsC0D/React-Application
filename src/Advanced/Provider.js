@@ -14,9 +14,8 @@ return (
 <MyContext.Provider value={{ data:someState,data1: customState}}>
 {props.children}
 </MyContext.Provider>
-
 )
 }
-
 export default Provider
+
 

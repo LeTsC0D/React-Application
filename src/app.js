@@ -6,9 +6,13 @@ import CSS from "./Components/CSS"
 import MyContext from "./Advanced/context"
 import Provider from "./Advanced/Provider"
 import Child1 from "./Advanced/Child1"
+import Wrapper from "./Advanced/Wrapper"
 
 import Counter from "./Advanced/Counter"
 import ThemeContext from "./Advanced/ThemeContext"
+
+import FormC from "./Forms/FormC"
+import FormD from "./Forms/FormD"
 
 const App=()=>{
 const [count,setCount]=useState(0)
@@ -60,6 +64,17 @@ console.log(bool)
     <Counter/>
     <br/>
     </ThemeContext.Provider>
+    <Wrapper>
+    {
+    (someArgument)=>(
+    <>
+    <div> This is Wrapper </div>
+    <div> someArgument</div>
+    </>
+    )
+    }
+    </Wrapper>
+    <br />
 
     <button onClick={()=>changeThemeClolor()}>Change Theme</button>
     <br/>
@@ -70,8 +85,14 @@ console.log(bool)
     <Provider>
     <Child1/>
     </Provider>
+    Handling Form
+    <FormC />
     <br/>
+    Handling Form using query.Selector which updates the real DOM instead of virual DOM
     <br/>
+    NOT NOT TRY TO MANIPULATE REAL DOM ,IT MAY INTRODUCE BUGS
+    <br />
+    <FormD />
     </div>
     )
 }
