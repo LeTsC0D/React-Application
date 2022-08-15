@@ -51,8 +51,21 @@ ol, ul {
 
 .active{
 font-size:50px;
+color:green;
+}
+
+.isActive{
+color:orange;
+font-size:20px;
+}
+
+.isInActive{
+color:blue;
+font-size:30px;
 }
 
 .always{
 background-color:green;
 }
+
+
