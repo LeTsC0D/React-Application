@@ -8,6 +8,8 @@ import Todo from './Components/Todo'
 import Timer from './Components/Timer'
 import ReverseCounter from './Components/ReverseCounter'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FileRoute from "./Router/FileRoute"
+import { BrowserRouter } from 'react-router-dom';
 
    function calculateWinner(squares) {
     const lines = [
@@ -39,25 +41,6 @@ function Square(props) {
 
 
 class Board extends React.Component {
-//  constructor(props) {
-//    super(props);
-//    this.state = {
-//      squares: Array(9).fill(null),
-//       xIsNext: true,
-//    };
-//  }
-
-//    handleClick(i) {
-//    const squares = this.state.squares.slice();
-//    if (calculateWinner(squares) || squares[i]) {
-//      return;
-//    }
-//      squares[i] = this.state.xIsNext ? 'X' : 'O';
-//      this.setState({
-//        squares: squares,
-//        xIsNext: !this.state.xIsNext,
-//      });
-//    }
 
   renderSquare(i) {
     return (
@@ -173,7 +156,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //root.render(<Game />,<App />);
 
 root.render(
-  <div>
+  <div style={{margin:"10px"}}>
     <Game />
     <App />
     <Counter />
@@ -181,5 +164,8 @@ root.render(
     <Todo/>
     <Timer />
     <ReverseCounter />
+    <BrowserRouter>
+    <FileRoute/>
+    </BrowserRouter>
   </div>
 );
