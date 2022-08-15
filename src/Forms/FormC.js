@@ -1,4 +1,5 @@
 import React,{useEffect,useState,useRef} from 'react';
+import { Button } from 'reactstrap';
 
 const FormC=()=>{
 const [fname,setFname]=useState("")
@@ -25,7 +26,11 @@ return(
     <option>Maths </option>
     <option>Science</option>
     </select>
-    <button type="submit">Click Me </button>
+    <Button type="submit" color="danger">Click Me </Button>
+
+
+  <Button  color="primary" >  BootStrap Button </Button>
+
 </form>
 
 

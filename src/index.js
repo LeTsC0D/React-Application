@@ -7,24 +7,8 @@ import DoubleCounter from './Components/DoubleCounter'
 import Todo from './Components/Todo'
 import Timer from './Components/Timer'
 import ReverseCounter from './Components/ReverseCounter'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-//class Square extends React.Component {
-//  constructor(props) {
-//    super(props);
-//    this.state = {
-//      value: null,
-//    };
-//  }
-//  render() {
-//    return (
-//      <button
-//        className="square"
-//        onClick={() => this.props.onClick()}>
-//        {this.props.value}
-//      </button>
-//    );
-//  }
-//}
    function calculateWinner(squares) {
     const lines = [
       [0, 1, 2],
