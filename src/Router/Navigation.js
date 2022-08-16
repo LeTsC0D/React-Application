@@ -1,10 +1,17 @@
 import React from 'react'
-import {Link, Routes, Route,NavLink} from 'react-router-dom'
+import {Link, Routes, Route,NavLink,Navigate,useNavigate} from 'react-router-dom'
 
 export default function Navigation() {
+const navigate=useNavigate();
   return (
     <nav>
       <ul>
+        {/*
+              <li>
+                <Link target="_blank"  to={{pathname:"https://www.google.com"}}>Redirect</Link>
+              </li>
+        */}
+
         <li>
           <Link to="/">Root</Link>
         </li>
@@ -34,6 +41,19 @@ export default function Navigation() {
           NavLink access the index.css to get css style using CALLBACK
           </NavLink>
         </li>
+        {
+        <span onClick={()=>navigate("/plot")}>plot
+        </span>
+        }
+
+
+        {/*
+        <span onClick={()=>{
+        return(
+        <Navigate to="/plot"></Navigate>
+        )}}>plot
+        </span>
+        */}
       </ul>
     </nav>
   )

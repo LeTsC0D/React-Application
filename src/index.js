@@ -10,7 +10,7 @@ import ReverseCounter from './Components/ReverseCounter'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FileRoute from "./Router/FileRoute"
 import { BrowserRouter } from 'react-router-dom';
-
+import SearchParams from "./Router/SearchParam"
    function calculateWinner(squares) {
     const lines = [
       [0, 1, 2],
@@ -166,6 +166,8 @@ root.render(
     <ReverseCounter />
     <BrowserRouter>
     <FileRoute/>
+    <SearchParams/>
     </BrowserRouter>
+
   </div>
 );
