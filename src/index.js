@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FileRoute from "./Router/FileRoute"
 import { BrowserRouter } from 'react-router-dom';
 import SearchParams from "./Router/SearchParam"
+import CounterRed from "./Reducer/CounterRed"
    function calculateWinner(squares) {
     const lines = [
       [0, 1, 2],
@@ -168,6 +169,7 @@ root.render(
     <FileRoute/>
     <SearchParams/>
     </BrowserRouter>
-
+    Application of Reducer to write the clean code and increase the readability of code<br />
+    <CounterRed/>
   </div>
 );
