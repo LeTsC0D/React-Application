@@ -22,17 +22,13 @@ return (
             <Route path=':blogId'  element={<Blog/>}></Route>
             <Route path='archive_blogs' element={<ArchivedBlogs/>}></Route>
         </Route>*/}
-
         <Route path="/hume" element={<Navigate to="/home"></Navigate>}> </Route>
         <Route path="/hume1" element={<Link to="/home">Manually trigger</Link>}> </Route>
-
         <Route path='/blogs/*' element={<BlogRoutes />}>
-
         </Route>
-
-        <Route path='/navlink'  element={<Blogs/>}></Route>
-        <Route path='/navlinkcss'  element={<Blogs/>}></Route>
-        <Route path='*' element={<ErrorPage />} ></Route>
+        <Route path='/navlink' element={<Blogs/>}></Route>
+        <Route path='/navlinkcss' element={<Blogs/>}></Route>
+        <Route path='/ErrorPage*' element={<ErrorPage />}></Route>
       </Routes>
 </div>
 )
