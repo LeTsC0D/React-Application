@@ -1,0 +1,508 @@
+Verzeo in collaboration with many partnered companies including  Autodesk and Many MNCs certification bring to you 2 month Internship program.
+
+Intro to Verzeo (1.5 min)
+
+https://www.youtube.com/watch?v=aZ8akB0zy1w
+
+?Internship domains offered are mentioned below branch wise:
+
+
+
+https://www.youtube.com/watch?v=RNneVr7aoSw&list=PLGZJDzu5NntRgpuqVtEb9e2tDaRYXRZFG
+https://www.youtube.com/playlist?list=PLGZJDzu5NntRmgwjCg0OwFpt9yHh68Muc
+https://www.youtube.com/playlist?list=PLGZJDzu5NntT7CrVD3D0WmJu31lGzrwhb
+
+
+https://scrimba.com/learn/learnreact
+
+ Countdown - https://codesandbox.io/s/focused-joliot-2xhxfs?file=/src/App.js
+
+
+DigitalIndia@753
+export default and exports
+react lifecycle
+
+looking forward to your approval for my leave
+
+in strict mode hosting is not done
+
+https://my.newtonschool.co/playground/project/v74bf7bvkw0w/
+
+
+What are the features of React?
+What do you mean by unidirectional?
+
+What is JSX?
+Can web browsers read JSX directly?
+ 
+What is virtual Dom?
+What is the difference between the ES5 and ES6 standards?
+
+What are the types of components in React?
+What is the use of render() in React?
+
+Explain the lifecycle methods of components.
+What are Pure Components?
+
+What are hooks in react? Can you name any hook that we frequently use ?
+
+What is the difference between state and props?
+
+What is a higher-order component in React?
+
+How can you embed two or more components into one?
+
+What are the differences between class and functional components?
+
+Differentiate between a controlled component and an uncontrolled component in React.
+
+
+1.What is React?
+2.What is the difference between Element and Component?
+3.What is the difference between state and props?
+4.What is "key" prop and what is the benefit of using it in arrays of elements?
+5.What is Virtual DOM?
+6.How Virtual DOM works?
+7.Life cycle methods in react. Best life cycle method for making API calls?
+8.Difference between class and functional component.
+9.Hooks. Give some example of hooks.
+10.Change the value.
+11.Disable a button
+12.What are Pure Components?
+13.Why should we not update the state directly?
+14.What is context?
+15.Controlled and uncontrolled component.
+16.What is fragment.
+
+
+
+Why we use react
+What is JSX
+Virtual DOM
+• reconciliation process
+• what is state and props –
+• functional component vs class component
+• Lifecycle methods in react
+What is fragments
+•Controlled vs uncontrolled component
+Counter
+Two way binding
+
+
+What is React -Yes
+-what is virtualDom and Dom in react -Yes
+-what is event capturing and event bubbling-No
+-What is a controlled and uncontrolled component? -Yes
+-what is useref in react-Yes
+-What is the difference between server side render and client side render -No
+-what is React Routers -Yes
+-Context Api-Yes
+-What is pure component - Yes
+
+-create todolist
+-Create  button after click the button should display the current time and update the time
+
+
+three phases
+Mounting, Updating, and Unmounting.
+
+
+Mounting
+constructor()
+getDerivedStateFromProps()
+render()
+componentDidMount()
+
+
+Updating
+getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+getSnapshotBeforeUpdate()
+componentDidUpdate()
+
+Unmounting
+componentWillUnmount()
+
+
+
+PURE COMPONENTS
+If the previous value of state or props and the new value of state or props is the 
+same, the component will not re-render itself. Since Pure Components restricts the 
+re-rendering when there is no use of re-rendering of the component. Pure Components 
+are Class Components which extends React.PureComponent. 
+
+
+
+
+concepts
+React Components - Answered / Correct
+State Managements- Answered / Correct
+Hooks- Answered / Correct
+Use State- Answered / Correct
+Use Effect- Answered / Correct
+HTML Forms- Answered / Correct
+ES6 functions- Answered / Correct
+arrow functions- Answered / Correct
+JS concepts- Answered / Correct
+[06/08, 7:10 PM] +91 96894 61926: 1.  
+Write a JavaScript program to find the most frequent item of an array// Done.
+
+2.
+ Write code to find out Prime No., Even No, and Odd no form 1 To 100 as a list on button click. There will be three buttons on the page with names like 1. Prime No, 2. Even No. and 3. Odd No.  When you click on the prime no. button the Prime no. the list should be there from 1 to 100 and the same functionality should be for each button. and also find out the sum of each numbers.// Done.
+
+3). 
+"I made a mistake and overwrote a JSON file with some weird data, thankfully I had no back-up and I'm too lazy to fix it so now you guys can solve it for me!
+
+Get the strings out of those arrays. like input = ([[][][][][][][][[][] [[[[[[[""I have no idea what i'm doing""]]]]]]]]]) ""I have no idea what i'm doing// done"
+[06/08, 7:10 PM] +91 96894 61926: 4) 
+Write a JavaScript function that accept row, column, (to identify a particular cell) and a string to update the content of that cell// Not Done.
+
+
+
+[1:02 pm, 07/08/2022] shashank: [8/4, 8:32 AM] ALONE STAR LIPAN: 1. What is Prototype?
+2. What is Memoization?
+3. What is deep copy? 
+4. What is bind? 
+5. Explain Array.reduce?
+6. Explain Promises
+7. What is Event loop?
+[8/4, 8:32 AM] ALONE STAR LIPAN: paras kumar js hard
+[1:02 pm, 07/08/2022] shashank: 1. What is Prototype?
+2. What is Memoization?
+3. What is deep copy? 
+4. What is bind? 
+5. Explain Array.reduce?
+6. Explain Promises
+7. What is Event loop?
+
+https://www.codingame.com/playgrounds/8595/reactjs-higher-order-components-tutorial
+
+[8:06 pm, 10/08/2022] shashank: What is React.
+- The working of React
+Virtual DOM concept.
+[Partially Answered]
+
+- What is difference between Functional and Class Component ? In which Situation you will use ?
+[Partially Answered]
+
+- What is stateful and stateless
+[Not Answered]
+
+- What's the difference between a Controlled component and an Uncontrolled one in React?
+[Not Answered]
+
+- What is diff between props and state?
+[Answered]
+
+- What do mean by fragments?
+[Not Answered]
+
+- What is difference between JS and JSX ?
+[Partially Answered]
+
+- Have you worked with Hooks, different type of hooks?
+[Answered]
+
+- Have you worked with react-router?What is it?
+[Not Answered]
+
+- code to make two component one with list and another having heading
+[Coded]
+
+- Write a code to increment and decrement using hooks
+[Coded]
+[8:06 pm, 10/08/2022] shashank: What is React? Explain its features.
+what is virtual dom?
+What is JSX?
+Can I write if else condition in JSX?
+
+What are state and props in React? Give example with coding.
+What are the various lifecycle method names?
+What is default in export statement?
+What are React Hooks?
+What are the rules of using hooks?
+Write syntax for useEffect hook.
+What is React Fragments?
+Why React uses className over class attribute?
+Differentiate between stateful and stateless components.
+
+
+
+Ya .... He asked me .. 
+1. promise program... 
+2. Given array with different type of value.. like...
+Ar=[2,3,5,7,8,a,p,o,y,u,e,k,i,8,8]
+From array find..
+Most frequency digit
+Show even digits
+Show prime numbers
+Show vowels
+Show all consonants
+
+
+What is Virtual DOM? 
+Difference between stateless and statefull component
+What are Lifecycle methods in React?
+What is the use of React Context Api?
+Difference between states and props. 
+Create a counter app with increment decrement and capture button,
+ when user click on increment count value increase by 1,
+when you click on decrement count decrease by 1 and when 
+you click on capture the current count would be added to 
+list and we have to maintain list of captured value
+
+
+[8/4, 8:32 AM] ALONE STAR LIPAN: 1. What is Prototype?
+2. What is Memoization?
+3. What is deep copy? 
+4. What is bind? 
+5. Explain Array.reduce?
+6. Explain Promises
+7. What is Event loop?
+[8/4, 8:32 AM] ALONE STAR LIPAN: paras kumar js hard
+
+
+-What is React -Yes
+-what is virtualDom and Dom in react -Yes
+-what is event capturing and event bubbling-No
+-What is a controlled and uncontrolled component? -Yes
+-what is useref in react-Yes
+-What is the difference between server side render and client side render -No
+-what is React Routers -Yes
+-Context Api-Yes
+-What is pure component - Yes
+
+-create todolist
+-Create  button after click the button should display the current time and update the time
+
+
+Shubham Madheysia EASY REACT MOCK
+
+Open https://codesandbox.io/s/new and create a new React component with 2 input fields, input1 and input2. Users can type any number in either of these input fields. You need to ensure that (input2 minus input1) is equal to 1 always. Means if user type value 5 in input1 then input2 value should change to 6 (to make input2 - input1 = 1). And similarly, if input2 value is 100 then input1 value should change to 99. You need to just play around with input values
+
+Note: In the UI only 2 input fields should be present. No button needed.
+
+Problem 2: Optimize ‘Problem 1’ by making it a stateless component. Means solve problem 1 without using any state variable. You still need to play with input tags and values only.
+
+Note: Don’t write vanilla JS like document.getElementById etc. Use react hooks here.
+
+PS: Keep Problem 1 and Problem 2 solutions separately. Don’t just work on Problem 2 because it is an optimization of Problem 1. Start with 1st alone
+
+
+
+
+What are the features of React?
+What do you mean by unidirectional?
+What is JSX?
+Can web browsers read JSX directly? 
+What is virtual Dom?
+What is the difference between the ES5 and ES6 standards?
+What are the types of components in React?
+What is the use of render() in React?
+Explain the lifecycle methods of components.
+What are Pure Components?
+What are hooks in react? Can you name any hook that we frequently use ?
+What is the difference between state and props?
+What is a higher-order component in React?
+How can you embed two or more components into one?
+What are the differences between class and functional components?
+Differentiate between a controlled component and an uncontrolled component in React.
+
+
+
+1.What is React?
+2.What is the difference between Element and Component?
+3.What is the difference between state and props?
+4.What is "key" prop and what is the benefit of using it in arrays of elements?
+5.What is Virtual DOM?
+6.How Virtual DOM works?
+7.Life cycle methods in react. Best life cycle method for making API calls?
+8.Difference between class and functional component.
+9.Hooks. Give some example of hooks.
+10.Change the value.
+11.Disable a button
+12.What are Pure Components?
+13.Why should we not update the state directly?
+14.What is context?
+15.Controlled and uncontrolled component.
+16.What is fragment.
+
+
+
+Create a project with showcasing multiple concepts
+React Components - Answered / Correct
+State Managements- Answered / Correct
+Hooks- Answered / Correct
+Use State- Answered / Correct
+Use Effect- Answered / Correct
+HTML Forms- Answered / Correct
+ES6 functions- Answered / Correct
+arrow functions- Answered / Correct
+JS concepts- Answered / Correct
+
+
+React componenets
+Components are independent and reusable bits of code.
+
+Four Kinds of React State
+Local state	useState,useReducer
+Global state	Context API,Redux 
+manage state across multiple components,
+Server state	useSWR
+Data that comes from an external server that must be integrated with our UI state.
+What happens when there is a network error? 
+Do I really need to hit my server every time my user visits the home page 
+if the data hasn’t changed?
+URL state	React Router ,useHistory or useLocation,useParams
+information we need about our location, history, and pathname.
+Data that exists on our URLs, including the pathname and query parameters.
+
+
+useEffect
+useEffect lets us perform side effects in function components
+ It runs once our component mounts
+
+
+useMemo allows us to 'memoize', or remember the result of expensive calculations 
+const ans=useMemo(() => getLetterCount(word), [word])
+
+useRef
+allow us to create a reference to a given element / component when the component mounts
+
+useReducer
+Reducers are simple, predictable (pure) functions that take a previous state object 
+and an action object and return a new state object
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "LOGIN":
+      return { username: action.payload.username, isAuth: true };
+    case "SIGNOUT":
+      // could also spread in initialState here
+      return { username: "", isAuth: false };
+    default:
+      return state;
+  }
+}
+
+function App(){
+const [state, dispatch] = useReducer(reducer, initialState);
+
+  function handleLogin() {
+    dispatch({ type: "LOGIN", payload: { username: "Ted" } });
+  }
+
+  function handleSignout() {
+    dispatch({ type: "SIGNOUT" });
+  }
+
+  return (
+    <>
+      Current user: {state.username}, isAuthenticated: {state.isAuth}
+      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleSignout}>Signout</button>
+    </>
+  );
+}
+
+
+What is React
+React is a JavaScript library, not a framework.
+
+featues
+JSX
+components	create reusable behavior
+React takes care of updating our UI when our data changes, 
+without the need to update the DOM manually ourselves
+
+
+pass data to React components
+Props
+Context API
+
+
+React Fragments
+React that let you write group children elements or components without 
+creating an actual node in the DOM.
+
+
+useCallback is to prevent functions that are declared within the body of function 
+components from being recreated on every render.
+useMemo, on the other hand, memoizes an expensive operation that we give it.
+
+
+Higher order Component
+higher-order component is a function that takes a component and returns a new component.
+
+
+fetch and axios
+  const fetchData = () => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setUsers(data)
+      })
+  }
+
+  const fetchData = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users")
+    const data = await response.json()
+    setUsers(data)
+  }
+
+
+  const fetchData = () => {
+    axios.get("https://jsonplaceholder.typicode.com/users").then(response => {
+      setUsers(response.data)
+    })
+  }
+
+    const postings = async () => {
+        try{
+            const res = await axios.get(url)
+            setPosts(res.data.data)
+        } catch (error) {
+            console.log('error')
+        }
+    }
+
+    const fetchData = async () => {
+      const result = await axios(
+        'https://hn.algolia.com/api/v1/search?query=redux',
+      );
+ 
+      setData(result.data);
+    };
+
+
+HOC
+https://www.codingdeft.com/posts/react-fetch-data-api/
+
+
+ROUTERS
+Memory Router
+Memory router keeps the URL changes in memory not in the user browsers. 
+
+Browser Router
+It routes as a normal URL in the browser and assumes that the server is handling all the request URL
+
+Hash Router
+Hash router uses client-side hash routing. 
+It uses the hash portion of the URL (i.e. window.location.hash) to keep your UI in sync with the URL
+Whenever, there is a new route get rendered, it updated the browser URL with hash routes.
+
+
+Pure Component
+ Pure Component, there is no need for shouldComponentUpdate() Lifecycle Method. 
+ReactJS Pure Component Class compares current state and props with new props and states to decide whether the React component should re-render itself or  Not.
+
+
+
+React memo
+export default memo(Todos);
+Now the Todos component only re-renders when the todos that are passed 
+to it through props are updated.
+

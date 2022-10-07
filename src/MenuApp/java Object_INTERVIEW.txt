@@ -1,0 +1,161 @@
+https://www.javaguides.net/2020/04/java-oops-quiz-coding-programs.html
+
+no-arg constructor in the Bike class. It will be invoked at the time of object creation.
+
+static method : It is executed before the main method at the time of classloading.
+a static block that gets executed exactly once, when the class is first loaded
+varaibles are not inherited
+
+multiple inheritance is not supported in java.
+
+If a class has multiple methods having same name but different in parameters or different  data type, 
+it is known as Method Overloading.
+
+If subclass (child class) has the same method as declared in the parent class, 
+it is known as method overriding in Java.
+
+Instance Initializer block is used to initialize the instance data member. It run each time when object of the class is created.
+The instance initializer block is invoked after the parent class constructor is invoked 
+(i.e. after super() constructor call).
+
+If you make any method as final, you cannot override it.
+If you make any class as final, you cannot extend it.
+we initialize blank final variable only in constructor or  It can be initialized only in static block.
+If you declare any parameter as final, you cannot change the value of it.
+
+There are two types of polymorphism in Java: compile-time polymorphism and runtime polymorphism. 
+We can perform polymorphism in java by method overloading and method overriding.
+
+Method overloading is a compile-time polymorphism.
+
+Runtime polymorphism or Dynamic Method Dispatch is a process in which a call to an overridden method is 
+resolved at runtime rather than compile-time.Method overriding is a run-time polymorphism.
+
+b default constructor of an abstract class is called when an instance of an inherited class is created
+
+Upcasting
+class A{}  
+class B extends A implements I{}  
+A a=new B();//upcasting  we can use the reference variable of class type or an interface type
+
+A method is overridden, not the data members, so runtime polymorphism can't be achieved by data members.
+hence when we are trying to access the data member which is not overridden, we will end up 
+accessing the data member of the Parent class always
+
+Static Binding (also known as Early Binding)
+When type of the object is determined at compiled time(by the compiler), it is known as static binding.
+If there is any private, final or static method in a class, there is static binding.
+
+Dynamic Binding (also known as Late Binding)
+When type of the object is determined at run-time, it is known as dynamic binding.
+
+upcasting
+Animal a=new Dog();  
+a.eat();   //calling dog method
+
+downcasting
+ Animal a=new Dog4(); 
+Dog4 d=(Dog4)a;//downcasting  
+
+
+Astract class 	It needs to be extended and its method implemented. It cannot be instantiated.
+A constructor of an abstract class is called when an instance of an inherited class is created
+abstract class B {
+  //declaring inner class as abstract with abstract method
+    abstract class C {
+        abstract void myAbstractMethod();
+    }
+}
+class D extends B {
+    class E extends C {
+      // implementing the abstract method
+        void myAbstractMethod() { System.out.println("Inside abstract method implementation"); }
+    }
+}
+ 
+
+If a class implements multiple interfaces, or an interface extends multiple interfaces, it is known as multiple inheritance.
+
+final  methods that cannot be overridden
+
+
+If a class contains at least one abstract method then compulsory we should declare the class as abstract 
+
+If the Child class is unable to provide implementation to all abstract methods of the Parent class 
+then we should declare that Child class as abstract so that the next level Child class should provide implementation 
+to the remaining abstract method.
+
+
+All methods declared within an interface must be implemented by the class(es) that implements this interface.
+
+we can now define static methods in interfaces that can be called independently without an object.
+
+Interface declared outside any other class can be public and default access specifiers
+Interface declared in a class can either be default, public, protected not private
+An interface can be declared inside another interface
+
+You can provide only a less restrictive or same-access modifier when overriding a method.
+
+
+
+
+
+
+
+
+
+
+class Base
+{
+	String name;
+    public void dr(){
+        System.out.println("sdfh");
+    }
+}
+
+class Derived extends Base
+{
+	public void dr(){
+	    System.out.println("rgg");
+	}
+}
+
+class d22 extends Derived
+{
+    public void dr1(){
+        System.out.println("dr1");
+    }    
+}
+
+class d3{
+	public static void main(String args[])
+	{
+		 Base obj = new d22();
+		 obj.dr();
+		 
+	}
+}
+
+
+answer:	rgg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+css selector
+Simple selectors (select elements based on name, id, class)
+Combinator selectors (descendant selector (space),child selector (>)
+			adjacent sibling selector (+),
+			general sibling selector (~),
+			)
+Pseudo-classes selectors define a special state of an element syntax :
+		(define a special state of an element.)
+example :first-child
+
+
+
+
+
+
+
+chess boards
+
+var i=0;
+var j=0;
+var board=document.querySelector(".chess");
+var chesstable=document.createElement("table");
+for(i=0;i<8;i++){
+  var tr=document.createElement('tr')
+  for(j=0;j<8;j++){
+    if(i%2==0){
+      if(j%2==0){
+        var td = document.createElement('td');
+        td.setAttribute("style","background-color:black;width:10px;height:10px;border:1px solid red");
+        // td.style.backgroundColor="black";
+        tr.appendChild(td);
+      }else{
+        var td = document.createElement('td');
+        td.setAttribute("style","background-color:white;width:10px;height:10px;border:1px solid red");
+        // td.style.backgroundColor="black";
+        tr.appendChild(td);        
+      }
+    }else{
+      if(j%2==0){
+        var td = document.createElement('td');
+        td.setAttribute("style","background-color:white;width:10px;height:10px;border:1px solid red");
+        // td.style.backgroundColor="black";
+        tr.appendChild(td);
+      }else{
+        var td = document.createElement('td');
+        td.setAttribute("style","background-color:black;width:10px;height:10px;border:1px solid red");
+        // td.style.backgroundColor="black";
+        tr.appendChild(td);        
+      }      
+    }
+  }
+  chesstable.appendChild(tr);
+}
+board.appendChild(chesstable)

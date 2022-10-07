@@ -1,0 +1,823 @@
+bitgert 0x1F5E1926b17F4967A9316AfD199Cb032a1529849
+kth smallest/largest elemet 
+top k frequent element 
+k closest number
+
+1. Introduce Yourself
+2.
+The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.
+
+For example, "ACGAATTCCG" is a DNA sequence.
+When studying DNA, it is useful to identify repeated sequences within the DNA.
+
+Given a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.
+
+ Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+Output: ["AAAAACCCCC","CCCCCAAAAA"]
+
+
+Input: s = "AAAAAAAAAAAAA"
+Output: ["AAAAAAAAAA"]
+3. Given a sorted array arr[] of integers and an integer k, the task is to find the smallest elements in the array which is greater than k. Note that k may or may not be present in the array. if No number is greater than k then print -1
+
+Input: arr[] = {2, 3, 5, 6, 6, 9,10}, k = 6 
+Output: 9
+Input: arr[] = {1, 1, 2, 5, 5, 7}, k = 8 
+Output: -1
+
+Input: arr[] = {-2, 1, 2, 5, 5, 7}, k = -3
+Ouptut:-2
+
+
+
+[11:28 pm, 15/07/2022] shashank: DSA 2 (medium) --> by hiren patel
+
+i) 
+what is data structure??
+ii)What's algorithm??
+
+1. whats string?
+2.What is Linked List?
+
+3.What is the purpose of a Linked list?
+
+4.What is Stack and where it can be used? 
+
+5.What is a Queue, how it is different from the stack?
+
+
+https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+
+
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
+[11:28 pm, 15/07/2022] 
+shashank: Different sorting algorithm? Best time complexity?
+
+Different searching techniques 
+
+Sort 0s 1s
+Implement binary search
+
+[11:28 pm, 15/07/2022] shashank: 
+Question: Number is represented in linked list such that each digit 
+corresponds to a node in linked list. Add 1 to it. For example 1999 is 
+represented as (1-> 9-> 9 -> 9) and adding 1 to it should change it to 
+(2->0->0->0)
+
+
+Given an expression string exp, write a program to examine 
+whether the pairs and the orders of “{“, “}”, “(“, “)”, “[“, “]” are correct in exp.
+
+
+Input: exp = “[()]{}{[()()]()}”
+
+Output: Balanced
+
+Input: exp = “[(])”
+
+Output: Not Balanced
+
+LinkedList<Integer> arr=new LinkedList<Integer>();  
+arr.add()  //It is used to append the specified element to the end of a list.
+arr.add(int index, E element)
+arr.addFirst(E e)
+arr.addLast(E e)
+arr.remove() //It is used to retrieve and removes the first element of a list.
+arr.remove(Object o)  //It is used to remove the first occurrence of the specified element in a list.
+arr.remove(int index)
+arr.removeFirst()
+arr.removeLast()
+arr.size()
+
+
+Stack<Integer> stk= new Stack<Integer>();
+stk.clear()
+stk.push(element)
+stk.peek()
+stk.pop()
+stk.clear();
+stk.search(element); //-1 if the element is absent or index from top starting from 1
+stk.peek() //throws null pointer exception if stack is empty 
+stk.empty()
+stk.size()
+
+
+Deque
+Deque<String> deque= new LinkedList<String>();
+deque.addFirst()
+deque.addLast()
+deque.peekFirst()
+deque.peekLast()
+deque.contains()
+deque.removeFirst()
+deque.removeLast()
+deque.size()
+
+
+StringBuilder str = new StringBuilder();
+str.delete(0, 7) //delete the substring
+str.deleteCharAt(10);
+str.insert(0, "  ");
+str.toString()
+str.substring(5)  // get substring start from index 5
+str.substring(5, 8))
+str.append("");
+str.reverse.toString();
+str.replace(start, end, " ");  // upto end-1
+str.setLength(0);  // clear
+str.setCharAt(2, 'S');
+
+
+WHEN a which is type of ListNode has field val 
+PriorityQueue<ListNode> minHeap = new PriorityQueue<ListNode>((a, b) -> a.val - b.val);
+PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();
+pQueue.add(element)
+pQueue.peek()
+pQueue.poll()
+pQueue.isEmpty()
+pQueue.size()
+pQueue.remove()
+
+
+NEXT GREATER ELEMENT(STACK)
+
+void printNGE(int arr[], int n)
+{
+    Stack<Integer> s = new Stack<Integer>();
+    int arr1[] = new int[n];
+    for (int i = n - 1; i >= 0; i--)
+    {
+        while (!s.empty() && s.peek() <= arr[i])
+            s.pop();
+        if (s.empty())
+            arr1[i] = -1;        
+        else
+            arr1[i] = s.peek();           
+        s.push(arr[i]);
+    }
+    for (int i = 0; i < n; i++)
+        System.out.println(arr[i] + " ---> " + arr1[i]);
+}
+
+Baeyam_2121_
+Baeyyam21@gmail.com
+
+Siongjean_2121_
+siongjean21@gmail.com
+
+MAXIMUM OF ALL POSSIBLE SUBARRAY OF SIZE K USING STACK
+
+    static void print_max(int a[], int n, int k)
+    {
+        int[] max_upto = new int[n];
+        Stack<Integer> s = new Stack<>();
+        s.push(0);
+        for (int i = 1; i < n; i++)
+        {
+            while (!s.empty() && a[s.peek()] <= a[i])
+            {
+                max_upto[s.peek()] = i - 1;
+                s.pop();
+            }
+            s.push(i);
+        }
+        while (!s.empty())
+        {
+            max_upto[s.peek()] = n - 1;
+            s.pop();
+        }
+        int j = 0;
+        for (int i = 0; i <= n - k; i++).
+        {
+            while (j < i || max_upto[j] < i + k - 1)
+            {
+                j++;
+            }
+            System.out.print(a[j] + " ");
+        }
+        System.out.println();
+    }
+
+ 
+MAXIMUM OF ALL POSSIBLE SUBARRAY OF SIKE K USING PRIORITY QUEUE
+
+private static void maxOfSubarray(int[] arr, int k) {
+    PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
+    int i;
+    for(i = 0 ; i < k ; i++)
+      priorityQueue.add(arr[i]);
+    System.out.print(priorityQueue.peek()+" ");
+    priorityQueue.remove(arr[0]);
+    for( ; i < arr.length ; i++) {
+      priorityQueue.add(arr[i]);
+      System.out.print(priorityQueue.peek()+" ");
+      priorityQueue.remove(arr[i - k + 1]);
+    }
+}
+
+MAXIMUM OF ALL POSSIBLE SUBARRAY OF SIZE K USING DEQUE
+
+  private static void maxOfSubarray(int[] arr, int k) {
+    Deque<Integer> deque = new LinkedList<Integer>();
+    int i;
+    for (i = 0; i < k; ++i) {
+      while (!deque.isEmpty() &&  arr[deque.peekLast()]<=arr[i]) {
+        deque.removeLast();
+      }
+      deque.addLast(i);
+    }
+    for (; i < arr.length; ++i) {
+      System.out.print(arr[deque.peekFirst()] + " ");
+      while ((!deque.isEmpty()) && deque.peekFirst() <= i - k)
+        deque.removeFirst();
+      while ((!deque.isEmpty()) &&  arr[deque.peekLast()]<=arr[i])
+        deque.removeLast();
+      deque.addLast(i);
+    }
+    System.out.print(arr[deque.peekFirst()]);
+ }
+
+
+SUM OF MAXIMUM ELEMENT OF ALL POSSIBLE SUBARRAY
+
+    static int findMaxSum(int arr[], int n)
+    {
+        int CL[] = new int[n], CR[] = new int[n];
+        Stack<Integer> q = new Stack<Integer>();
+        for (int i = 0; i < n; i++)
+        {
+            while (q.size() != 0 && arr[q.peek()] <= arr[i])
+            {
+                CL[i] += CL[q.peek()] + 1;
+                q.pop();
+            }
+            q.push(i);
+        }
+        while (q.size() != 0)
+            q.pop();
+        for (int i = n - 1; i >= 0; i--)
+        {
+            while (q.size() != 0 && arr[q.peek()] < arr[i])
+            {
+                CR[i] += CR[q.peek()] + 1;
+                q.pop();
+            }
+            q.push(i);
+        }
+        while (q.size() != 0)
+            q.pop();
+        int ans = 0;
+        for (int i = 0; i < n; i++)
+            ans += (CL[i] + 1) * (CR[i] + 1) * arr[i];
+        return ans;
+    }
+
+SUM OF MAXIMUM-MINIMUM OF ALL SUBARRAY
+
+    public long subArrayRanges(int[] nums) {
+        long total = 0;
+        for (int i = 0; i < nums.length; i++) {
+            PriorityQueue<Integer> min = new PriorityQueue<>();
+            PriorityQueue<Integer> max = new PriorityQueue<>(Collections.reverseOrder());
+            for (int j = i; j < nums.length; j++) {
+                min.add(nums[j]);
+                max.add(nums[j]);
+                total += (max.peek() - min.peek());
+            }
+        }
+        return total;
+    }
+
+REVERSE THE LINKED LIST FROM index LEFT TO  index RIGHT
+
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        ListNode start=head;
+        int count=1;
+        ListNode prev=null;
+        ListNode trace=null;
+        ListNode trace_next=null;
+        while(start!=null){
+            if(count>=left && count<=right){
+             ListNode temp=start.next;
+                start.next=prev;
+                prev=start;
+                start=temp;
+            }else{
+                if(count>right){
+                    break;
+                }
+                prev=start;
+                trace=start;
+                start=start.next; 
+                trace_next=start;
+            }
+            count++;
+        }
+        if(trace!=null){
+        trace.next=prev;
+        trace_next.next=start;      
+            return head;
+        }else{
+            head.next=start;
+            return prev;
+        }
+    }
+
+RETURN NODE WHERE CYCLE EXIST
+
+    public ListNode detectCycle(ListNode head) {
+        ListNode start=head;
+        ListNode second=head;
+        if (head==null || head.next==null) return null;
+        
+        while(second!=null && second.next!=null){
+            start=start.next;
+            second=second.next.next;
+            if(start==second){
+                break;
+            }
+            if(second==null || second.next==null){
+                break;
+            }
+        }
+
+        if(start==second){
+         start=head;
+            if(start!=second){
+                while(start!=second){
+                    start=start.next;
+                    second=second.next;
+                }
+                return start;
+                
+            }else
+                return start;    
+        }else{
+            return null;
+        }
+
+
+LONGEST VALID SUBSTRING
+                                                                                      
+Input: s = ")()())"
+Output: 4
+
+    static int findMaxLen(String str)
+    {
+        int n = str.length();
+        Stack<Integer> stk = new Stack<>();
+        stk.push(-1);
+        int result = 0; 
+        for (int i = 0; i < n; i++)
+        {
+            if (str.charAt(i) == '(')
+                stk.push(i);
+            else
+            {
+                if(!stk.empty())
+                    stk.pop();
+
+                if (!stk.empty())
+                    result=Math.max(result,i - stk.peek());
+                else
+                    stk.push(i);
+            }
+        }
+        return result;
+    }
+
+
+Longest common prefix 
+Input: {"geeksforgeeks", "geeks", "geek", "geezer"}
+Output: "gee"
+
+    public String longestCommonPrefix(String[] a)
+    {
+        int size = a.length;
+        if (size == 0)
+            return "";
+        if (size == 1)
+            return a[0];
+        Arrays.sort(a);
+        int end = Math.min(a[0].length(), a[size-1].length());
+        int i = 0;
+        while (i < end && a[0].charAt(i) == a[size-1].charAt(i) )
+            i++;
+        String pre = a[0].substring(0, i);
+        return pre;
+    }
+
+
+Group of anagrams
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<HashMap<Character , Integer> , ArrayList<String>> Parent = new HashMap<>();
+        for(String str :strs){
+            HashMap<Character , Integer> childwithFreqency = new HashMap<>();
+            
+            for(int i =0;i<str.length();i++){
+                char ch = str.charAt(i);
+               childwithFreqency.put(ch , childwithFreqency.getOrDefault(ch , 0)+1);
+            }
+            if(Parent.containsKey( childwithFreqency)==false){
+                ArrayList<String> childwithlist = new ArrayList<>();
+              childwithlist .add(str);
+                Parent.put(childwithFreqency,childwithlist );
+                
+            }
+            else{
+                ArrayList<String> childwithlist  = Parent.get(childwithFreqency);
+                childwithlist .add(str);
+            }
+        }
+        List<List<String>> result = new ArrayList<>();
+        for(ArrayList<String> val:Parent.values()){
+            result.add(val);
+        }
+        return result;
+    }
+
+merge sort on linked list
+
+  	node mergeSort1(node h)
+	{
+		if (h == null || h.next == null) {
+			return h;
+		}else{
+		node middle = getMiddle1(h);
+		node left = mergeSort1(h);
+		node right = mergeSort1(middle);
+		node sortedlist = sortedMerge1(left, right);
+		return sortedlist;          
+        	}
+	}
+
+ 	public static node getMiddle1(node head)
+	{
+		if (head == null)
+			return head;
+
+		node slow = head, fast = head;
+		node prev=null;
+		while (fast!=null && fast.next != null) {
+		  	prev=slow;	
+          		slow = slow.next;
+		  	fast = fast.next.next;
+		}
+      		prev.next=null;
+		return slow;
+	}
+
+
+node sortedMerge1(node headA, node headB)
+{
+    node dummyNode = new node(0);
+    node tail = dummyNode;
+    while(true)
+    {
+        if(headA == null)
+        {
+            tail.next = headB;
+            break;
+        }
+        if(headB == null)
+        {
+            tail.next = headA;
+            break;
+        }
+        if(headA.val <= headB.val)
+        {
+            tail.next = headA;
+            headA = headA.next;
+        }
+        else
+        {
+            tail.next = headB;
+            headB = headB.next;
+        }
+        tail = tail.next;
+    }
+    return dummyNode.next;
+}
+
+Next greater frequency element
+
+Stack<Pair> mystack = new Stack<>();
+    HashMap<Integer,Integer> mymap = new HashMap<>();
+    class Pair{
+        int data;
+        int freq;
+        Pair(int data,int freq){
+            this.data = data;
+            this.freq = freq;
+        }
+    }
+
+    void NGF(int[] arr,int[] res) {
+        int n = arr.length;
+        for(int i = 0;i<n;i++) {
+            if(mymap.containsKey(arr[i]))
+                mymap.put(arr[i], mymap.get(arr[i]) + 1);
+            else
+                mymap.put(arr[i], 1);
+        }
+        for(int i = n-1;i>=0;i--) {
+            curr_freq = mymap.get(arr[i]);
+            while(!mystack.isEmpty()  &&  mystack.peek().freq <=curr_freq)
+                mystack.pop();
+            res[i] = (mystack.isEmpty()) ? -1 : mystack.peek().data;
+            mystack.push(new Pair(arr[i],mymap.get(arr[i])));
+        }
+    }
+
+
+
+
+Length of longest palindrome list in a linked list
+
+static int countCommon(Node a, Node b)
+{
+    int count = 0;
+    for (; a != null && b != null;a = a.next, b = b.next){
+ 
+        if (a.data == b.data)
+            ++count;
+        else
+            break;
+     }
+    return count;
+}
+ 
+static int maxPalindrome(Node head)
+{
+    int result = 0;
+    Node prev = null, curr = head;
+    while (curr != null)
+    {
+        Node next = curr.next;
+        curr.next = prev;
+        result = Math.max(result,2*countCommon(prev, next)+1);
+        result = Math.max(result,2*countCommon(curr, next));
+        prev = curr;
+        curr = next;
+    }
+    return result;
+}
+
+
+
+
+SHORTEST UNSORTED CONTINUOUS SUBARRAY
+Input: nums = [2,6,4,8,10,9,15]
+Output: 5
+Explanation: You need to sort [6, 4, 8, 10, 9]
+
+    public int findUnsortedSubarray(int[] nums) {
+        int start = -1, end = -2;
+        
+        int max = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < max) end = i;
+            max = Math.max(max, nums[i]);
+        }
+        int min = nums[nums.length - 1];
+        for (int i = nums.length - 2; i >= 0; i--) {
+            if (nums[i] > min) start = i;
+            min = Math.min(min, nums[i]);
+        }
+
+        return end - start + 1;
+    }
+
+
+Remove Zero Sum Consecutive Nodes from Linked List 
+Input: head = [1,2,3,-3,4]
+Output: [1,2,4]
+
+    public ListNode removeZeroSumSublists(ListNode head) {
+        if(head==null) return head;
+        HashMap<Integer,ListNode> hm = new HashMap<>();
+        ListNode ans= new ListNode(0);
+        hm.put(0,ans);
+        ans.next=head;
+        int sum=0;
+        ListNode curr=head;
+        while(curr!=null){
+            sum+=curr.val;
+            if(hm.containsKey(sum)) {
+                int currSum=sum;
+                ListNode toRemove=hm.get(sum).next;
+                while(toRemove!=curr){
+                    currSum+=toRemove.val;
+                    hm.remove(currSum);
+                    toRemove=toRemove.next;
+                }
+                hm.get(sum).next=curr.next;}
+            else {
+                hm.put(sum,curr);
+                 }         
+            curr=curr.next;
+        }
+        
+        return ans.next;
+    }
+
+Remove K Digits
+Input: num = "1432219", k = 3
+Output: "1219"
+
+    public String removeKdigits(String num, int k)
+    {
+        int i;
+        String res="0";
+        if(k<num.length())                                                            
+        {
+	    //If k>=num.length() then output will obviously be "0"
+            Stack<Character> stk=new Stack<Character>();
+            for(i=0;i<=num.length()-1;i++)
+            {
+                while(!stk.empty() && k!=0 && Character.getNumericValue(stk.peek())>Character.getNumericValue(num.charAt(i)))
+                {
+                    stk.pop();
+                    k-=1;
+                }
+                stk.push(num.charAt(i));
+            }
+            for(;k>0;k--)
+                stk.pop();
+            while(!stk.empty())
+                res=stk.pop()+res;
+            res=res.substring(0,res.length()-1);
+            for(i=0;i<res.length()-1 && res.charAt(i)=='0';)                            //To remove the leading zeros
+                res=res.substring(1,res.length());
+        }
+        
+        return res;
+    }
+
+
+ Smallest K-Length Subsequence With Occurrences of a Letter
+
+Input: s = "leet", k = 3, letter = "e", repetition = 1
+Output: "eet"
+
+class Solution {
+    public String smallestSubsequence(String s, int k, char letter, int r) {
+        int n_letters = 0;
+        for (int i = 0; i < s.length(); i++)
+            if (s.charAt(i) == letter)
+                n_letters ++;
+        
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            while (!stack.isEmpty() && stack.peek() > c && (s.length() - i + stack.size() > k) && (stack.peek() != letter || n_letters > r)) {
+                if (stack.pop() == letter) r ++;
+            }
+            
+            if (stack.size() < k) {
+                if (c == letter) {
+                    stack.push(c);
+                    r --;
+                } else if (k - stack.size() > r) {
+                    stack.push(c);
+                }
+            }
+            
+            if (c == letter) n_letters --;
+        }
+        
+        StringBuilder sb = new StringBuilder(stack.size());
+        for(Character c : stack) sb.append(c);
+        return sb.toString();
+    }
+}
+
+Maximum Score of a Good Subarray
+
+Input: nums = [1,4,3,7,4,5], k = 3
+Output: 15
+
+    int findmaxscore(int[] arr,int k,int n ){
+        int[] cl=new int[n];
+        int[] cr=new int[n];
+        Stack<Integer> s=new Stack<Integer>();
+        for(int i=0;i<n;i++){
+            while(!s.empty() && arr[s.peek()]>=arr[i]){
+                cl[i]+=cl[s.peek()]+1;
+                s.pop();
+            }
+            s.push(i);
+        }
+        while(!s.empty()){
+            s.pop();
+        }
+        for(int i=n-1;i>=0;i--){
+            while(!s.empty() && arr[s.peek()]>=arr[i]){
+                cr[i]+=cr[s.peek()]+1;
+                s.pop();
+            }
+            s.push(i);
+        }
+        while(!s.empty()){
+            s.pop();
+        }   
+        int ans=0;
+        for(int i=0;i<n;i++){
+            int left=i-cl[i];
+            int right=i+cr[i];
+            if(left<=k && right>=k){
+                int temp=arr[i]*(right-left+1);
+                if(temp>ans){
+                    ans=temp;
+                }
+            }
+        }
+        return ans;
+            
+    }
+        
+
+Check if two circular linked list is identical or not
+
+boolean checkIdentical(Node head1,Node head2)
+{
+    // Get the length of first linked list
+    int l1 = length(head1);
+    int l2 = length(head2);
+    if (l1 != l2)
+        return false;
+    int Count = 0;
+    bool flag = 0;
+    Node h1 = head1;
+    Node h2 = head2;
+    while (1) {
+        if (h1->data == h2->data) {
+            h1 = h1->next;
+            Count++;
+            if (Count == l1)
+                return true;
+        }
+        else {
+            h1 = head1;
+            Count = 0;
+            if (flag)
+                return false;
+        }
+        if (h2->next == head2)
+            flag = 1;
+        h2 = h2->next;
+    }
+}
+
+Rotate linked list 
+
+To rotate a linked list by k, we can first make the linked list circular and 
+then moving k-1 steps forward from head node,make head=current.next.next 
+and current.next.next=null
+
+
+Return after deletion of consecutive node sums up to 0
+
+Node removeCancellableNodes(Node listHead)
+{
+	if (listHead == null) return null;
+	Stack<Node> stack = new Stack<Node>();
+	Node node = listHead;  	
+	while(node != null)
+	{
+		if (node.value < 0)
+		{
+			int sum = node.value;
+                        while (!stack.isEmpty())
+			{
+				Node temp = stack.pop();
+				sum += temp.value;
+				temp = null;
+				if (sum == 0)
+				{
+					node = stack.peek();
+					break;
+				}
+			}
+		}
+		else
+		{
+			stack.push(node);
+		}
+		node = node.next;
+	}
+	
+	Node dummynode=new Node(0);
+	Node prev=dummynode;
+	for (int i = 0; i < stack.size(); i++) {
+		Node node = stack.pop();
+		prev.next=node;
+		prev=node;
+	}
+		
+	return dummynode.next();	
+}

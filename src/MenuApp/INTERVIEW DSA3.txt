@@ -1,0 +1,1033 @@
+What are data structures?
+What are algorithms?
+https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
+
+https://leetcode.com/problems/binary-tree-maximum-path-sum/
+
+natural policy gradient
+trpo
+https://github.com/sudhansu143/Interview_Questions
+ppo
+
+https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+given a string, different possible ways to group numbers and operators
+find out subarray for given sum
+
+1.Print All Possible Valid Combinations Of Parenthesis of Given ‘N’
+Objec­tive: 
+– Given “n”, generate all valid parenthesis strings of length “2n”.
+
+Example:
+Given n=2
+Output:
+(())
+()()
+For n=3
+Output:
+((()))
+(()())
+(())()
+()(())
+()()()
+
+
+2. Different ways to sum n using numbers greater than or equal to m
+Given two natural 
+number n and m. The task is to find the number of ways in which the numbers that are 
+greater than or equal to m can be added to get the sum n.
+Examples: 
+ 
+Input : n = 3, m = 1
+
+Output : 3
+Following are three different ways
+to get sum n such that each term is
+greater 
+than or equal to m
+1 + 1 + 1, 1 + 2, 3 
+
+Input : n = 2, m = 1
+Output : 2
+Two ways are 1 + 1 and 2
+
+Questions asked (ordered)
+1. What is the basic difference between recursion and dynamic 
+programming.
+
+
+2 What is the advantage of using dynamic programming?
+
+
+3. Given a string s, return the number of palindromic substrings in it.
+
+A string is a 
+palindrome when it reads the same backward as forward.
+
+A substring is a contiguous 
+sequence of characters within the string. 
+
+
+
+Example 1:
+
+Input: s = "abc"
+Output: 3
+Explanation: Three palindromic strings: "a", "b", "c".
+
+Example 2:
+
+Input: s = "aaa"
+Output: 6
+Explanation: Six palindromic strings: "a", "a", "a", "aa", 
+"aa", "aaa". 
+
+
+
+4.Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), 
+return the number of islands.
+
+An island is surrounded by water and is formed by connecting 
+adjacent lands horizontally or vertically. 
+You may assume all four edges of the grid are all 
+surrounded by water.
+
+
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  
+["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+Output: 3
+
+
+tower of hanoi
+https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/
+https://www.geeksforgeeks.org/length-of-longest-palindromic-sub-string-recursion/
+https://www.geeksforgeeks.org/longest-common-substring-dp-29/
+https://leetcode.com/problems/word-search-ii/
+https://leetcode.com/problems/distinct-subsequences/
+https://leetcode.com/problems/maximal-rectangle/
+https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
+https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/
+https://leetcode.com/problems/frog-jump/
+https://leetcode.com/problems/split-array-largest-sum/
+https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/
+https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/
+https://leetcode.com/problems/split-array-with-same-average/
+https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/
+https://leetcode.com/problems/find-the-shortest-superstring/
+https://leetcode.com/problems/numbers-with-repeated-digits/
+https://leetcode.com/problems/shortest-common-supersequence/
+https://leetcode.com/problems/minimum-falling-path-sum-ii/
+https://leetcode.com/problems/number-of-paths-with-max-score/
+https://leetcode.com/problems/distinct-echo-substrings/
+https://leetcode.com/problems/jump-game-v/
+https://leetcode.com/problems/maximum-students-taking-exam/
+https://leetcode.com/problems/restore-the-array/
+https://leetcode.com/problems/stone-game-iii/
+dd https://leetcode.com/problems/find-all-good-strings/
+https://leetcode.com/problems/number-of-ways-of-cutting-newa-pizza/
+https://leetcode.com/problems/stone-game-iv/
+https://leetcode.com/problems/paint-house-iii/
+dd https://leetcode.com/problems/get-the-maximum-score/
+https://leetcode.com/problems/stone-game-v/
+dd https://leetcode.com/problems/count-all-possible-routes/
+https://leetcode.com/problems/palindrome-partitioning-iv/
+https://leetcode.com/problems/maximize-palindrome-length-from-subsequences/
+https://leetcode.com/problems/minimum-cost-to-reach-destination-in-time/
+https://leetcode.com/problems/substring-with-largest-variance/
+https://leetcode.com/problems/check-if-there-is-a-valid-parentheses-string-path/
+
+1. check whether binary tree is binary search tree 
+(for left traversing the max is parent and min is inter_min_value and for right traversing 
+min is parent and max is integer.max_value )
+2. traverse level order binary tree (good add the left and right child the pop ,select the next to find its child and add and pop)
+3. check whether the binary tree is balanced or not (difference between left height and right height is max 1)
+4. longest branch of nodes in increasing consecutive order.
+5. convert a binary tree into circular doubly linked list. (traverse inorder and create linkedlist)
+6.
+
+
+longest palindromic sub sequence
+Maximum Score Words Formed by Letters
+
+
+LONGEST INCREASING SUBSEQUENCE
+
+static int incsub(int[] arr,int index,int n,String temp,int prev,ArrayList<String> arr1){
+  if(index==n){
+    arr1.add(temp);
+    return 0;
+  }
+  int ans=0;
+  if(arr[index]>prev){
+  ans= Math.max(incsub(arr,index+1,n,temp,prev,arr1),1+incsub(arr,index+1,n,temp+"."+arr[index],arr[index],arr1));
+  }else{
+   ans=Math.max(ans, incsub(arr,index+1,n,temp,prev,arr1));
+  }
+  return ans;
+}
+
+
+MINIMUM COST PATH TO REACH
+
+	static int minCost(int cost[][], int m,int n,int[][] tc)
+	{
+		if (n < 0 || m < 0)
+			return Integer.MAX_VALUE;
+		else if (m == 0 && n == 0)
+			return cost[m][n];
+      		else if(tc[m][n]!=Integer.MAX_VALUE)
+			return tc[m][n];
+        	else
+			return tc[m][n]=cost[m][n] + Math.min(minCost(cost, m-1, n-1,tc),
+					Math.min(minCost(cost, m-1, n,tc),minCost(cost, m, n-1,tc)));
+	}
+
+
+GENERATE ALL POWER SET OF STRING
+
+class GFG {
+static void powerSet(String str, int index,String curr)	
+{
+	int n = str.length();
+	if (index == n)
+	{
+		System.out.println(curr);
+		return;
+	}
+        powerSet(str, curr,index + 1);
+	powerSet(str, curr + str.charAt(index),index + 1);
+}
+
+public static void main(String[] args)
+{
+	String str = "abc";
+	int index = 0;
+	String curr="";
+	powerSet(str,curr,index);
+	}
+}
+
+generate all combination of balanced paranthesis
+
+    public static void generateParenthesis(int n, int open, int close,String s, ArrayList<String> ans)
+    {
+        if (open == n && close == n) {
+            ans.add(s);
+            return;
+        }
+        if (open < n) {
+            generateParenthesis(n, open + 1, close, s + "{",ans);
+        }
+        if (close < open) {
+            generateParenthesis(n, open, close + 1, s + "}",ans);
+        }
+    }
+
+LENGTH OF THE LONGEST PALINDROMIC SUBSTRING
+    static int lps(char seq[], int i, int j, int dp[][])
+    {
+        if (i == j) {
+            return dp[i][j] = 1;
+        }
+        if (seq[i] == seq[j] && i + 1 == j) {
+            return dp[i][j] = 2;
+        } 
+        if (seq[i] == seq[j]) {
+            return dp[i][j] = lps(seq, i + 1, j - 1, dp) + 2;
+        }
+        return dp[i][j] = max(lps(seq, i, j - 1, dp), lps(seq, i + 1, j, dp));
+    }
+
+
+MERGE SORT on linked list
+
+  	node mergeSort1(node h)
+	{
+		if (h == null || h.next == null) {
+			return h;
+		}else{
+		node middle = getMiddle1(h);
+		node left = mergeSort1(h);
+		node right = mergeSort1(middle);
+		node sortedlist = sortedMerge1(left, right);
+		return sortedlist;          
+        	}
+	}
+
+ 	public static node getMiddle1(node head)
+	{
+		if (head == null)
+			return head;
+
+		node slow = head, fast = head;
+		node prev=null;
+		while (fast!=null && fast.next != null) {
+		  	prev=slow;	
+          		slow = slow.next;
+		  	fast = fast.next.next;
+		}
+      		prev.next=null;
+		return slow;
+	}
+
+
+node sortedMerge1(node headA, node headB)
+{
+    node dummyNode = new node(0);
+    node tail = dummyNode;
+    while(true)
+    {
+        if(headA == null)
+        {
+            tail.next = headB;
+            break;
+        }
+        if(headB == null)
+        {
+            tail.next = headA;
+            break;
+        }
+        if(headA.val <= headB.val)
+        {
+            tail.next = headA;
+            headA = headA.next;
+        }
+        else
+        {
+            tail.next = headB;
+            headB = headB.next;
+        }
+        tail = tail.next;
+    }
+    return dummyNode.next;
+}
+
+// lets sort using quicksort 
+
+    public void quicksort(int[] nums,int start,int end){
+        if(start<end){
+            int index=partition(nums,start,end);
+            quicksort(nums,start,index-1);
+            quicksort(nums,index+1,end);                  
+        }
+    }
+    public int partition(int[] nums,int start,int end){
+        int pivot=nums[end];
+        int i,j;
+        i=start;
+        j=start-1;
+        int temp=0;
+        for(;i<end;i++){
+            if(nums[i]<pivot){
+                j++;
+                temp=nums[j];
+                nums[j]=nums[i];
+                nums[i]=temp;                
+            }
+        }
+        j++;
+        // perform swap
+        temp=nums[j];
+        nums[j]=pivot;
+        nums[end]=temp;
+        return j;
+    }
+
+
+LETS SORT USING MERGE SORT
+
+    public void merge_sort(int[] nums,int start,int end){
+        int mid=(start+end)/2;
+        if(start<end){
+            merge_sort(nums,start,mid);
+            merge_sort(nums,mid+1,end);
+        }
+        merge(nums,start,end,mid);       
+    }
+    
+    public void merge(int[] nums,int start,int end,int mid){
+        int left=mid-start+1;
+        int right=end-mid;
+        int[] a1=new int[left];
+        int[] a2=new int[right];
+          
+        for(int i=0;i<left;i++){
+           // System.out.print(a1[i]); 
+            a1[i]=nums[start+i];
+        }
+        // System.out.println("a1");   
+        for(int i=0;i<right;i++){
+           // System.out.print(a2[i]);
+            a2[i]=nums[mid+1+i];
+        }        
+        int i,j,temp;
+        i=j=temp=0;
+        left=a1.length;
+        right=a2.length;
+        int k=start;
+        while(i<left && j<right){
+            if(a1[i]<=a2[j]){
+	        nums[k]=a1[i];
+                k++;
+            	i++;
+            }else{
+                nums[k]=a2[j];
+                k++;
+                j++;
+            }
+        }
+        while(i<a1.length){
+            nums[k]=a1[i];
+            i++;
+            k++;
+        }
+        while(j<a2.length){
+            nums[k]=a2[j];
+            j++;
+            k++;
+        }
+    }
+
+MERGE TWO LIST
+
+    public static void mergeArrays(int[] arr1, int[] arr2, int n1,
+                                int n2, int[] arr3)
+    {
+        int i = 0, j = 0, k = 0;
+
+        while (i<n1 && j <n2)
+        {
+            if (arr1[i] < arr2[j])
+                arr3[k++] = arr1[i++];
+            else
+                arr3[k++] = arr2[j++];
+        }
+     
+        while (i < n1)
+            arr3[k++] = arr1[i++];
+
+        while (j < n2)
+            arr3[k++] = arr2[j++];
+    }
+
+
+BALANCED PARENTHSIS
+
+bool areBracketsBalanced(string expr)
+{ 
+    stack<char> temp;
+        for(int i=0;i<expr.length();i++)
+        {
+            if(temp.empty())
+            {
+                temp.push(expr[i]);
+            }
+            else if((temp.top()=='('&& expr[i]==')')  ||  (temp.top()=='{' && expr[i]=='}')  ||  (temp.top()=='[' && expr[i]==']'))
+            {
+                temp.pop();
+            }
+            else
+            {
+                temp.push(expr[i]);
+            }
+        }
+        if(temp.empty())
+        {
+            return true;
+        }
+        return false;
+}
+
+MATRIX CHAIN MULTIPLICATION
+
+ static int MatrixChainOrder(int p[], int n)
+  {
+        int m[][] = new int[n][n];
+        int i, j, k, L, q;
+        for (i = 1; i < n; i++)
+            m[i][i] = 0;
+        for (L = 2; L < n; L++)
+        {
+            for (i = 1; i < n - L + 1; i++)
+            {
+                j = i + L - 1;
+                if (j == n)
+                    continue;
+                m[i][j] = Integer.MAX_VALUE;
+                for (k = i; k <= j - 1; k++)
+                {
+                    q = m[i][k] + m[k + 1][j]
+                        + p[i - 1] * p[k] * p[j];
+                    if (q < m[i][j])
+                        m[i][j] = q;
+                }
+            }
+        } 
+        return m[1][n - 1];
+    }
+
+
+INFINITE NUMBER OF COINS ARE PRESENT, ADD DIFFERENT COINS SUM TO TARGET
+
+static int count(int S[], int m, int n,int[][] dp)
+{
+	
+	if (n == 0)
+		return 1;
+
+	if (n < 0)
+		return 0;
+
+	if (m <= 0 && n >= 1)
+		return 0;
+	
+  	if(dp[m][n]!=-1){  return dp[m][n];}
+
+	return dp[m][n]=count(S, m - 1, n,dp) + count(S, m, n - S[m - 1],dp);
+}
+
+PALINDROME PARTITIONING 
+
+static int minPalPartion(String string, int i, int j,int[][] dp)
+{
+	if( i >= j || isPalindrome(string, i, j) )
+	return 0;
+  	if(dp[i][j]!=Integer.MAX_VALUE){
+    		return dp[i][j];
+  	}
+	int ans = Integer.MAX_VALUE, count;
+	for(int k = i; k < j; k++)
+	{
+	count = minPalPartion(string, i, k,dp) +
+		minPalPartion(string, k + 1, j,dp) + 1;
+
+	ans = Math.min(ans, count);
+      	dp[i][j]=ans;
+	}
+	return dp[i][j];
+}
+
+MAXIMUM LENGTH PALINDROME STRING  method-1
+
+public static int findpalindrome(String s,String temp,int start,int end,ArrayList<String> arr1,int max){
+  //System.out.println(start+" "+end+" "+temp+" "+s);
+  if(start==-1||end==s.length()){
+    return 0;
+  }else{
+    int start1=0;
+    int end1=temp.length()-1;
+    boolean flag=false;
+    int count=0;
+    while(start1<end1){
+      if(temp.charAt(start1)!=temp.charAt(end1)){
+        flag=true;
+        break;
+      }
+      start1++;
+      end1--;
+    }
+    if(flag==false && temp.length()>0){
+      arr1.add(temp);
+      //return temp.length();
+    }
+    else if(flag==true){
+      return temp.length()-2;
+    }
+  }
+  //findpalindrome(s,temp,index+1,arr1);
+  int a=  findpalindrome(s,s.charAt(start)+temp+s.charAt(end),start-1,end+1,arr1,max);
+  return Math.max(a,max);
+}
+
+MAXIMUM LENGTH PALINDROME STRING  method-2
+
+public static int longestpalind(String[] arr,int i,int j){
+  if(i>j){
+    return 0;
+  }
+  if(i==j){
+   return 1;
+ }
+  if(arr[i].equals(arr[j])){
+    return 2+longestpalind(arr,i+1,j-1);
+  }else{
+  return Math.max(longestpalind(arr,i+1,j),longestpalind(arr,i,j-1)); 
+  }
+}
+
+
+
+// Driver program to test above functions
+public static void main(String[] args)
+{
+    String str = "forgeeksskeegfor";
+    ArrayList<String> arr1=new ArrayList<String>();
+	int max=0;
+    for(int i=0;i<str.length();i++){
+    int a=findpalindrome(str,"",i,i+1,arr1,0);
+    int b=findpalindrome(str,""+str.charAt(i),i-1,i+1,arr1,0);
+    if(a>max){
+    max=a;
+    }
+    if(b>max){
+    max=b;
+    }
+    }
+    System.out.println("maximum length "+max);
+    System.out.println(arr1);
+}
+
+LONGEST COMMON SUBSEQUENCE
+
+
+  static int commonsubseq(String x,String y,String temp,int index1,int index2,int max,ArrayList<String> arr){
+    if(index1==x.length()||index2==y.length()){
+      arr.add(temp);
+      return max;
+    }
+    if(x.charAt(index1)==y.charAt(index2)){
+    return 1+commonsubseq(x,y,temp+x.charAt(index1),index1+1,index2+1,0,arr);
+    }
+    else{
+    return Math.max(commonsubseq(x,y,temp,index1+1,index2,0,arr),commonsubseq(x,y,temp,index1,index2+1,0,arr));
+    }
+  }
+
+
+Total number of non-decreasing numbers with n digits
+
+static void nondecreasing(String s,int index,ArrayList<String> arr,int count){
+	if(s.length()==count){
+		arr.add(s);
+  	return;
+	}
+  	for(int i=index;i<=9;i++){
+  	nondecreasing(s+i,i,arr,count);
+ 	}
+}
+
+
+NUMBER OF WAYS TO REACH NTH STAIR
+
+EFFICIENT dp
+public static int countways1(int n,int sum,int[] dp){
+  if(n==1){
+    dp[n]=1;
+    return 1;
+  }
+  if(n==2){
+    dp[n]=1;
+    return 2;
+  }
+  dp[n]=countways1(n-1,sum,dp)+countways1(n-2,sum,dp);
+  //return countways1(n-1,sum,dp)+countways1(n-2,sum,dp);
+return dp[n];
+}
+
+NON EFFICIENT RECURSION O(2^N)
+public static int countways1(int n,int sum,int[] dp){
+  if(n==1){
+    return 1;
+  }
+  if(n==2){
+    return 2;
+  }
+ return countways1(n-1,sum,dp)+countways1(n-2,sum,dp);
+}
+
+VERY BAD APPROACH DONT DO THIS TOP DOWN
+
+public static countways1(int n,int sum){
+  if(sum>=n){
+    if(sum==n){
+     return 1; 
+    }
+    return 0;
+  }
+ return countways1(n,sum+1)+countways1(n,sum+2);
+}
+
+
+Longest Even Length Substring such that Sum of First and Second Half is same
+
+static void findlength1(String s,String temp,ArrayList<String> arr,int index ){
+  if(index==s.length()){
+  return;
+  }
+  if(temp.length()%2==0){
+    int t=temp.length()/2;
+    int sumleft=0;
+    int sumright=0;
+    for(int i=0;i<temp.length();i++){
+      if(i<temp.length()/2){
+      sumleft+=Integer.parseInt(""+temp.charAt(i));
+      }else{
+      sumright+=Integer.parseInt(""+temp.charAt(i)); 
+      }
+    }
+    if(sumleft==sumright){
+      if(arr.get(0).length()<=temp.length()){
+        arr.clear();
+        arr.add(temp);
+      }
+    }
+  }
+  findlength1(s,temp,arr,index+1);
+  findlength1(s,temp+s.charAt(index),arr,index+1); 
+}
+
+Generate all substring 
+    public static void generate(String word) {
+        if (word.length() == 1) {
+            System.out.println(word);
+            return;
+        }else{
+            System.out.println(word);
+            generate(word.substring(0, word.length()-1)); 
+            generate(word.substring(1, word.length())); 
+        }
+    }
+
+
+0/1 KNAPSACK PROBLEM
+
+public static int maxvalue(int[] val,int[] wt,int W,int n,int i){
+  if(i==n ||W==0){
+    return 0;
+  }
+  if(wt[i]>W){
+ return   maxvalue(val,wt,W,n,i+1);
+  }else{
+   return Math.max(val[i]+maxvalue(val,wt,W-wt[i],n,i+1),maxvalue(val,wt,W,n,i+1)); 
+  }
+}
+
+
+kadane algorithm to find subaray with maximum sum
+
+ public static String findmaxsub(int[] arr,int n){
+   int sum=0;
+   int temp=0;
+   int start=0;
+   int end=0;
+   int s=0;
+   for(int i=0;i<n;i++){
+     temp+=arr[i];
+     if(temp>sum){
+       sum=temp;
+       start=s+1;
+       end=i;
+     }
+     if(temp<0){
+       temp=0;
+       s=i;    
+     }
+   }
+   System.out.println(start+" "+end);
+   String ans="";
+   for(int i=start;i<end;i++){
+     ans+=arr[i]+" ";
+   }
+   return ans;
+ }
+
+
+
+
+
+Minimum number of jumps to reach end
+
+static int minsteps(int[] arr,int index,int jump){
+  if(index>=(arr.length-1)){
+    return jump;
+  }
+  return Math.min(
+  minsteps(arr,index+1,jump+1),
+  minsteps(arr,index+arr[index],jump+1));
+  
+}
+
+
+Longest Common Substring
+
+    static int longestcommon(String s1,String s2,int index1,int index2,int count,int[][] dp){
+        if(index1==s1.length() || index2==s2.length()){
+            return count;
+        }
+        if(dp[index1][index2]!=-1){
+          return dp[index1][index2];
+        }
+        int count1=0;
+        if(s1.charAt(index1)==s2.charAt(index2)){
+            return longestcommon(s1,s2,index1+1,index2+1,count+1,dp);
+        }
+        dp[index1][index2]= Math.max(count,Math.max(
+                longestcommon(s1,s2,index1+1,index2,0,dp),
+		longestcommon(s1,s2,index1,index2+1,0,dp)));
+
+        return dp[index1][index2];
+    }
+
+
+
+Minimum number of squares whose sum equals to given number n
+
+static int findminsq(int n,int sum,int rem,int count,int[] dp){
+  if(sum>=n){
+    if(sum==n){
+      //System.out.println(count);
+      return count;
+    }else
+    return Integer.MAX_VALUE;
+  }
+    if(dp[sum]!=-1){
+      return dp[sum];
+    }
+    int ans=Integer.MAX_VALUE;
+    for(int i=1;i<=n;i++){
+      ans=Math.min(ans,findminsq(n,sum+i*i,n-(sum+(i*i)),count+1,dp));
+    }
+  dp[sum]=ans;
+    return dp[sum];
+  }
+  
+
+Find the minimum cost to reach destination using a train
+
+static int mintraincost(int[][] cost,int index,int n,int costt,int[] dp){
+  if(index==n-1){
+    return costt; 
+  }
+  if(dp[index]!=-1){
+    return dp[index];
+  }
+  int ans=Integer.MAX_VALUE;
+  for(int j=index+1;j<n;j++){
+    ans=Math.min(ans,mintraincost(cost,j,n,costt+cost[index][j],dp));
+  }
+  dp[index]=ans;
+  return dp[index];
+}
+
+Subset Sum (sum of array elements equals to target)
+
+    static void subsetsum(int[] weight,int target,int index,ArrayList<String> arr,int sum,String temp){
+        if(sum>=target || index==(weight.length)){
+            System.out.println(temp);
+            if(sum==target){
+                arr.add(temp);
+            }
+            return;
+        }
+        subsetsum(weight,target,index+1,arr,sum,temp);
+        subsetsum(weight,target,index+1,arr,sum+weight[index],temp+"."+weight[index]);
+
+    }
+
+
+
+CUTTING a Rod
+  public static int findmax(int[] arr,int n,int n1,int[][] dp){
+    if(n==0){
+      if(n1==0){
+      return 0;  
+      }else
+        return Integer.MIN_VALUE;
+    }
+    if(dp[n][n1]!=0){
+      return dp[n][n1];
+    }
+    return dp[n][n1]=Math.max(arr[n]+findmax(arr,n1-n,n1-n,dp),findmax(arr,n-1,n1,dp));
+    
+  }
+  
+
+
+EDIT DISTANCE
+
+    static int minDis(String s1, String s2, int n, int m,int[][] dp)
+    {
+        if (n == 0)
+            return m;
+        if (m == 0)
+            return n;
+
+        if (dp[n][m] != -1)
+            return dp[n][m];
+
+        if (s1.charAt(n - 1) == s2.charAt(m - 1)) {
+            return dp[n][m] = minDis(s1, s2, n - 1, m - 1, dp);
+        }
+
+        else {
+ 
+            int insert, del, replace; // temp variables
+            insert = minDis(s1, s2, n, m - 1, dp);
+            del = minDis(s1, s2, n - 1, m, dp);
+            replace = minDis(s1, s2, n - 1, m - 1, dp);
+            return dp[n][m]= 1 + Math.min(insert, Math.min(del, replace));
+        }
+    }
+
+  public static int minedits(String s1,String s2,int m,int n,int i,int j){
+    if(i==m){
+      return n-j;
+    }
+    if(j==n){
+      return m-i;
+    }
+    
+    if(s1.charAt(i)==s2.charAt(j)){
+      return minedits(s1,s2,m,n,i+1,j+1);
+    }else{
+      return 1+Math.min(minedits(s1,s2,m,n,i,j+1),
+                        Math.min(minedits(s1,s2,m,n,i+1,j),minedits(s1,s2,m,n,i+1,j+1)));
+    } 
+  }
+
+Unique Paths
+https://leetcode.com/problems/unique-paths/
+
+    int numofpath(int curx,int cury,int goalx,int goaly,int m,int n,int[][] dp){
+        if(curx==goalx && cury==goaly){
+            // count++;
+            return 1;
+        }
+        if(dp[curx][cury]!=-1){
+            return dp[curx][cury];
+        }
+        int ans1,ans2;
+        ans1=ans2=0;
+        // either go down or right 
+        int downx=curx+1;
+        int downy=cury;
+        if(downx<m && cury<n){
+          ans1=numofpath(curx+1,cury,goalx, goaly,m,n,dp)  ; 
+        }
+
+        int rightx=curx;
+        int righty=cury+1;
+        if(rightx<m && righty<n){
+         ans2=numofpath(curx,cury+1,goalx,goaly,m,n,dp)   ;
+        }     
+        dp[curx][cury]=ans1+ans2;
+        return ans1+ans2;
+    }
+
+
+Jump Game
+https://leetcode.com/problems/jump-game/
+
+    boolean jumpcount(int[] arr,int start,int end,boolean[] dp){
+        if(start>=end){
+            if(start==end){
+                return true;
+            }else
+            return false;
+        }
+        if(dp[start]!=false){
+            return dp[start];
+        }
+        int val=arr[start];
+        boolean temp=false;
+        for(int i=1;i<=val;i++){
+            temp=temp | jumpcount(arr,start+i,end,dp);
+        }
+        dp[start]=temp;
+        return dp[start];
+    }
+
+Combination Sum IV
+https://leetcode.com/problems/combination-sum-iv/
+
+    int findcomb(int[] arr,int index,int target,int n,int sum,ArrayList<String> arr1,String temp){
+        // System.out.println(sum+" "+temp+" "+n);
+        if(sum>=target){
+            if(sum==target){
+                arr1.add(temp);
+                return 1;
+            }
+            return 0;
+        }
+        int ans=0;
+        ans=findcomb(arr,index,target,n,sum+arr[index],arr1,temp+arr[index]);
+        for(int i=0;i<n;i++){
+            //System.out.println(i+" "+index);
+            if(i!=index){
+                ans+=findcomb(arr,i,target,n,sum+arr[i],arr1,temp+arr[i]);
+            }
+            
+        }
+        return ans;
+        
+    }
+
+House Robber 
+https://leetcode.com/problems/house-robber/
+
+    int maxloot(int[] nums,int index,int n,int sum){
+        if(index>=n){
+            return sum;
+        }
+        int ans=0;
+        for(int i=index;i<n;i++){
+              ans=Math.max(ans,maxloot(nums,i+2,n,sum+nums[i]));     
+        }
+        return ans;
+    }
+
+
+Longest Common Prefix using Divide and Conquer Algorithm
+
+    static String mergesort(String temp1,String temp2){
+        int left=temp1.length();
+        int right=temp2.length();
+        String ans="";
+        for(int i=0,j=0;i<left && j<right;i++,j++){
+            if(temp1.charAt(i)==temp2.charAt(j)){
+                ans+=temp1.charAt(i);
+            }else{
+                break;
+            }
+        }
+        return ans;
+    }
+    static String merge(String[] arr,int start,int end){
+        int mid=(start+end)/2;
+        if(start==end){
+            return arr[start];
+        }
+        String temp1,temp2;
+        temp1="";
+        temp2="";
+        if(start<end){
+           temp1=merge(arr,start,mid);
+           temp2=merge(arr,mid+1,end);
+        }
+        return mergesort(temp1,temp2);
+    }
+
+
+https://www.geeksforgeeks.org/partition-problem-dp-18/
+
+static boolean checkpartition(int[] arr,int index,int n){
+  if(index==n-1){
+    return false;
+  }
+  int sum1=0;
+  for(int i=0;i<=index;i++){
+    sum1+=arr[i];
+  }
+  int sum2=0;
+  for(int i=index+1;i<n;i++){
+    sum2+=arr[i];
+  }
+  if(sum1==sum2){
+    return true;
+  }
+  return (false | checkpartition(arr,index+1,n));
+}

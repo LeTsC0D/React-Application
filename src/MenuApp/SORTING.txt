@@ -1,0 +1,366 @@
+ADD DIAGRAM IN REPORT 
+
+RESUME
+
+STUDY DSA1
+
+FRAGMENT WALA QUESTION ASSIGN
+
+TIMER APP AS DISC
+
+REACT TIC TOE APPIN MAIN PAGE
+
+
+Radix sort
+inplace sorting from least significant digit to most significant digit
+TC= O(d*(n+b))
+
+
+Bucket sort
+create n buckets , take mod of every array elements put them in  bucket index and
+sort the more than one elments in same bucket using insertion sort.
+O(n)
+
+
+comb sort
+Comb Sort improves on Bubble Sort by removing the inversions 
+using a gap of the size of more than 1, which decreses by factor 1.3
+O(N^2/2^p)  , best O(nlogn)
+
+SEARCHING
+Jump Search
+ O(vn)
+
+
+
+
+
+
+class Solution {
+    public int[] sortArray(int[] nums) {
+        // lets sort it using merge sort 
+        merge_sort(nums,0,nums.length-1);
+        // quicksort(nums,0,nums.length-1);
+        // sectionsort(nums);
+        // bubblesort(nums);
+        // insertionsort(nums);
+        return nums;
+    }
+    // lets do insertion sort 
+    public void insertionsort(int[] nums){
+        int temp=0,j;
+        for(int i=1;i<(nums.length);i++){
+            j=i-1;
+            int key=nums[i];
+            while (j >= 0 && nums[j] > key) {
+                nums[j + 1] = nums[j];
+                j = j - 1;
+            }
+            nums[j + 1] = key;
+            
+            for(int ii=0;ii<nums.length;ii++){
+               System.out.print(nums[ii]+" "); 
+            }
+            System.out.println();           
+        }
+    }
+
+    // lets do by buuble sort 
+    public void bubblesort(int[] nums){
+        int temp=0;
+        for(int i=0;i<nums.length;i++){
+            for(int j=0;j<(nums.length-1);j++){
+                if(nums[j+1]<nums[j]){
+                    temp=nums[j];
+                    nums[j]=nums[j+1];
+                    nums[j+1]=temp;
+                }
+            }
+            for(int ii=0;ii<nums.length;ii++){
+               System.out.print(nums[ii]+" "); 
+            }
+            System.out.println();           
+        }
+    }
+
+    // lets do selection sort 
+    public void selectionsort(int[] nums){
+        int min,temp,swap_index;
+        swap_index=0;
+        for(int i=0;i<nums.length;i++){
+            min=nums[i];
+            swap_index=i;
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[j]<min){
+                    min=nums[j];
+                    swap_index=j;
+                }
+            }
+            // perform swap 
+            temp=nums[i];
+            nums[i]=min;
+            nums[swap_index]=temp;
+            // for(int ii=0;ii<nums.length;ii++){
+            //    System.out.print(nums[ii]+" "); 
+            // }          
+        }
+    }
+
+
+    // lets sort using quicksort 
+    public void quicksort(int[] nums,int start,int end){
+        if(start<end){
+            int index= partition(nums,start,end);
+            quicksort(nums,start,index-1);
+            quicksort(nums,index+1,end);                  
+        }
+    }
+    public int partition(int[] nums,int start,int end){
+        int pivot=nums[end];
+        int i,j;
+        i=start;
+        j=start-1;
+        int temp=0;
+        for(;i<end;i++){
+            if(nums[i]<pivot){
+                j++;
+                temp=nums[j];
+                nums[j]=nums[i];
+                nums[i]=temp;                
+            }
+        }
+        j++;
+        // perform swap
+        temp=nums[j];
+        nums[j]=pivot;
+        nums[end]=temp;
+        return j;
+    }
+    
+LETS SORT USING MERGE SORT
+
+    public void merge_sort(int[] nums,int start,int end){
+        int mid=(start+end)/2;
+        if(start<end){
+            merge_sort(nums,start,mid);
+            merge_sort(nums,mid+1,end);
+        }
+        merge(nums,start,end,mid);       
+    }
+    
+    public void merge(int[] nums,int start,int end,int mid){
+        int left=mid-start+1;
+        int right=end-mid;
+        int[] a1=new int[left];
+        int[] a2=new int[right];
+          
+        for(int i=0;i<left;i++){
+            // System.out.print(a1[i]); 
+            a1[i]=nums[start+i];
+        }
+        // System.out.println("a1");   
+        for(int i=0;i<right;i++){
+            // System.out.print(a2[i]);
+            a2[i]=nums[mid+1+i];
+        }        
+        int i,j,temp;
+        i=j=temp=0;
+        left=a1.length;
+        right=a2.length;
+        int k=start;
+        while(i<left && j<right){
+            if(a1[i]<=a2[j]){
+	        nums[k]=a1[i];
+                k++;
+            	i++;
+            }else{
+                nums[k]=a2[j];
+                k++;
+                j++;
+            }
+        }
+        while(i<a1.length){
+            nums[k]=a1[i];
+            i++;
+            k++;
+        }
+        while(j<a2.length){
+            nums[k]=a2[j];
+            j++;
+            k++;
+        }
+    }
+
+MERGE SORT INPLACE 
+	// Inplace Implementation
+	static void merge(int arr[], int start, int mid, int end)
+	{
+		int start2 = mid + 1;
+		if (arr[mid] <= arr[start2]) {
+			return;
+		}
+      
+      	while(start <= mid){
+        	if(arr[start]<arr[start2]){
+         		start++;
+        	}else{
+         		int temp=arr[start];
+          		arr[start]=arr[start2];
+          		start++;
+          		arr[start2]=temp;
+          		int index=start2;
+          		while(index<end){
+          			temp=arr[index];
+            			if(arr[index]>arr[index+1]){
+              				arr[index]=arr[index+1];
+              				arr[index+1]=temp;
+              				index++;
+            			}else
+            				break;
+          		}  
+        	    }
+      	       }
+	  }
+
+BINARY SEARCH
+
+    public int binarysearch(int[] nums,int start,int end,int target){
+        if(start<=end){
+            int mid=(start+end)/2;
+             // System.out.println(mid+" "+start+" "+end+" "+target);
+            if(nums[mid]==target){
+                System.out.println("target");
+                return mid;
+            }else{
+                if(nums[mid]<target){
+                    return binarysearch(nums,mid+1,end,target);
+                }else{
+                    return binarysearch(nums,start,mid-1,target);
+                }
+            }            
+        }
+        return -1;
+    }
+
+
+count lessser then self on right
+
+class test1 {
+    static class Values {
+        int val;
+        int index;
+        public Values(int val, int index)
+        {
+            this.val = val;
+            this.index = index;
+        }
+    }
+
+    // lets sort using merge sort
+    public static void merge_sort(Values[] items,int start,int end,int[] count){
+        int mid=(start+end)/2;
+        if(start<end){
+            merge_sort(items,start,mid,count);
+            merge_sort(items,mid+1,end,count);
+        }
+        merge(items,start,end,mid,count);
+    }
+
+    public static void merge(Values[] items,int start,int end,int mid,int[] count){
+        int left=mid-start+1;
+        int right=end-mid;
+        Values[] a1=new Values[left];
+        Values[] a2=new Values[right];
+        for(int i=0;i<left;i++){
+            a1[i]=items[start+i];
+        }
+        for(int i=0;i<right;i++){
+            a2[i]=items[mid+1+i];
+        }
+        int i,j,temp;
+        i=j=temp=0;
+        left=a1.length;
+        right=a2.length;
+        int k=start;
+        int rightCounter = 0;
+        while(i<left && j<right){
+            if(a1[i].val<=a2[j].val){
+                count[a1[i].index] += rightCounter;
+                items[k]=a1[i];
+                k++;
+                i++;
+            }else{
+                rightCounter++;
+                items[k]=a2[j];
+                k++;
+                j++;
+            }
+        }
+        while(i<a1.length){
+            count[a1[i].index] += rightCounter;
+            items[k]=a1[i];
+            i++;
+            k++;
+        }
+        while(j<a2.length){
+            items[k]=a2[j];
+            j++;
+            k++;
+        }
+    }
+
+
+public static void main(String []args) {
+    int arr[] = {3,4,2,1,1,2,5,3};
+    int[] count=new int[8];
+    Values[] items = new Values[8];
+
+    for (int i = 0; i < 8; i++) {
+        items[i] = new Values(arr[i], i);
+    }
+    merge_sort(items,0,7,count);
+    for(int i=0;i<arr.length;i++){
+        System.out.print(count[i]);
+    }
+}
+
+
+Find first and last position of an element in sorted array
+
+    /* if x is present in arr[] then returns the index of
+    FIRST occurrence of x in arr[0..n-1], otherwise
+    returns -1 */
+    
+    public static int first(int arr[], int low, int high, int x, int n)
+    {
+        if (high >= low) {
+            int mid = low + (high - low) / 2;
+            if ((mid == 0 || x > arr[mid - 1]) && arr[mid] == x)
+                return mid;
+            else if (x > arr[mid])
+                return first(arr, (mid + 1), high, x, n);
+            else
+                return first(arr, low, (mid - 1), x, n);
+        }
+        return -1;
+    }
+ 
+    /* if x is present in arr[] then returns the index of
+    LAST occurrence of x in arr[0..n-1], otherwise
+    returns -1 */
+    public static int last(int arr[], int low, int high, int x, int n)
+    {
+        if (high >= low) {
+            int mid = low + (high - low) / 2;
+            if ((mid == n - 1 || x < arr[mid + 1]) && arr[mid] == x)
+                return mid;
+            else if (x < arr[mid])
+                return last(arr, low, (mid - 1), x, n);
+            else
+                return last(arr, (mid + 1), high, x, n);
+        }
+        return -1;
+    }
+
+
+

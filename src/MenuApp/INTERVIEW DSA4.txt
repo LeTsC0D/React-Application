@@ -1,0 +1,464 @@
+https://my.newtonschool.co/playground/code/0l942d1gst5o/
+
+https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
+https://www.geeksforgeeks.org/find-a-pair-with-given-sum-in-bst/
+https://www.geeksforgeeks.org/sorted-array-to-balanced-bst/
+https://www.geeksforgeeks.org/sum-k-smallest-elements-bst/
+https://practice.geeksforgeeks.org/problems/sum-of-leaf-nodes-in-bst/1/?page=2&category[]=Binary%20Search%20Tree&sortBy=submissions
+https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
+https://www.geeksforgeeks.org/kth-smallest-element-in-bst-using-o1-extra-space/
+https://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked-list/
+https://www.geeksforgeeks.org/print-left-view-binary-tree/
+https://www.geeksforgeeks.org/print-nodes-at-k-distance-from-root/
+https://leetcode.com/problems/maximum-depth-of-binary-tree/
+https://leetcode.com/problems/binary-tree-level-order-traversal/
+https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/
+https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/
+https://leetcode.com/problems/greatest-sum-divisible-by-three/
+https://leetcode.com/problems/minimum-jumps-to-reach-home/
+https://leetcode.com/problems/stone-game-vii/
+https://leetcode.com/problems/jump-game-vi/
+https://leetcode.com/problems/maximum-absolute-sum-of-any-subarray/
+https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/
+https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/
+https://leetcode.com/problems/number-of-sub-arrays-with-odd-sum/
+https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/
+https://leetcode.com/problems/largest-sum-of-averages/
+https://leetcode.com/problems/sum-of-subarray-minimums/
+https://leetcode.com/problems/maximum-sum-circular-subarray/
+https://leetcode.com/problems/partition-to-k-equal-sum-subsets/
+https://leetcode.com/problems/partition-equal-subset-sum/
+https://leetcode.com/problems/combination-sum-iv/
+https://leetcode.com/problems/largest-divisible-subset/
+https://leetcode.com/problems/count-numbers-with-unique-digits/
+https://leetcode.com/problems/ugly-number-ii/
+https://leetcode.com/problems/minimum-path-sum/
+https://leetcode.com/problems/unique-paths-ii/
+https://leetcode.com/problems/jump-game-ii/
+
+
+
+https://www.geeksforgeeks.org/print-nodes-distance-k-leaf-node/
+https://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/
+https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/
+https://www.geeksforgeeks.org/add-greater-values-every-node-given-bst/
+https://www.geeksforgeeks.org/count-subtress-sum-given-value-x/
+https://www.geeksforgeeks.org/find-distance-between-two-nodes-of-a-binary-tree/
+https://www.geeksforgeeks.org/maximum-difference-between-node-and-its-ancestor-in-binary-tree/
+
+
+left view
+top view bottom view 
+TREE
+
+let view
+right vew
+zig zag traversal
+boundary viw
+top view
+bottom view
+diameter
+
+find if path exist in graph
+https://leetcode.com/problems/find-if-path-exists-in-graph/
+https://www.geeksforgeeks.org/minimum-sum-path-triangle/
+https://leetcode.com/problems/regular-expression-matching/
+https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+
+https://www.codesdope.com/blog/article/binary-trees-in-c-array-representation-and-travers/
+
+Print a Binary Tree in Vertical Order
+
+r programming 
+hadoop 
+hive
+tabaleau
+matplot lib
+sclket learn library
+map-reduce framework 
+
+spring boot
+spring security
+
+hacker earth cding league 
+International Coding League, 2022
+
+
+  ArrayList<ArrayList<Integer>> arr=new ArrayList<>();
+  ArrayList<Integer> a1=new ArrayList<Integer>();
+  a1.add(23);
+  a1.add(45);
+  //arr.add(a1)
+  arr.add(new ArrayList<Integer>(a1));
+  for(ArrayList<Integer> temp:arr){
+   System.out.println(temp); 
+  }
+HashMap<Integer,ArrayList<Integer>> map= new HashMap<Integer,ArrayList<Integer>>(); 
+
+
+public void vertical(Node root,HashMap<Integer,ArrayList<Integer>> arr,int n){
+  if(root==null){
+    return ;
+  }
+  if(!arr.containsKey(n)){
+    ArrayList<Integer> a2=new ArrayList<Integer>();
+    a2.add(root.data);
+    arr.put(n,a2);
+  }else{
+    ArrayList<Integer> a2=arr.get(n);
+   a2.add(root.data);
+    arr.put(n,a2);
+  }
+  vertical(root.left,arr,n-1);
+  vertical(root.right,arr,n+1);
+}
+
+
+mirror image
+    boolean areMirror(Node a, Node b)
+    {
+        /* Base case : Both empty */
+        if (a == null && b == null)
+            return true;
+        // If only one is empty
+        if (a == null || b == null)
+            return false;
+        return a.data == b.data
+                && areMirror(a.left, b.right)
+                && areMirror(a.right, b.left);
+    }
+
+maximum width
+    // the tree using level order traversal
+    static int maxwidth(node root)
+    {
+        // Base case
+        if (root == null)
+            return 0;
+ 
+        // Initialize result
+        int maxwidth = 0;
+ 
+        // Do Level order traversal keeping
+        // track of number of nodes at every level
+        Queue<node> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty())
+        {
+            // Get the size of queue when the level order
+            // traversal for one level finishes
+            int count = q.size();
+ 
+            // Update the maximum node count value
+            maxwidth = Math.max(maxwidth, count);
+ 
+            // Iterate for all the nodes in
+            // the queue currently
+            while (count-- > 0) {
+                // Dequeue an node from queue
+                node temp = q.remove();
+ 
+                // Enqueue left and right children
+                // of dequeued node
+                if (temp.left != null)
+                {
+                    q.add(temp.left);
+                }
+                if (temp.right != null)
+                {
+                    q.add(temp.right);
+                }
+            }
+        }
+        return maxwidth;
+    }
+
+
+Graph 
+
+    ArrayList<Integer>[] adj;
+    static int count = 0;
+
+    public Graph(int numVertices) {
+        adj = new ArrayList[numVertices];
+        for (int i = 0; i < adj.length; i++) {
+            adj[i] = new ArrayList<>();
+        }
+    }
+
+    public void connectEdge(int source, int destination) {
+        adj[source].add(destination);
+        adj[destination].add(source);
+    }
+
+    public void dfs(int source,int destination,boolean[] visited){
+        visited[source]=true;
+        if(source==destination){
+            return ;
+        }
+        for(Integer node:adj[source]){
+            if(visited[node]==false){
+                dfs(node,destination,visited);
+            }   
+        }
+    }
+
+    public void bfs(int source,int destination,boolean[] visited){   
+        Queue<Integer> q=new LinkedList<Integer>();
+        q.add(source);
+        while(!q.isEmpty()){
+            int temp=q.poll();
+            if(temp==destination){
+                return ;
+            }
+	    visited[node]=true;
+            for(Integer node:adj[temp]){
+                if(visited[node]==false){
+                    q.add(node);
+                }
+            }
+        }
+    }
+
+Height 
+    public static int height(Node root)
+    {
+        // base case: empty tree has a height of 0
+        if (root == null) {
+            return 0;
+        }
+ 
+        // recursion for the left and right subtree and consider maximum depth
+        return 1 + Math.max(height(root.left), height(root.right));
+    }
+
+
+sum of left leaf nodes only
+  static void inorder(Node node,int flag){
+    if(node.left==null && node.right==null && flag==0){
+       ans+=node.data;
+    }
+    if(node.left!=null){
+    	 inorder(node.left,0);
+    }
+    if(node.right!=null){
+    	inorder(node.right,1);
+    }    
+  }
+
+diameter
+    int diameter(Node root)
+    {
+        // base case if tree is empty
+        if (root == null)
+            return 0;
+ 
+        // get the height of left and right sub-trees
+        int lheight = height(root.left);
+        int rheight = height(root.right);
+ 
+        // get the diameter of left and right sub-trees
+        int ldiameter = diameter(root.left);
+        int rdiameter = diameter(root.right);
+ 
+        return Math.max(lheight + rheight + 1,Math.max(ldiameter, rdiameter));
+    }
+
+level order
+void printLevelOrder()
+    {
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+
+            Node tempNode = queue.poll();
+            System.out.print(tempNode.data + " ");
+ 
+            /*Enqueue left child */
+            if (tempNode.left != null) {
+                queue.add(tempNode.left);
+            }
+ 
+            /*Enqueue right child */
+            if (tempNode.right != null) {
+                queue.add(tempNode.right);
+            }
+        }
+    }
+
+maximum width 
+    // the tree using level order traversal
+    static int maxwidth(node root)
+    {
+        // Base case
+        if (root == null)
+            return 0;
+
+        int maxwidth = 0;
+ 
+        Queue<node> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty())
+        {
+            int count = q.size();
+ 
+            maxwidth = Math.max(maxwidth, count);
+
+            while (count-- > 0) {
+                node temp = q.remove();
+ 
+                if (temp.left != null)
+                {
+                    q.add(temp.left);
+                }
+                if (temp.right != null)
+                {
+                    q.add(temp.right);
+                }
+            }
+        }
+        return maxwidth;
+    }
+
+find the path from root with specified sum in binary tree
+
+static void printPathsUtil(Node curr_node, int sum,int sum_so_far,ArrayList<Integer> path)
+{
+	if (curr_node == null)
+		return;
+	// Add the current node's value
+	sum_so_far += curr_node.key;
+	// Add the value to path
+	path.add(curr_node.key);
+	// Print the required path
+	if (sum_so_far == sum)
+	{
+		System.out.print("Path found: ");
+		for(int i = 0; i < path.size(); i++)
+			System.out.print(path.get(i) + " ");
+		System.out.println();
+	}else{
+	// If left child exists
+	if (curr_node.left != null)
+		printPathsUtil(curr_node.left, sum,sum_so_far, path);
+
+	// If right child exists
+	if (curr_node.right != null)
+		printPathsUtil(curr_node.right, sum,sum_so_far, path);	
+	}
+	// Remove last element from path
+	// and move back to parent
+	path.remove(path.size() - 1);
+}
+
+
+Flatten a binary tree into linked list
+      public static void preorder(Node node,LinkedList<Integer> ll){
+      if(node==null){
+      	return;
+      }
+      ll.add(node.data);
+      preorder(node.left,ll);
+      preorder(node.right,ll);
+      }
+
+
+Number of path from root to leaf with path sum equals target
+
+      public static void findpath(Node node,int sum,int target){
+      if(node==null){
+        return;
+      }
+      if(node.left==null && node.right==null){
+        
+        if((sum+node.data)==target){
+          path++;
+        }
+        System.out.println(sum+node.data);
+      }
+      if(node.left!=null){
+        findpath(node.left,sum+node.data,target);
+      }
+      if(node.right!=null){
+        findpath(node.right,sum+node.data,target);
+      } 
+    }
+
+
+// Function to print all nodes having k leaves 
+static int kLeaves(Node ptr,int k) 
+{ 
+    // Base Conditions : No leaves 
+    if (ptr == null) 
+        return 0; 
+ 
+    // if node is leaf 
+    if (ptr.left == null && ptr.right == null) 
+        return 1; 
+ 
+    // total leaves in subtree rooted with this 
+    // node 
+    int total = kLeaves(ptr.left, k) + kLeaves(ptr.right, k); 
+ 
+    // Print this node if total is k 
+    if (k == total) 
+        System.out.print(ptr.data + " "); 
+ 
+    return total; 
+} 
+
+
+
+	/* Function to print corner node at each level */
+	void printCorner(Node root)
+	{
+		// star node is for keeping track of levels
+		Queue<Node> q = new LinkedList<Node>();
+
+		// pushing root node and star node
+		q.add(root);
+		// Do level order traversal of Binary Tree
+		while (!q.isEmpty())
+		{
+			// n is the no of nodes in current Level
+			int n = q.size();
+			for(int i = 0 ; i < n ; i++){
+			// dequeue the front node from the queue
+			Node temp = q.peek();
+			q.poll();
+			//If it is leftmost corner value or rightmost corner value 
+			//then print it
+			if(i==0 || i==n-1)
+				System.out.print(temp.key + " ");
+			//push the left and right children of the temp node
+			if (temp.left != null)
+				q.add(temp.left);
+			if (temp.right != null)
+				q.add(temp.right);
+			}
+		}
+
+	}
+
+
+
+LCA(Least Common Ancestor)
+
+    public static Node LCA(Node root, int n1, int n2)
+    {
+        if (root == null)
+            return root;
+        if (root.value == n1 || root.value == n2)
+            return root;
+        Node left = LCA(root.left, n1, n2);
+        Node right = LCA(root.right, n1, n2);
+        if (left != null && right != null)
+            return root;
+        if (left == null && right == null)
+            return null;
+        if (left != null)
+            return left ;
+        else
+            return right ;
+    }
+

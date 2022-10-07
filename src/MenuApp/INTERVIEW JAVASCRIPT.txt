@@ -1,0 +1,2650 @@
+Description:
+
+Use Below mentioned API and design user card list page.
+
+Each user card must contain user details and an action button/link.
+
+On click of button show user details page.
+
+API Details:
+
+User List API:
+
+URL: https://jsonplaceholder.typicode.com/users Method: GET
+
+
+
+
+1. How js works. (partially answered)
+2. DIfference b/w let const var. (answered)
+3. Hoisting in js with code snippets. (answered )
+4. Difference b/w normal and arrow function. (answered)
+5. Closure with examples. (answered with some help)
+6. Operations on array. (answered)
+7. Synchronous and asynchronous. (answered)
+
+
+
+1. Make an api call to the url: "https://fakestoreapi.com/products" to fetch a list of products
+2. Render the products (name,image and price)
+3. Implement a simple search filter using array filter method wherein you will accept the search term from the user in an input tag and display the most relevant products in the console
+
+
+
+Problem 2: Write a JS function which takes a JSON object and prints all the values present in the object. Example: for JSON {a: {b:1}, c:2, d:3} print 1 2 3. Remember this should be generic function
+
+const printJson = (jsonObj) => {
+// your code here which print all the values of the json object
+// if jsonObj = { a: 1, b: 2 } print 1 2
+// if jsonObj = { b: { c: 2} } print 2
+}
+
+
+There are 7 types of primitive data types.
+string
+number
+boolean
+null
+undefined
+bigint
+symbol
+
+for (var i = 0; i < 4; i++) {
+  // global scope
+  setTimeout(() => console.log(i));		//4 4 4 4
+}
+
+for (let i = 0; i < 4; i++) {
+  // block scope
+  setTimeout(() => console.log(i));		 //0 1 2 3
+}
+
+
+const circle = {
+  radius: 20,
+  diameter() {
+    return this.radius * 2;
+  },
+  perimeter: () => 2 * Math.PI * this.radius,
+};
+console.log(circle.diameter());		//40
+console.log(circle.perimeter());	//NaN
+
+
+
+If you prepend the additive(+) operator on 
+falsy values(null, undefined, NaN, false, ""), the falsy value converts 
+to a number value zero.
+console.log(+null); // 0
+console.log(+undefined); // NaN
+console.log(+false); // 0
+console.log(+NaN); // NaN
+console.log(+""); // 0
+
+
+var ans=[1,1,2,4,5,4,3,5,3]
+console.log([...new Set(ans)]); // [1, 2, 4, 5, 3]
+
+
+Babel is a JavaScript transpiler to convert ECMAScript 2015+ code 
+into a backwards compatible version of JavaScript in current and older 
+browsers or environments.
+
+
+const originalArray = [1, 2, 3, 4, 5];
+const newArray = originalArray.reduce((accumulator, value) => {
+  return [value, ...accumulator];
+}, []);
+
+console.log(originalArray); // [1, 2, 3, 4, 5]
+console.log(newArray); // [ 5, 4, 3, 2, 1]
+
+
+
+Arrow functions do not have an arguments, super, this, or new.target
+const arrowFunc = () => arguments.length;
+console.log(arrowFunc(1, 2, 3));	// ReferenceError: arguments is not defined
+
+
+const func = function () {
+  return arguments.length;
+};
+console.log(func(1, 2, 3));	//3
+
+
+console.log(10 == [10]);		//true
+console.log(10 == [[[[[[[10]]]]]]]);	//true
+
+console.log(10 + "10");		//1010
+console.log(10 - "10");		// 0
+
+
+async function processArray(array) {
+  array.forEach(item => {
+    await delayedLog(item);  
+    //ERROR await inside a synchronous function then it throws a syntax error.
+  })
+}
+
+
+async function process(array) {
+  array.forEach(async (item) => {
+    await delayedLog(item);		//NO ERROR
+  });
+}
+
+
+var set = new Set();
+set.add("+0").add("-0").add(NaN).add(undefined).add(NaN); 
+//: Set(4) {"+0", "-0", NaN, undefined}
+console.log(set);
+
+
+The typeof operator on any primitive returns a string value.
+console.log(typeof typeof typeof true); //string
+
+var array=[1,2]
+var elements=[1,2,3]
+array.push(elements)
+console.log(array)	//[1, 2, [1, 2, 3]]
+var array1=[1,2]
+array1.push.apply(array1,elements)
+console.log(array1)	//[1, 2, 1, 2, 3]
+
+
+Unlike function declarations, class declarations are not hoisted
+const squareObj = new Square(10);
+console.log(squareObj.area);	//ReferenceError
+
+class Square {
+  constructor(length) {
+    this.length = length;
+  }
+
+  get area() {
+    return this.length * this.length;
+  }
+
+  set area(value) {
+    this.area = value;
+  }
+}
+
+const arr = [1, 2, 3];
+const max = Math.max(...arr);
+console.log(max)	//3
+console.log(Math.max.apply(null,arr))	//3
+
+
+function abc(){
+this.name="sdfd"
+console.log(this)
+}
+abc();				//windows object
+var c=new abc();		//abc object
+
+
+var x=9;
+var module={
+x:81,
+getx:function(){return this.x}
+}
+console.log(module.getx())	//81
+var retrieve=module.getx;
+console.log(retrieve())		//9
+var newcopy=retrieve.bind(module)
+console.log(newcopy())		//81
+
+If this arg is passed to call, bind, or apply on invocation of an arrow function it will be ignored.
+Inside arrow function "this" retains the value of the enclosing lexical context's this
+arrow functions do not have this. If this is accessed, it is taken from the outside method.
+
+RECURSION
+ans=7700
+let company = { // the same object, compressed for brevity
+  sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 1600 }],
+  development: {
+    sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800 }],
+    internals: [{name: 'Jack', salary: 1300}]
+  }
+};
+
+
+IIFE
+function cachingDecorator() {
+  let cache = new Map();
+
+  return function(x) {
+    if (cache.has(x)) {    // if there's such key in cache
+      return cache.get(x); // read the result from it
+    }
+    cache.set(x, "a");     // and cache (remember) the result
+    alert(JSON.stringify(Array.from(cache.entries())))
+  };
+}
+var ans=cachingDecorator()
+ans(1)	//[1,a]
+ans(2)	//[1,a],[2,a]
+ans(3)	//[1,a],[2,a],[3,a]
+ans(4) 	//[a,a],[2,a],[3,a],[4,a]
+
+cachingDecorator()(1)	//[1,a]
+cachingDecorator()(2)	//[2,a]
+cachingDecorator()(3)	//[3,a]
+cachingDecorator()(4) //[4,a]
+
+
+
+const range = (start, stop, step) => 
+Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+
+// Generate numbers range 0..4
+range(0, 4, 1);
+// [0, 1, 2, 3, 4]
+
+
+
+
+/* function sumsalary(){
+var ans=0;
+company.sales.forEach((data)=>ans+=data.salary)
+company.development.sites.forEach((data)=>ans+=data.salary)
+company.development.internals.forEach((data)=>ans+=data.salary)
+return ans;
+} */
+
+//console.log(sumsalary())
+
+function sumsalary2(obj){
+var ans=0;
+Object.keys(obj).forEach((data)=>{
+if(Array.isArray(obj[data])){
+obj[data].forEach((dt)=>ans+=dt.salary)
+}else{
+ans+=sumsalary2(obj[data])
+}
+})
+return ans
+}
+console.log(sumsalary2(company))
+
+
+
+
+
+function changes from, but the change is not seen outside, 
+because a function always gets a copy of the value:
+
+function showMessage(from, text) {
+  from = '*' + from + '*'; // make "from" look nicer
+  alert( from + ': ' + text );
+}
+let from = "Ann";
+showMessage(from, "Hello"); // *Ann*: Hello
+
+// the value of "from" is the same, the function modified a local copy
+alert( from ); // Ann
+
+showMessage("Ann");	
+//If a function is called, but an argument is not provided, 
+then the corresponding value becomes undefined.
+
+
+If a function does not return a value, it is the same as if it returns undefined:
+function doNothing() { /* empty */ }
+alert( doNothing() === undefined ); // true
+
+function doNothing() {
+  return;
+}
+alert( doNothing() === undefined ); // true
+num = 5; // the variable "num" is created if it didn't exist
+alert(num); // 5
+
+
+
+sayHi("John"); // Hello, John
+function sayHi(name) {
+  alert( `Hello, ${name}` );
+}
+
+
+
+sayHi("John"); // error!
+let sayHi = function(name) {  
+  alert( `Hello, ${name}` );
+};
+
+
+
+Any mathematical operation on NaN returns NaN
+alert( NaN + 1 ); // NaN
+alert( 3 * NaN ); // NaN
+alert( "not a number" / 2 - 1 ); // NaN
+
+BigInt  // the "n" at the end means it's a BigInt
+const bigInt = 1234567890123456789012345678901234567890n;
+
+
+
+If a variable is declared, but not assigned, then its value is undefined
+
+AND returns the first falsy value while OR returns the first truthy one.
+
+
+Zero delay setTimeout
+setTimeout(func, 0), or just setTimeout(func)
+
+Recursion, timer 
+let start = Date.now();
+let times = [];
+
+setTimeout(function run() {
+  times.push(Date.now() - start); // remember delay from the previous call
+
+  if (start + 100 < Date.now()) alert(times); // show the delays after 100ms
+  else setTimeout(run); // else re-schedule
+});
+
+
+
+
+arrow functions do not have this. If this is accessed, it is taken from the outside.
+
+ let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    this.students.forEach(
+      student => alert(this.title + ': ' + student)
+    );
+  }
+};
+
+group.showList();
+
+
+
+
+var, are either function-scoped or global-scoped
+
+
+var tolerates redeclarations, while let not
+
+function sayHi() {
+  
+if (false) {
+
+ var phrase1;
+  
+}
+
+  
+alert(phrase1);
+		//undefined not error
+}
+
+sayHi();
+
+
+
+
+Reverse a given string 
+var str = "Full Stack Tutorials";
+var output = str.split("").reverse().join("");
+
+
+MEMOIZATION
+var queue = (function () {
+    var items = [];
+    return {
+      enqueue: function (item) {      
+         items.push(item);
+      },
+      dequeue: function () {
+        if (items.length > 0) {
+          var next = items[0];
+          items.shift();
+          return next;
+        } else {
+           throw "Cannot dequeue from an empty queue";
+        }
+      },
+      front: function(){
+      return items;
+      }
+    };
+  })();
+  queue.enqueue(20)
+  console.log(queue.front())
+
+
+STRING 
+'abc'.repeat(2)     // 'abcabc'
+const str = 'For more information, see Chapter 3.4.5.1';
+const re = /see (chapter \d+(\.\d)*)/i;
+const found = str.match(re);
+
+
+const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const regexp = /[A-E]/gi;
+const matches_array = str.match(regexp);
+
+console.log(matches_array);
+// ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
+
+
+const myString = 'Hello 1 word. Sentence number 2.'
+const splits = myString.split(/(\d)/)
+console.log(splits)		//[ "Hello ", "1", " word. Sentence number ", "2", "." ]
+
+
+
+
+var data=["dsjf1212","bdshf435","nsdfj56"]
+var ans=data.reduce((el1,el2)=>el1.concat(el2.match(/[0-9]+/g)),[]);
+console.log(ans)
+
+The rest parameters must be at the end
+function f(arg1, ...rest, arg2) { // arg2 after ...rest ?!
+  // error
+}
+
+
+IIFE 
+
+var ab=(function abc(){
+var i=0;
+return function(x){
+i+=x;
+console.log(i)
+}
+})();
+ab(2)
+ab(1)
+
+
+function abcd(){
+var i=0;
+return function(x){
+i+=x;
+console.log(i)
+}
+}
+var a=abcd()
+a(2)
+a(1)
+
+
+function abcde(){
+var i=0;
+return function f(x){
+i+=x;
+console.log(i)
+return f
+}
+}
+abcde()(1)(2)
+
+
+let user = {
+  firstName: "John",
+  sayHi() {
+    alert(`Hello, ${this.firstName}!`);
+  }
+};
+
+setTimeout(user.sayHi, 1000); // Hello, undefined!
+setTimeout(() => user.sayHi(), 1000); // Hello, John! //but this is vulnerable
+
+let sayHi = user.sayHi.bind(user); 
+setTimeout(sayHi, 1000); // Hello, John!  //works fine
+
+
+
+
+let studentData = ["John Doe", "Some School", 6, 7, 8, 7, 9, 9,-1, "Some School"];
+let numbers = studentData.reduce((newArray,cur) => {
+    if(typeof cur == "number") newArray.push(cur);
+    return newArray
+}, []);
+
+console.log(numbers)		//[6, 7, 8, 7, 9, 9, -1]
+
+var val=0;
+var ans=realEstate.map((ele)=> {return val+=ele.price});
+console.log(val)		//1080000
+console.log(ans)		//[450000, 780000, 1080000]
+
+
+//find out the highest price
+var ans2=realEstate.reduce((prev,curr)=>{
+if(curr.price>prev){
+prev=curr.price;
+}
+return prev;
+},0);
+
+console.log(ans2)		//450000
+
+
+let a = [1,1,2,42]
+let b = { "name": "Manan" }
+console.log(a instanceof Array) //true
+console.log(b instanceof Array) //false
+
+
+//From the array of numbers, choose even double even numbers and compute the sum
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+var res=0;
+var ans=numbers.map((numbers)=>{
+if(numbers%2==0){
+return numbers*numbers;
+}else
+return 0
+}).map((data)=>res+=data)
+console.log(res)
+
+var ans=numbers.filter((ele)=>ele%2==0).reduce((prev,data)=>prev+=data*data,0)
+console.log(ans)
+
+
+
+Abbreviate the name and return the name initials
+const input = 'George Raymond Richard Martin';
+var names=input.split(" ");
+var ans=names.reduce((prev,curr)=>prev+curr.charAt(0),"");
+console.log(ans)
+
+
+
+const input = 'Every developer likes to mix kubernetes and javascript';
+var res=""
+input.split(" ").map((data)=>{
+if(data.length>=4){
+return res+=data.charAt(0)+(data.length-2)+data.charAt(data.length-1)+" "
+}else
+return res+=data+" "
+})
+console.log(res)		//"E3y d7r l3s to mix k8s and j8t "
+
+
+
+ const input = [
+    ['a', 'b', 'c'],
+    ['c', 'd', 'f'],
+    ['d', 'f', 'g'],
+  ];
+ var ans=new Map()
+ var count=0
+ input.forEach((data)=>data.map((ele)=>{
+ if(!ans.has(ele)){
+ ans.set(ele,1);
+ }else{
+ ans.set(ele,ans.get(ele)+1);
+ }
+ }))
+ console.log(ans)
+ 
+
+ //Alternate 
+ var ans2=input.flat().reduce((prev,ele)=>{
+ if(prev[ele]){
+ prev[ele]+=1;
+ }else{
+ prev[ele]=1;
+ }
+ return prev;
+ },{})
+ console.log(ans2)
+ 
+
+shallow copy
+let copiedPerson = Object.assign({}, person);
+deep copy
+let copiedPerson = JSON.parse(JSON.stringify(person));
+
+
+FETCH
+const abd= "https://randomuser.me/api/";
+async function  gh(){
+return await fetch(abd).then((data)=>data.json()).then((data)=>data.results[0]);
+}
+
+async function fc(){
+const yu=await gh();
+console.log(yu);
+}
+fc()
+
+
+let animal = {
+  eats: true,
+  walk() {
+    alert("hi")
+  }
+};
+
+let rabbit = {
+  __proto__: animal
+};
+
+rabbit.walk = function() {
+  alert("Rabbit! Bounce-bounce!");
+};
+
+rabbit.walk(); // Rabbit! Bounce-bounce!
+animal.walk();  //hi
+
+
+let animal = {
+  eats: true,
+  walk() {
+    alert("Animal walk");
+  }
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+let longEar = {
+  earLength: 10,
+  __proto__: rabbit
+};
+
+// walk is taken from the prototype chain
+longEar.walk(); // Animal walk
+alert(longEar.jumps); // true (from rabbit)
+
+
+let user = {
+  name: "John",
+  surname: "Smith",
+
+  get fullName() {
+    return `${this.name} ${this.surname}`;
+  },
+
+  set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
+  }
+};
+
+// set fullName is executed with the given value.
+user.fullName = "Alice Cooper";
+
+alert(user.name); // Alice
+alert(user.surname); // Cooper
+
+
+let animal = {
+  name1: "Animal",
+  init(a) {         
+    this.name1=a;
+  }
+};
+
+let rabbit = {
+  __proto__: animal,
+  name2: "Rabbit",
+  init(a,b) {         
+  this.name2=b;
+    super.init(a);
+  }
+};
+
+let longEar = {
+  __proto__: rabbit,
+  name3: "Long Ear",
+  init(a,b,c) {         
+  this.name3=c;
+    super.init(a,b);
+  }
+};
+
+longEar.init("a","b","c"); 
+console.log(longEar.name1) //a
+
+
+
+
+
+
+Alernate using FUNCTION
+function User(name) {
+  this.name = name;
+}
+// a function prototype has "constructor" property by default,
+// so we don't need to create it
+
+// 2. Add the method to prototype
+User.prototype.sayHi = function() {
+  alert(this.name);
+};
+
+// Usage:
+let user = new User("John");
+user.sayHi();
+
+
+function Food(){
+this.name="jdd"
+}
+function Bread(){
+this.name1='sdfdf'
+}
+function Sushi(){
+this.name2="56tyh"
+}
+
+/* var basicFood = new Food(); */
+
+Bread.prototype = new Food();
+Sushi.prototype = new Bread();
+
+var ans=new Sushi()
+console.log(ans.name)
+
+Alternate way using FUNCTION
+function animal(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+animal.prototype.canRun = function () {
+    console.log('yes ' + this.name + ' can run !');
+}
+
+function human(name, age, money) {
+    animal.call(this, name, age);
+    this.money = money;
+}
+
+human.prototype = Object.create(animal.prototype);
+
+human.prototype.canEarn = function () {
+    console.log('yes ' + this.name + ' can earn');
+}
+// human.prototype.__proto__ = animal.prototype;
+var h1 = new human('dj', 30, '2000 $');
+h1.canRun();		//"yes dj can run !"
+h1.canEarn();		//"yes dj can earn"
+
+
+
+
+using CLASS approach
+class User {
+
+  constructor(name) {
+    // invokes the setter
+    this.name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    if (value.length < 4) {
+      alert("Name is too short.");
+      return;
+    }
+    this._name = value;
+  }
+
+}
+
+let user = new User("John");
+
+class Animal {
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+  // ...
+}
+
+class Rabbit extends Animal {
+  constructor(name, earLength) {
+    super(name);
+    this.earLength = earLength;
+  }
+  // ...
+}
+
+// now fine
+let rabbit = new Rabbit("White Rabbit", 10);
+alert(rabbit.name); // White Rabbit
+alert(rabbit.earLength); // 10
+
+
+set
+const mySet1 = new Set()
+mySet1.add(1)  
+mySet1.has(1)    
+mySet1.delete(1) 
+mySet1.forEach((value) => {
+  console.log(value);
+});
+
+map
+const myMap = new Map()
+myMap.set(1,'value ')
+myMap.size              // 1
+myMap.get(1)    // "value"
+myMap.has("1")
+myMap.keys()
+myMap.values()
+myMap.entries()
+for (const key of myMap.keys()) {
+  console.log(key);
+}
+
+for (const [key, value] of myMap.entries()) {
+  console.log(key + ' = ' + value)
+}
+// 0 = zero
+// 1 = one
+myMap.forEach(function(value, key) {
+  console.log(key + ' = ' + value)
+})
+
+
+const object1 = {
+  a: 'somestring',
+  b: 42
+};
+
+
+for (const key of Object.keys(object1)) 
+{
+  console.log(`${key}`);
+		//"a" "b"
+}
+
+
+for (const [key, value] of Object.entries(object1)) 
+{
+  
+console.log(`${key}: ${value}`);
+	//// expected output:
+// "a: somestring"
+// "b: 42"
+
+}
+
+
+
+Object.entries(obj).forEach(([key, value]) => {
+  console.log(`${key} ${value}`); //// expected output:
+// "a: somestring"
+// "b: 42"
+
+}
+
+
+});
+
+
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+
+let arr = [1, 2, 3];
+shuffle(arr);
+
+
+
+'abc'.padStart(10);         // "       abc"
+'abc'.padStart(10, "foo");  // "foofoofabc"
+'abc'.padStart(6,"123465"); // "123abc"
+'abc'.padStart(8, "0");     // "00000abc"
+'abc'.padStart(1);          // "abc"
+
+
+TIMER APP
+let startTime;
+let elapsedTime = 0;
+let timerInterval;
+
+
+function timeToString(time) {
+  let diffInHrs = time / 3600000;
+  let hh = Math.floor(diffInHrs);
+
+  let diffInMin = (diffInHrs - hh) * 60;
+  let mm = Math.floor(diffInMin);
+
+  let diffInSec = (diffInMin - mm) * 60;
+  let ss = Math.floor(diffInSec);
+
+  let diffInMs = (diffInSec - ss) * 100;
+  let ms = Math.floor(diffInMs);
+
+  let formattedMM = mm.toString().padStart(2, "0");
+  let formattedSS = ss.toString().padStart(2, "0");
+  let formattedMS = ms.toString().padStart(2, "0");
+
+  return `${formattedMM}:${formattedSS}:${formattedMS}`;
+}
+
+
+// Create "start", "pause" and "reset" functions
+
+function start() {
+  startTime = Date.now() - elapsedTime;
+  timerInterval = setInterval(function printTime() {
+    elapsedTime = Date.now() - startTime;
+    print(timeToString(elapsedTime));
+  }, 10);
+  showButton("PAUSE");
+}
+
+function pause() {
+  clearInterval(timerInterval);
+}
+
+function reset() {
+  clearInterval(timerInterval);
+  elapsedTime = 0;
+}
+
+
+Remove from drop down
+<select id="options">
+  <option>a</option>
+  <option>b</option>
+  <option>c</option>
+</select>
+
+<button id="remove">remove</button>
+
+
+var removeid=document.getElementById("remove");
+removeid.addEventListener("click",delete1);
+
+function delete1(){
+  var select=document.getElementById("options");
+  select.remove(select.selectedIndex);
+}
+
+
+
+https://www.youtube.com/watch?v=cuHDQhDhvPE
+FILTER,REDUCE,SOME,MAP
+
+
+
+https://webdesign.tutsplus.com/tutorials/javascript-debounce-and-throttle--cms-36783
+Build a Real-World dApp With React, Solidity, and Web3.js
+https://my.newtonschool.co/playground/markup/z241hf97ylys/
+https://my.newtonschool.co/playground/markup/ibn1s1ba5lus/
+https://my.newtonschool.co/playground/code/dw5ka0cut7v8/
+https://my.newtonschool.co/playground/code/n4z6avobkjet/
+https://my.newtonschool.co/playground/markup/rkiersyudt78/
+https://my.newtonschool.co/playground/markup/0uqyv8dap9tq/
+https://my.newtonschool.co/playground/markup/582bp4ukyf8j/
+
+https://zellwk.com/blog/frontend-login-system/
+https://dev.to/thedevdrawer/login-validation-authentication-using-vanilla-javascript-4i45
+https://codepen.io/nswamy14/pen/MXoZjg
+https://gist.github.com/straker/769fb461e066147ea16ac2cb9463beae
+
+[3:33 pm, 25/06/2022] shashank: https://my.newtonschool.co/playground/markup/87pmatm2up88/
+[3:35 pm, 25/06/2022] shashank: 
+Whack a Hole js => https://www.youtube.com/watch?v=b20YueeXwZg
+
+[3:36 pm, 25/06/2022] shashank: 
+1. I am not a Robot => https://www.youtube.com/watch?v=oIViu2VJSus
+
+3. Deck of Cards => https://www.youtube.com/watch?v=h3ehO5QMNu4
+
+4. Minesweeper => https://www.youtube.com/watch?v=AfhfAxKFP-s
+
+5. Movie Booking JS => https://www.youtube.com/watch?v=Kb856Ts8Bws
+
+Write code to get random number from 1,3,5,7,9,11 by using random function in js.
+
+
+write code in js to find out prime number, even number and odd number from 1 to 50 
+and also try to calculate the total number of prime, even and odd.
+
+veryvery important 
+https://docs.google.com/spreadsheets/d/1zvCoeo80JRwOjH00REgzmg0MxKq-dDp2B-OriZyrQgI/edit#gid=1786781222
+
+https://github.com/abhyudaysoni/JavaScript/tree/master/mock%20interviews%2Fchessboard
+
+https://javascript.plainenglish.io/ultimate-interview-questions-on-javascript-closures-8dd12a210677
+https://www.w3schools.com/jsref/event_target.asp
+https://codeburst.io/perpetual-currying-in-javascript-5ae1c749adc5
+https://blog.logrocket.com/understanding-javascript-currying/
+deep copy
+shallow copy
+for in
+for of
+object destructuring 
+object optinal chaining
+different types of constructor
+implementation of regex in javascript
+private properties to access 
+access  private from private/public method
+custom map function
+polyfills 
+PROTOTYPE AND PROTOTYPL INHERITENCE
+
+https://deep-soursop-209.notion.site/Project-List-2b703d07de89488dbf6ebdd4dd482fc5
+https://jsfiddle.net/srivastavaaviral1/hxuon4qm/112/
+
+display none doesnot keep space while visibility hidden keeps teh space anfd hide
+
+
+The difference between rem units and em units is that em units are relative to the 
+font size of their own element, not the root element. As such they can cascade and 
+cause unexpected results.
+root font size is the default 16px
+html {
+font-size: 100%;
+}
+
+ul {
+font-size: 0.75em;
+}
+If we have a list nested inside another list, the font size of the inner list 
+will be 75% of the size of its parent (in this case 9px)
+ul ul {
+font-size: 1em;
+}
+
+
+snake = [  {x: 200, y: 200},  {x: 190, y: 200},  {x: 180, y: 200},  {x: 170, y: 200},  {x: 160, y: 200}];
+
+(5) [{…}, {…}, {…}, {…}, {…}]
+snakemy = [
+      {x: 200, y: 300},
+      {x: 190, y: 300},
+      {x: 180, y: 300},
+      {x: 170, y: 300},
+      {x: 160, y: 300}
+    ]
+(5) [{…}, {…}, {…}, {…}, {…}]
+var result=snake.map((Obje)=>snakemy.some((item)=>return item.x==Obje.x && item.y==Obje.y));
+VM728:1 Uncaught SyntaxError: Unexpected token 'return'
+var result=snake.map((Obje)=>return snakemy.some((item)=>return item.x==Obje.x && item.y==Obje.y));
+VM809:1 Uncaught SyntaxError: Unexpected token 'return'
+var result=snake.map((Obje)=> return snakemy.some((item)=> return (item.x==Obje.x && item.y==Obje.y)));
+VM970:1 Uncaught SyntaxError: Unexpected token 'return'
+var result=snake.map((Obje)=> return snakemy.some((item)=> return (item.x===Obje.x && item.y===Obje.y)));
+VM1039:1 Uncaught SyntaxError: Unexpected token 'return'
+var result=snake.map((Obje)=> return snakemy.some((item)=> (item.x===Obje.x && item.y===Obje.y)));
+VM1095:1 Uncaught SyntaxError: Unexpected token 'return'
+var result=snake.map((Obje)=> snakemy.some((item)=> (item.x===Obje.x && item.y===Obje.y)));
+undefined
+result
+(5) [false, false, false, false, false]
+snake = [  {x: 200, y: 200},  {x: 190, y: 200},  {x: 180, y: 200},  {x: 170, y: 200},  {x: 160, y: 300}];
+
+(5) [{…}, {…}, {…}, {…}, {…}]
+var result=snake.map((Obje)=> snakemy.some((item)=> (item.x===Obje.x && item.y===Obje.y)));
+undefined
+result
+(5) [false, false, false, false, true]0: false1: false2: false3: false4: truelength: 5[[Prototype]]: Array(0)
+var result4=snake.filter((item)=>snakemy.filter((item2)=>item.x==item2.x && item.y==item2.y)));
+VM1707:1 Uncaught SyntaxError: Unexpected token ')'
+var result4=snake.filter((item)=>snakemy.filter((item2)=>item.x==item2.x && item.y==item2.y));
+undefined
+result4
+(5) [{…}, {…}, {…}, {…}, {…}]0: {x: 200, y: 200}1: {x: 190, y: 200}2: {x: 180, y: 200}3: {x: 170, y: 200}4: {x: 160, y: 300}x: 160y: 300[[Prototype]]: Objectlength: 5[[Prototype]]: Array(0)
+var result4=snake.filter((item)=>snakemy.filter((item2)=>item.x===item2.x && item.y===item2.y));
+undefined
+result4
+(5) [{…}, {…}, {…}, {…}, {…}]0: {x: 200, y: 200}1: {x: 190, y: 200}2: {x: 180, y: 200}3: {x: 170, y: 200}4: {x: 160, y: 300}length: 5[[Prototype]]: Array(0)
+var result4=snake.map((item)=>snakemy.filter((item2)=>item.x===item2.x && item.y===item2.y));
+undefined
+result4
+(5) [Array(0), Array(0), Array(0), Array(0), Array(1)]0: []1: []2: []3: []4: Array(1)0: {x: 160, y: 300}length: 1[[Prototype]]: Array(0)length: 5[[Prototype]]: Array(0)
+var result4=snake.filter((item)=>snakemy.some((item2)=>item.x===item2.x && item.y===item2.y));
+undefined
+result4
+[{…}]0: {x: 160, y: 300}length: 1[[Prototype]]: Array(0)
+
+
+0 == false   // true
+0 === false  // false
+1 == "1"     // true
+1 === "1"    // false
+null == undefined // true
+null === undefined // false
+'0' == false // true
+'0' === false // false
+[]==[] or []===[] //false, refer different objects in memory
+{}=={} or {}==={} //false, refer different objects in memory
+
+
+
+const kvArray = [{ key: 1, value: 10 },
+                 { key: 2, value: 20 },
+                 { key: 3, value: 30 }];
+
+const reformattedArray = kvArray.map(({ key, value}) => ({ [key]: value }));
+
+['1', '2', '3'].map((str) => parseInt(str)); // [1, 2, 3]
+
+
+const items = ['item1', 'item2', 'item3'];
+const copyItems = [];
+for (let i = 0; i < items.length; i++) {
+  copyItems.push(items[i]);
+}
+items.forEach((item) => {
+  copyItems.push(item);
+});
+
+Map's keys can be any value,The keys of an Object must be either a String or a Symbol.
+
+const myMap = new Map()
+myMap.set(0, 'zero')
+myMap.set(1, 'one')
+
+for (const [key, value] of myMap) {
+  console.log(key + ' = ' + value)
+}
+
+Variables declared with let and const are also hoisted but, unlike var, 
+are not initialized with a default value. An exception will be thrown 
+if a variable declared with let or const is read before it is initialized.
+
+for (const key of myMap.keys()) {
+  console.log(key)
+}
+for (const value of myMap.values()) {
+  console.log(value)
+}
+
+Spread syntax (...) allows an iterable such as an array expression or string to be expanded in places  
+
+function myFunction(x, y, z) { }
+let args = [0, 1, 2];
+myFunction(...args);
+
+const obj1 = { foo: 'bar', x: 42 };
+const obj2 = { foo: 'baz', y: 13 };
+const merge = (...objects) => ({ ...objects });
+
+const mergedObj1 = merge(obj1, obj2);
+// Object { 0: { foo: 'bar', x: 42 }, 1: { foo: 'baz', y: 13 } }
+
+const merge = (...objects) => objects.reduce((acc, cur) => ({ ...acc, ...cur }));
+
+const mergedObj1 = merge(obj1, obj2);
+// Object { foo: 'baz', x: 42, y: 13 }
+
+
+
+function Counter() {
+  this.sum = 0
+  this.count = 0
+}
+Counter.prototype.add = function(array) {
+  
+array.forEach((entry)=> {
+    
+this.sum += entry;
+    
+++this.count;
+  
+});
+
+};
+const obj = new Counter();
+obj.add([2, 5, 9]);
+console.log(obj.count); // 3
+console.log(obj.sum); // 16
+
+
+let obj = {1: "value1",2:"dwedwed"};
+let array = [...obj]; // TypeError: obj is not iterable
+
+In Object, the data-type of the key-field is restricted to integer, strings, and symbols.
+Whereas in Map, the key-field can be of any data-type (integer, an array, even an object!)
+In the Map, the original order of elements is preserved. 
+This is not true in case of objects.
+
+Object.entries(obj) return An array of the given object's own enumerable 
+string-keyed property [key, value] pairs.
+
+
+
+let sum = (a, b) => a + b;
+or
+let sum = (a, b) => { return a + b};
+or
+/* This arrow function is a shorter form of:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes();
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+
+or
+
+ask(
+  "Do you agree?",
+  () => alert("You agreed."),
+  () => alert("You canceled the execution.")
+);
+
+
+function bob(a) {
+  return a + 100;
+}
+
+// Arrow Function
+const bob = a => a + 100;
+
+bob(10)
+
+
+const arr = [5, 6, 13, 0, 1, 18, 23];
+
+const sum = arr.reduce((a, b) => a + b);
+// 66
+
+const even = arr.filter(v => v % 2 == 0);
+// [6, 0, 18]
+
+const double = arr.map(v => v * 2);
+
+
+
+
+// Usage
+const flatten = (arr) => {
+  const result = [];
+  arr.forEach((i) => {
+    if (Array.isArray(i)) {
+      result.push(...flatten(i));
+    } else {
+      result.push(i);
+    }
+  });
+  return result;
+}
+
+const nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]];
+console.log(flatten(nested)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+Object flatten
+var obj={a:3,b:{c:4,f:7,r:{b:{c:4,f:7}}},e:8}
+const flatten = (obj) => {
+  const result = [];
+  Object.keys(obj).forEach((i) => {
+  //console.log(obj[i],typeof obj[i])
+    if ( obj[i] instanceof Object) {
+      result.push(...flatten(obj[i]));
+    } else {
+      result.push(obj[i]);
+    }
+  });
+  return result;
+}
+
+var ans=flatten(obj)
+console.log(ans)		//[3, 4, 7, 4, 7, 8]
+
+
+
+let sum = [0, 1, 2, 3].reduce(function (previousValue, currentValue) {
+  return previousValue + currentValue
+}, 0)
+
+alternatevely 
+
+let total = [ 0, 1, 2, 3 ].reduce(
+  ( previousValue, currentValue ) => previousValue + currentValue,0
+)
+// sum is 6
+
+let flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+  function(previousValue, currentValue) {
+    return previousValue.concat(currentValue)
+  },
+  []
+)
+// flattened is [0, 1, 2, 3, 4, 5]
+
+
+
+const friends = [{
+  name: 'Anna',
+  books: ['Bible', 'Harry Potter'],
+  age: 21
+}, {
+  name: 'Bob',
+  books: ['War and peace', 'Romeo and Juliet'],
+  age: 26
+}, {
+  name: 'Alice',
+  books: ['The Lord of the Rings', 'The Shining'],
+  age: 18
+}]
+
+let allbooks = friends.reduce(function(previousValue, currentValue) {
+  return [...previousValue, ...currentValue.books]
+}, ['Alphabet'])
+
+// allbooks = [
+//   'Alphabet', 'Bible', 'Harry Potter', 'War and peace',
+//   'Romeo and Juliet', 'The Lord of the Rings',
+//   'The Shining'
+// ]
+
+
+var:Variables will be hoisted,It has function scope	
+let:Hoisted but not initialized,It has block scope
+function userDetails(username) {
+  if (username) {
+    console.log(salary); // undefined due to hoisting
+    console.log(age); // ReferenceError: Cannot access 'age' before initialization
+    let age = 30;
+    var salary = 10000;
+  }
+  console.log(salary); //10000 (accessible to due function scope)
+  console.log(age); //error: age is not defined(due to block scope)
+}
+userDetails("John");
+
+
+
+
+
+const numbers = [-5, 6, 2, 0,];
+
+const doubledPositiveNumbers = numbers.reduce((previousValue, currentValue) => {
+  if (currentValue > 0) {
+    const doubled = currentValue * 2;
+    previousValue.push(doubled);
+  }
+  return previousValue;
+}, []);
+
+console.log(doubledPositiveNumbers); // [12, 4]
+
+
+
+
+
+let names = ['iliakan', 'remy', 'jeresig'];
+let requests = names.map(name => fetch(`https://api.github.com/users/${name}`));
+Promise.all(requests)
+  .then(responses => {
+    // all responses are resolved successfully
+    for(let response of responses) {
+      alert(`${response.url}: ${response.status}`); // shows 200 for every url
+    }
+    return responses;
+  })
+  // map array of responses into an array of response.json() to read their content
+  .then(responses => Promise.all(responses.map(r => r.json())))
+  // all JSON answers are parsed: "users" is the array of them
+  .then(users => users.forEach(user => alert(user.name)));
+
+
+/* 
+var a="Hello Good Morning"
+var ans=a.split(" ").reverse();
+var s=" "
+var anss=ans.map((ob)=>{
+return s=s+ob+" "}
+);
+console.log(s) */
+
+/* var ans= new promise((res,rej)=>{
+if(true){
+return res("resolves")
+}else{
+return rej("rejec")
+}
+});
+
+(function(){
+console.log("iife")
+})(); */
+
+/* var a=[1,2,3,4,5,6]
+var ans=a.filter((ob)=>ob%2==0);
+console.log(ans) */
+
+/* var a=[1,2,6,1,7,20,6,2,3,6,2,1,7]
+var ans=a.reduce((prev,next)=>{
+  if(prev.includes(next)==false){
+    prev.push(next)
+  }
+  return prev
+},[])
+console.log(ans) */
+
+looking forward for your approval for leave
+I look forward to your approval of my leave
+
+var e = 10;
+function sum(a){
+  return function(b){
+    return function(c){
+      // outer functions scope
+      return function(d){
+        // local scope
+        return a + b + c + d + e;
+      }
+    }
+  }
+}
+
+
+
+console.log(sum(1)(2)(3)(4)); // log 20
+
+
+
+const add = (function () {
+  let counter = 0;
+  return function () {counter += 1; return counter}
+})();
+
+add();
+add();
+add();
+
+
+let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+for (let key in user) {
+  // keys
+  alert( key );  // name, age, isAdmin
+  // values for the keys
+  alert( user[key] ); // John, 30, true
+}
+ integer properties are sorted, others appear in creation order. 
+
+
+let user = { name: "John" };
+
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+
+// copies all properties from permissions1 and permissions2 into user
+Object.assign(user, permissions1, permissions2);
+
+// now user = { name: "John", canView: true, canEdit: true }
+let user = { name: "John" };
+
+Object.assign(user, { name: "Pete" });
+
+alert(user.name); // now user = { name: "Pete" }
+
+
+let user = {
+  name: "John"
+};
+
+
+let admin = user;
+
+undefined
+user=null
+
+null
+
+admin
+{name: 'John'}
+
+
+garbage collection algorithm is called “mark-and-sweep”
+Generational collection,Incremental collection,Idle-time collection
+
+
+let user = {
+  name: "John",
+  age: 30
+};
+
+user.sayHi = function() {
+  alert("Hello!");
+};
+
+user.sayHi(); // Hello!
+
+//anoher method to add as a method
+user.sayHi = sayHi;
+
+
+var abc1= function fun1(a) { return {
+            name:"hjkhjkh",              
+	    fun2() { return this.name;
+			
+	    }
+          };
+}
+abc1("hjh").fun2()
+'hjkhjkh'
+
+
+function User(name) {
+  this.name = name;
+  this.isAdmin = false;
+}
+
+let user = new User("Jack");
+
+alert(user.name); // Jack
+alert(user.isAdmin); // false
+
+
+special case
+let obj = {};
+
+function A() { return obj; }
+function B() { return obj; }
+
+alert( new A() == new B() ); // true
+
+
+
+The optional chaining ?. stops the evaluation if the value before ?. is undefined or null and returns undefined.
+
+
+let key = "firstName";
+
+let user1 = {
+  firstName: "John"
+};
+
+let user2 = null;
+
+alert( user1?.[key] ); // John
+alert( user2?.[key] ); // undefined
+
+
+?. for safe reading and deleting, but not writing
+
+
+Symbols are guaranteed to be unique. 
+Even if we create many symbols with exactly the same description, they are different values.
+
+let id = Symbol("id");
+
+let user = {
+  name: "John",
+  [id]: 123 // not "id": 123
+};
+
+Symbols are skipped by for…in loop
+
+if there’s a symbol described as key, then returns it, otherwise creates a new symbol Symbol(key) and stores it in the registry by the given key.
+Symbols inside the registry are called global symbols.
+
+Symbol.for(key) returns a symbol by name. To do the opposite – return a name by global symbol – we can use: Symbol.keyFor(sym)
+let sym2 = Symbol.for("id");
+
+// get name by symbol
+alert( Symbol.keyFor(sym) ); // name
+alert( Symbol.keyFor(sym2) ); // id
+
+
+The Symbol.keyFor internally uses the global symbol registry to look up the key for the symbol. 
+let globalSymbol = Symbol.for("name");
+let localSymbol = Symbol("name");
+
+alert( Symbol.keyFor(globalSymbol) ); // name, global symbol
+alert( Symbol.keyFor(localSymbol) ); // undefined, not global
+
+alert( localSymbol.description ); // name
+
+array filter methods
+function isBigEnough(value) {
+  return value >= 10
+}
+
+var employee1 = { firstName: "John", lastName: "Rodson" };
+var employee2 = { firstName: "Jimmy", lastName: "Baily" };
+
+function invite(greeting1, greeting2) {
+  console.log(
+    greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
+  );
+}
+
+var inviteEmployee1 = invite.bind(employee1);
+var inviteEmployee2 = invite.bind(employee2);
+inviteEmployee1("Hello", "How are you?"); // Hello John Rodson, How are you?
+inviteEmployee2("Hello", "How are you?"); // Hello Jimmy Baily, How are you?
+
+
+let arrayIntegersOriginal1 = [1, 2, 3, 4, 5];
+let arrayIntegersOriginal2 = [1, 2, 3, 4, 5];
+let arrayIntegersOriginal3 = [1, 2, 3, 4, 5];
+
+let arrayIntegers1 = arrayIntegersOriginal1.splice(0, 2); // returns [1, 2]; original array: [3, 4, 5]
+let arrayIntegers2 = arrayIntegersOriginal2.splice(3); // returns [4, 5]; original array: [1, 2, 3]
+let arrayIntegers3 = arrayIntegersOriginal3.splice(3, 1, "a", "b", "c"); //returns [4]; original array: [1, 2, 3, "a", "b", "c", 5]
+
+
+let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)   // filtered is [12, 130, 44]
+
+const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+function isPrime(num) {
+  for (let i = 2; num > i; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return num > 1;
+}
+
+console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
+
+
+
+let words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present']
+
+const modifiedWords = words.filter( (word, index, arr) => {
+  return word.length < 6
+})
+
+console.log(modifiedWords)
+
+
+
+const obj1 = { foo: 'bar', x: 42 };
+Object.assign(obj1, { x: 1337 });
+console.log(obj1); // Object { foo: "bar", x: 1337 }
+
+
+const obj1 = { foo: 'bar', x: 42 };
+const obj2 = { foo: 'baz', y: 13 };
+const merge = (...objects) => ({ ...objects });
+
+const mergedObj1 = merge(obj1, obj2);
+// Object { 0: { foo: 'bar', x: 42 }, 1: { foo: 'baz', y: 13 } }
+
+
+
+
+const parts = ['shoulders', 'knees'];
+const lyrics = ['head', ...parts, 'and', 'toes'];
+//  ["head", "shoulders", "knees", "and", "toes"]
+
+function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+
+  script.onload = () => callback(script);
+
+  document.head.append(script);
+}
+
+
+fetch returning fetch and making extendible
+
+fetch('/article/promise-chaining/user.json')
+  .then(response => response.json())
+  .then(user => fetch(`https://api.github.com/users/${user.name}`))
+  .then(response => response.json())
+  .then(githubUser => new Promise(function(resolve, reject) { // (*)
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+    setTimeout(() => {
+      img.remove();
+      resolve(githubUser); // (**)
+    }, 3000);
+  }))
+  // triggers after 3 seconds
+  .then(githubUser => alert(`Finished showing ${githubUser.name}`));
+
+
+
+let promise = new Promise(function(resolve, reject) {
+  setTimeout(() => resolve("done!"), 1000);
+});
+
+// resolve runs the first function in .then
+promise.then(
+  result => alert(result), // shows "done!" after 1 second
+  error => alert(error) // doesn't run
+);
+
+
+new Promise((resolve, reject) => {
+  setTimeout(() => resolve("value"), 2000);
+})
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+delay(3000).then(() => alert('runs after 3 seconds'));
+
+
+
+promise chaining
+new Promise(function(resolve, reject) {
+  setTimeout(() => resolve(1), 1000); // (*)
+}).then(function(result) { // (**)
+  alert(result); // 1
+  return result * 2;
+}).then(function(result) { // (***)
+  alert(result); // 2
+  return result * 2;
+}).then(function(result) {
+  alert(result); // 4
+  return result * 2;
+});
+
+
+
+Promise.all([
+  new Promise(resolve => setTimeout(() => resolve(1), 3000)), 
+
+  new Promise(resolve => setTimeout(() => resolve(2), 2000)), 
+  new Promise(resolve => setTimeout(() => resolve(3), 1000))  
+]).then(data=>alert(data)); 
+
+
+
+new Promise(function(resolve, reject) {
+  setTimeout(() => resolve(1), 1000);
+}).then(function(result) {
+  alert(result); // 1
+  return new Promise((resolve, reject) => { // (*)
+    setTimeout(() => resolve(result * 2), 1000);
+  });
+}).then(function(result) { // (**)
+  alert(result); // 2
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(result * 2), 1000);
+  });
+}).then(function(result) {
+  alert(result); // 4
+});
+
+
+
+alternating way of writing the same things
+
+loadScript("/article/promise-chaining/one.js")
+  .then(script => loadScript("/article/promise-chaining/two.js"))
+  .then(script => loadScript("/article/promise-chaining/three.js"))
+  .then(script => {
+    // scripts are loaded, we can use functions declared there
+    one();
+    two();
+    three();
+  });
+
+
+
+example:
+function runPromiseInSequence(arr, input) {
+  
+return arr.reduce(
+(promiseChain, currentFunction) => 
+	promiseChain.then(data=>currentFunction(data)),
+Promise.resolve(input)
+)
+}
+
+
+// promise function 1
+function p1(a) {
+  return new Promise((resolve, reject) => {
+    resolve(a * 5)
+  })
+}
+
+
+// promise function 2
+function p2(a) {
+  return new Promise((resolve, reject) => {
+    resolve(a * 2)
+  })
+}
+
+// function 3  - will be wrapped in a resolved promise by .then()
+function f3(a) {
+ return a * 3
+}
+
+// promise function 4
+function p4(a) {
+  return new Promise((resolve, reject) => {
+    resolve(a * 4)
+  })
+}
+
+const promiseArr = [p1, p2, f3, p4]
+runPromiseInSequence(promiseArr, 10)
+  .then(console.log)   // 1200
+
+async function foo() {
+   return 1
+}
+
+It is similar to but not exactly the same:
+
+function foo() {
+   return Promise.resolve(1)
+}
+
+
+
+async function parallel() {
+  console.log('==PARALLEL with await Promise.all==')
+
+  // Start 2 "jobs" in parallel and wait for both of them to complete
+  await Promise.all([
+      (async()=>console.log(await resolveAfter2Seconds()))(),
+      (async()=>console.log(await resolveAfter1Second()))()
+  ])
+}
+
+
+
+polyfills  if function is not present we make our own 
+if (!Promise.allSettled) {
+  const rejectHandler = reason => ({ status: 'rejected', reason });
+  const resolveHandler = value => ({ status: 'fulfilled', value });
+  Promise.allSettled = function (promises) {
+    const convertedPromises = promises.map(p => Promise.resolve(p).then(resolveHandler, rejectHandler));
+    return Promise.all(convertedPromises);
+  };
+}
+
+
+Promise.allSettled: we’d like to fetch the information about multiple users. Even if one request fails, we’re still interested in the others.
+
+Promise.race: waits only for the first settled promise and gets its result (or error).
+
+Promise.any:waits only for the first fulfilled promise and gets its result
+
+Promise.resolve(value) creates a resolved promise with the result value.
+
+
+
+
+let cache = new Map();
+
+function loadCached(url) {
+  if (cache.has(url)) {
+    return Promise.resolve(cache.get(url));
+  }
+
+  return fetch(url)
+    .then(response => response.json())
+    .then(text => {
+      cache.set(url,text);
+      return text;
+    });
+}
+
+var abcd=loadCached("https://api.github.com/users/iliakan")
+
+
+
+const double = x => x + x
+const triple = x => 3 * x
+const quadruple = x => 4 * x
+
+// Function composition enabling pipe functionality
+const pipe = (...functions) => initialValue => functions.reduce(
+    (acc, fn) => fn(acc),
+    initialValue
+)
+
+const multiply6 = pipe(double, triple)
+multiply6(6)   // 36
+
+
+if (!Array.prototype.mapUsingReduce) {
+  Array.prototype.mapUsingReduce = function(callback, initialValue) {
+    return this.reduce(function(mappedArray, currentValue, currentIndex, array) {
+      mappedArray[currentIndex] = callback.call(initialValue, currentValue, currentIndex, array)
+      return mappedArray
+    }, [])
+  }
+}
+[1, 2,  3].mapUsingReduce(
+  (currentValue, currentIndex, array) => currentValue + currentIndex + array.length
+) // [5, 7,  10]
+
+
+
+let results = await Promise.all([
+  fetch(url1),
+  fetch(url2),
+  ...
+]);
+
+
+
+const promise = new Promise(
+  (resolve) => {
+    setTimeout(() => {
+      resolve("I'm a Promise!");
+    }, 5000);
+  },
+  (reject) => {}
+);
+
+promise.then((value) => console.log(value));
+
+
+
+Rewriting Async/await
+
+function loadJson(url) {
+  return fetch(url)
+    .then(response => {
+      if (response.status == 200) {
+        return response.json();
+      } else {
+        throw new Error(response.status);
+      }
+    });
+}
+
+loadJson('https://javascript.info/no-such-user.json')
+  .catch(alert); // Error: 404
+
+
+
+async function loadJson(url) { // (1)
+  let response = await fetch(url); // (2)
+
+  if (response.status == 200) {
+    let json = await response.json(); // (3)
+    return json;
+  }
+
+  throw new Error(response.status);
+}
+
+loadJson('https://javascript.info/no-such-user.json')
+  .catch(alert); // Error: 404 (4)
+
+
+
+function say(phrase) {
+  alert(this.name + ': ' + phrase);
+}
+
+let user = { name: "John" };
+
+// user becomes this, and "Hello" becomes the first argument
+say.call( user, "Hello" ); // John: Hello
+
+
+Instead of func.call(this, ...arguments) we could use func.apply(this, arguments).
+
+let user = {
+  firstName: "John"
+};
+
+function func() {
+  alert(this.firstName);
+}
+
+let funcUser = func.bind(user);
+funcUser(); // John
+
+
+
+function mul(a, b) {
+  return a * b;
+}
+
+let double = mul.bind(null, 2);
+
+alert( double(3) ); // = mul(2, 3) = 6
+alert( double(4) ); // = mul(2, 4) = 8
+alert( double(5) ); // = mul(2, 5) = 10
+
+
+
+function greet() {
+  const reply = [this.animal, 'typically sleep between', this.sleepDuration].join(' ');
+  console.log(reply);
+}
+
+const obj = {
+  animal: 'cats',
+  sleepDuration: '12 and 16 hours',
+};
+
+greet.call(obj);  // cats typically sleep between 12 and 16 hours
+
+
+
+Bind
+this.x = 9;    // 'this' refers to the global object (e.g. 'window') in non-strict mode
+const module = {
+  x: 81,
+  getX() { return this.x; }
+};
+
+module.getX();//  returns 81
+
+const retrieveX = module.getX;
+retrieveX();
+//  returns 9; the function gets invoked at the global scope
+
+const boundGetX = retrieveX.bind(module);
+boundGetX();
+//  returns 81
+
+let animal = {
+  eats: true
+};
+let rabbit = {
+  jumps: true
+};
+
+rabbit.__proto__ = animal; // (*)
+
+// we can find both properties in rabbit now:
+alert( rabbit.eats );  	// true (**)
+alert( rabbit.jumps ); 	// true
+
+Now if we read a property from rabbit, and it’s missing, JavaScript will automatically take it from animal
+
+prototype inheritence
+
+let animal = {
+  eats: true,
+  walk() {
+    alert("Animal walk");
+  }
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+// walk is taken from the prototype
+rabbit.walk(); // Animal walk
+
+
+
+
+let animal = {
+  eats: true,
+  walk() {
+    alert("Animal walk");
+  }
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+let longEar = {
+  earLength: 10,
+  __proto__: rabbit
+};
+
+// walk is taken from the prototype chain
+longEar.walk(); // Animal walk
+alert(longEar.jumps); // true (from rabbit)
+
+
+
+Inheriting objects run the inherited methods, they will modify only their own states, not the state of the big object.
+// animal has methods
+let animal = {
+  walk() {
+    if (!this.isSleeping) {
+      alert(`I walk`);
+    }
+  },
+  sleep() {
+    this.isSleeping = true;
+  }
+};
+
+let rabbit = {
+  name: "White Rabbit",
+  __proto__: animal
+};
+
+// modifies rabbit.isSleeping
+rabbit.sleep();
+
+alert(rabbit.isSleeping); // true
+alert(animal.isSleeping); // undefined (no such property in the prototype)
+
+
+
+let animal = {
+  eats: true
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+// Object.keys only returns own keys
+alert(Object.keys(rabbit)); // jumps
+// for..in loops over both own and inherited keys
+for(let prop in rabbit) alert(prop); // jumps, then eats
+
+
+polyfilling
+if (!String.prototype.repeat) { // if there's no such method
+  // add it to the prototype
+
+  String.prototype.repeat = function(n) {
+    // repeat the string n times
+    // actually, the code should be a little bit more complex than that
+    // (the full algorithm is in the specification)
+    // but even an imperfect polyfill is often considered good enough
+    return new Array(n + 1).join(this);
+  };
+}
+
+alert( "La".repeat(3) ); // LaLaLa
+
+
+
+Add to the prototype of all functions the method defer(ms), that runs the function after ms milliseconds.
+
+Function.prototype.defer = function(ms) {
+  setTimeout(this, ms);
+};
+
+function f() {
+  alert("Hello!");
+}
+
+f.defer(1000); // shows "Hello!" after 1 sec
+
+
+let chineseDictionary = Object.create(null);
+chineseDictionary.hello = "a";
+chineseDictionary.bye = "b";
+
+alert(Object.keys(chineseDictionary)); // hello,bye
+
+Object.create(null) creates an empty object without a prototype 
+
+
+
+function Rabbit(name) {
+  this.name = name;
+}
+Rabbit.prototype.sayHi = function() {
+  alert( this.name );
+}
+
+let rabbit = new Rabbit("Rabbit");
+
+rabbit.sayHi();                        // Rabbit
+Rabbit.prototype.sayHi();              // undefined
+Object.getPrototypeOf(rabbit).sayHi(); // undefined
+rabbit.__proto__.sayHi();              // undefined
+
+another example 
+let animal = {
+  eats: true
+};
+
+
+
+function Rabbit(name) {
+  this.name = name;
+}
+Rabbit.prototype = animal;
+let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
+alert( rabbit.eats ); // true
+
+
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+}
+let rabbit = new Rabbit();
+Rabbit.prototype = {};
+alert( rabbit.eats ); // true
+
+
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+let rabbit = new Rabbit();
+Rabbit.prototype.eats = false;
+alert( rabbit.eats ); // false
+
+
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+let rabbit = new Rabbit();
+delete rabbit.eats;
+alert( rabbit.eats ); // true
+
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+let rabbit = new Rabbit();
+delete Rabbit.prototype.eats;
+alert( rabbit.eats ); // undefined
+
+
+constructor
+function Person(name) {
+  this.name = name;
+  this.introduceSelf = function() {
+    console.log(`Hi! I'm ${this.name}.`);
+  }
+}
+const salva = new Person('Salva');
+
+	
+const myObject = {
+  city: 'Madrid',
+  greet() {
+    console.log(`Greetings from ${this.city}`);
+  }
+}
+myObject.greet(); 	// Greetings from Madrid
+
+
+Throttling is a technique in which, no matter how many times the user fires the 
+event, the attached function will be executed only once in a given time interval.
+Scrolling,Mouse move,API calls
+helps in avoiding lots of async call to fetch.
+
+function throttle(callback, delay) {
+    var timeoutHandler = null;
+    return function () {
+        if (timeoutHandler == null) {
+            timeoutHandler = setTimeout(function () {
+                callback();
+                timeoutHandler = null;
+            }, delay);
+        }
+    }
+}
+
+function helloFromThrottle(){
+  console.log("Jesus is saying hi!!!")
+}
+
+const foo = throttle(helloFromThrottle,5000)
+foo()
+
+In the debouncing technique, no matter how many times the user fires the event, 
+the attached function will be executed only after the specified time once the 
+user stops firing the event.Typing,Animation
+
+function debounce(callback, delay) {
+    var timeoutHandler = null;
+    return function () {
+        clearTimeout(timeoutHandler);
+        timeoutHandler = setTimeout(function () {
+            callback();
+        }, delay);
+    }
+}
+
+function SayHello(){
+  console.log("Jesus is saying hello!!")
+}
+
+let x = debounce(SayHello,3000)
+x()
+
+
+
+Currying is a transformation of functions that translates a function from callable 
+as f(a, b, c) into callable as f(a)(b)(c).
+
+currying
+function curry(f) { // curry(f) does the currying transform
+  return function(a) {
+    return function(b) {
+      return f(a, b);
+    };
+  };
+}
+
+// usage
+function sum(a, b) {
+  return a + b;
+}
+
+let curriedSum = curry(sum);
+
+alert( curriedSum(1)(2) ); // 3
+
+alternate
+let curriedSum = _.curry(sum); // using _.curry from lodash library
+
+alert( curriedSum(1, 2) ); // 3, still callable normally
+alert( curriedSum(1)(2) ); // 3, called partially
+
+
+
+function makeCounter() {
+  let count = 0;
+
+  return function() {
+    return count++;
+  };
+}
+
+let counter = makeCounter();
+let counter2 = makeCounter();
+
+alert( counter() ); // 0
+alert( counter() ); // 1
+
+alert( counter2() ); // 0
+alert( counter2() ); // 1
+
+
+
+let users = [
+  { name: "John", age: 20, surname: "Johnson" },
+  { name: "Pete", age: 18, surname: "Peterson" },
+  { name: "Ann", age: 19, surname: "Hathaway" }
+];
+
+users.sort((a, b) => a.name > b.name ? 1 : -1);
+
+
+
+
+var employer = [
+'wipro', 'yohima', 'accentur', 'capgemine', 'infosyss'
+];
+employer.sort(function (x, y) {
+if (x > y) {
+return -1;
+}
+if (y > x) {
+return 1;
+}
+return 0;
+});	
+console.log("Here are the employers in descending order", employer);
+// yohima,wipro,infosys,capgemine,accenture
+
+
+
+var str = "jhkj7682834";
+            
+var matches = str.match(/(\d+)/);		//7682834
+
+var str1 = "foo35bar5jhkj88";
+var matches1 = str1.match(/\d+/g);		//['35', '5', '88']
+
+
+
+const multiArgFunction = (a, b, c) => a + b + c;
+console.log(multiArgFunction(1, 2, 3)); // 6
+
+const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
+curryUnaryFunction(1)(2)(3); // returns the number 6
+
+
+
+Memoization
+
+const memoizAddition = () => {
+  let cache = {};
+  return (value) => {
+    if (value in cache) {
+      console.log("Fetching from cache");
+      return cache[value]; // Here, cache.value cannot be used as property name starts with the number which is not a valid JavaScript  identifier. Hence, can only be accessed using the square bracket notation.
+    } else {
+      console.log("Calculating result");
+      let result = value + 20;
+      cache[value] = result;
+      return result;
+    }
+  };
+};
+// returned function from memoizAddition
+const addition = memoizAddition();
+console.log(addition(20)); //output: 40 calculated
+console.log(addition(20)); //output: 40 cached
+
+
+
+callback function
+function callbackFunction(name) {
+  console.log("Hello " + name);
+}
+
+function outerFunction(callback) {
+  let name = prompt("Please enter your name.");
+  callback(name);
+}
+
+outerFunction(callbackFunction);
+
+
+
+type conversion in javascript
+Number(),String(),Boolean(),parseInt()
+
+There are 6 types of objects:
+Object
+Date
+Array
+String
+Number
+Boolean
+
+
+let result;
+
+result = '4' - true;
+console.log(result); // 3
+
+result = 4 + true;
+console.log(result); // 5
+
+
+When sending data to a web server, the data has to be in a string format. 
+var userJSON = { name: "John", age: 31 };
+var userString = JSON.stringify(userJSON);
+console.log(userString); //"{"name":"John","age":31}"
+
+
+deep copy
+let ingredients_list = ["noodles",{"list":["eggs","flour","water"]}];
+let ingredients_list_deepcopy = JSON.parse(JSON.stringify(ingredients_list));
+
+
+
+/* // [1,1,2,2,2,3,3,3,3]
+// [3,3,3,3,2,2,2,1,1]
+var arr=[6,5,5]
+var ans=new Map()
+arr.forEach((data)=>{
+if(ans.has(data)){
+ans.set(data,ans.get(data)+1)
+}else{
+  ans.set(data,1)
+}
+})
+console.log(ans)
+
+
+var arr2=[]
+for(const key of ans.keys()){
+arr2.push([key,ans.get(key)])
+}
+console.log(arr2)
+arr2.sort((a,b)=>b[1]-a[1])
+console.log(arr2)
+
+
+var ans2=[]
+for(var i=0;i<arr2.length;i++){
+  for(var j=0;j<arr2[i][1];j++){
+    console.log(arr2[i][0])
+    ans2.push(arr2[i][0])
+  }
+}
+console.log(ans2) */
+
+
+alert( "I love HTML".replace(/HTML/, "$& and JavaScript") ); // I love HTML and JavaScript
+alert( "We will, we will".replace(/we/i, "I") ); // I will, we will
+alert( "Voila".match(/V[oi]la/) ); // null, no matches  For instance, [eao] means any of the 3 characters: 'a', 'e', or 'o'.
+alert( "Exception 0xAF".match(/x[0-9A-F][0-9A-F]/g) ); // xAF
+[^aeyo] – any character except 'a', 'e', 'y' or 'o'.
+[^0-9] – any character except a digit,
+\d{5} denotes exactly 5 digits, the same as \d\d\d\d\d.
+\d+ looks for numbers  one or more
+\d0* looks for a digit followed by any number of zeroes (may be many or none):
+let regexp = /\.{3,}/g;
+alert( "Hello!... How goes?.....".match(regexp) ); // ..., .....
+For instance, [eao] means any of the 3 characters: 'a', 'e', or 'o'
+
+let regexp = /Java|JavaScript|PHP|C|C\+\+/g;
+let str = "Java, JavaScript, PHP, C, C++";
+alert( str.match(regexp) ); // Java,Java,PHP,C,C
+
+
+Cookies are usually set by a web-server using the response 
+Set-Cookie HTTP-header. Then, the browser automatically adds 
+them to (almost) every request to the same domain using the Cookie HTTP-header.
+
+By default, if a cookie doesn’t have one of these options, 
+it disappears when the browser is closed. Such cookies are called “session cookies”
+
+
+A cookie is called “third-party” if it’s placed by a domain other 
+than the page the user is visiting.
+
+
+local storage and session storage
+setItem(key, value) – store key/value pair.
+getItem(key) – get the value by key.
+removeItem(key) – remove the key with its value.
+clear() – delete everything.
+key(index) – get the key on a given position.
+length – the number of stored items.
+
+Also unlike cookies, the server can’t manipulate storage objects via HTTP headers.
+ Everything’s done in JavaScript.
+
+
+The idea is that if we have a lot of elements handled in a similar way, 
+then instead of assigning a handler to each of them – we put a single 
+handler on their common ancestor.
+
+
+When an event happens on an element, it first runs the handlers on it, 
+then on its parent, then all the way up on other ancestors.
+
+bubbling
+When an event happens on an element, it first runs the handlers on it, 
+then on its parent, then all the way up on other ancestors.
+
+A bubbling event goes from the target element straight up. 
+Normally it goes upwards till <html>, and then to document object, 
+and some events even reach window, calling all handlers on the path.
+event.stopPropagation()
+
+
+The standard DOM Events describes 3 phases of event propagation:
+
+Capturing phase – the event goes down to the element.
+Target phase – the event reached the target element.
+Bubbling phase – the event bubbles up from the element.
+
+addEventListener(event, handler) don’t know anything about capturing, 
+they only run on the 2nd and 3rd phases.
+
+There’s a special built-in function method func.call(context, …args) 
+that allows to call a function explicitly setting this.
+
+The result of func.bind(context) is a special function-like “exotic object”, 
+that is callable as function and transparently passes the call to 
+func setting this=context.
+
+
+JavaScript Hoisting refers to the process whereby the interpreter appears 
+to move the declaration of functions, variables or classes to the top of 
+their scope, prior to execution of the code.
+One of the advantages of hoisting is that it lets you use a function before 
+you declare it in your code.
+
+However, JavaScript only hoists declarations, not initializations! This means that 
+initialization doesn't happen until the associated line of code is executed, 
+even if the variable was originally initialized then declared, or declared and 
+initialized in the same line.
+
+Variables declared with let and const are also hoisted but, unlike var, are not 
+initialized with a default value
+
+closure gives you access to an outer function's scope from an inner function. 
+
+JavaScript only had two kinds of scopes: function scope and global scope.
+
+
+{ // TDZ starts at beginning of scope
+  console.log(bar); // undefined
+  console.log(foo); // ReferenceError
+  var bar = 1;
+  let foo = 2; // End of TDZ (for foo)
+}
+
+"Currying is the process of taking a function with multiple arguments and 
+turning it into a sequence of functions each with only a single argument."
+
+special numeric values” which also belong to this data type: 
+Infinity, -Infinity and NaN
+
+
+mathematical operation on NaN returns NaN
+
+
+
+
