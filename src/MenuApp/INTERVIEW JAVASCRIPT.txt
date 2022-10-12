@@ -40,9 +40,110 @@ const printJson = (jsonObj) => {
 }
 
 
-There are 7 types of primitive data types.
+event loop
+function call form a stack of frame
+heaps to store the object
+Queue  task queue(set time out) and micro task queue(promise)
+
+
+closures
+In other words, a closure gives you access to an outer function's scope from 
+an inner function
+var are either function-scoped or global-scoped,
+let and const declarations, which, among other things like temporal dead zones, 
+allow you to create block-scoped variables
+The shared lexical environment is created in the body of an anonymous function, 
+which is executed as soon as it has been defined (also known as an IIFE).
+
+bind
+The bind() method creates a new function that, when called, has its this 
+keyword set to the provided value
+
+The call() method calls the function with a given this value and arguments 
+provided
+
+The apply() method calls the specified function with a given this value, 
+and arguments provided as an array 
+
+promise
+A Promise is an object representing the eventual completion or failure of an 
+asynchronous operation.
+then() function returns a new promise.
+n the old days, doing several asynchronous operations in a row would lead to 
+the classic callback pyramid of doom:
+
+doSomething(function (result) {
+  doSomethingElse(result, function (newResult) {
+    doThirdThing(newResult, function (finalResult) {
+      console.log(`Got the final result: ${finalResult}`);
+    }, failureCallback);
+  }, failureCallback);
+}, failureCallback);
+
+With modern functions, we attach our callbacks to the returned promises instead, 
+forming a promise chain:
+
+doSomething()
+  .then(function (result) {
+    return doSomethingElse(result);
+  })
+  .then(function (newResult) {
+    return doThirdThing(newResult);
+  })
+  .then(function (finalResult) {
+    console.log(`Got the final result: ${finalResult}`);
+  })
+  .catch(failureCallback);
+
+
+There are two objects for data storage on the client provided by HTML web storage:
+Local storage object - Stores data with no expiration date,key/value pairs,
+data remains in the browser until and unless the browser's memory is cleared
+setItem(),getItem(key),clear(),removeItem(key),storage limit is about 10MB,
+data is plain text; hence it is not secure by design
+
+
+
+Session storage object - Stores data for one session 
+(data is lost when the browser tab is closed), session storage stores up to 5 MB
+sessionstorage.setItem() 
+sessionstorage.getItem()
+
+cookies
+Cookies are sent with requests to the server and are sent to the client on 
+response; hence the cookies data is exchanged with the server on every request. 
+session cookies and persistent cookies.small storage capacity of 4 kilobytes
+document.cookie = "username=Max Brown; expires=Wed, 05 Aug 2020 23:00:00 UTC; path=/"
+Session Cookies
+It do not specify the attributes such as Expires or Max-Age and hence are 
+removed when the browser is closed.
+Persistent Cookies
+Persistent cookies specify the Expires or Max-Age attributes. 
+These cookies do not expire on closing the browser but will expire at a specific 
+date (Expires) or length of time (Max-Age).
+
+Higher order function
+Higher Orders Functions are functions that perform operations on other functions.
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach((number) => console.log(number + 1));'
+const numbers = [1, 2, 3, 4, 5];
+
+const oddArray = numbers.filter((number) => number % 2 !== 0);
+console.log(oddArray);
+const numbers = [1, 2, 3, 4, 5];
+
+const newArray = numbers.map((number) => number + 1);
+console.log(numbers);
+
+const numbers = [1, 2, 3, 4, 5];
+
+const totalValue = numbers.reduce((sum, number) => sum + number);
+console.log(totalValue);
+
+There are 7 types of primitive data types.All primitives are immutable
 string
-number
+number 64 bit floating point format
 boolean
 null
 undefined
@@ -134,10 +235,58 @@ async function process(array) {
 }
 
 
+NaN    representing Not-A-Number.'
+
+JavaScript Hoisting refers to the process whereby the interpreter appears to move 
+the declaration of functions, variables or classes to the top of their scope, 
+prior to execution of the code.
+Hoisting allows functions to be safely used in code before they are declared.
+
+variable hosting
+The default initialization of the var is undefined.
+
+Variables declared with let and const are also hoisted but, unlike var, are not 
+initialized with a default value. An exception will be thrown if a variable 
+declared with let or const is read before it is initialized.
+
+
+Generator
+function* generator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = generator(); // "Generator { }"
+
+console.log(gen.next().value); // 1
+console.log(gen.next().value); // 2
+console.log(gen.next().value); // 3
+
+
+JavaScript is a single-thread language because of only one call stack.
+its really easy to implement as we don’t have to deal with the complicated 
+scenarios that arise in the multi-threaded environment like deadlock.
+
+Event loop
+it finds out that setTimeout() doesn’t belong to JS so it pops out the function
+ and puts in the WebAPI to get executed there.
+the WebAPI executes the timeout function and places the code in the callback 
+queue. The eventloop checks if the call stack is empty or not or whether there 
+is any statement in the callback queue that needs to be executed all the time. 
+As soon as the event loop checks that the call stack is empty and there is 
+something in the callback queue that needs to be executed, it places the statement 
+in the call stack and the call stack executes the statement and prints B in 
+the console of the browser.
+
 var set = new Set();
 set.add("+0").add("-0").add(NaN).add(undefined).add(NaN); 
 //: Set(4) {"+0", "-0", NaN, undefined}
 console.log(set);
+
+
+Unlike var,let variable can be updated but cannot be re-declared within its scope
+const variable cannot be updated and cannot be re-declared within its scope
 
 
 The typeof operator on any primitive returns a string value.
