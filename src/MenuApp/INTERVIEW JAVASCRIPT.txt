@@ -30,6 +30,12 @@ URL: https://jsonplaceholder.typicode.com/users Method: GET
 3. Implement a simple search filter using array filter method wherein you will accept the search term from the user in an input tag and display the most relevant products in the console
 
 
+JavaScript (JS) interpreted, or just-in-time compiled programming language.
+It is also a scripting language for Web pages.
+
+The DOM represents a document with a logical tree.
+Each branch of the tree ends in a node, and each node contains objects.
+
 
 Problem 2: Write a JS function which takes a JSON object and prints all the values present in the object. Example: for JSON {a: {b:1}, c:2, d:3} print 1 2 3. Remember this should be generic function
 
@@ -40,10 +46,159 @@ const printJson = (jsonObj) => {
 }
 
 
-event loop
+var arr=["sdjf","sdjfd","sdjkfhsdlf"]
+ans=[]
+arr.forEach((word)=>{
+ans=[...ans,...word]
+})
+console.log(ans)  //["s", "d", "j", "f", "s", "d", "j", "f", "d", "s", "d", "j", "k", "f", "h", "s", "d", "l", "f"]
+
+
+var arr=["hello", "how","are","you"]
+var ans=new Map()
+function findoccurance(array){
+	array.forEach((word)=>{
+  		var wordsplit=word.split("")
+      wordsplit.forEach((char)=>{
+      	if(ans.has(char)){
+        ans.set(char,ans.get(char)+1)
+        }else{
+        ans.set(char,1)
+        }
+      })
+  })
+}
+findoccurance(arr)
+console.log(ans)
+
+0: {"h" => 2}1: {"e" => 2}2: {"l" => 2}3: {"o" => 3}4: {"w" => 1}5: {"a" => 1}
+6: {"r" => 1}7: {"y" => 1}8: {"u" => 1}
+
+Higher-order functions in JavaScript take some functions as arguments and 
+return another function.
+
+
+javascript is A script or scripting language is a computer language that 
+does not need the compilation step and is rather interpreted one by one at runtime.
+Server-Side Scripting Languages		Python, PHP, and Perl
+Client-Side Scripting Languages		JavaScript
+
+V8 used to have two compilers, 
+full-codegen:compiler that produced simple and relatively slow machine code.
+Crankshaft:optimizing compiler that produced highly-optimized code.
+A JavaScript engine interpreter,which converts JavaScript to bytecode
+For garbage collection, V8 uses a traditional generational approach of 
+mark-and-sweep to clean the old generation. V8 uses incremental marking: 
+instead of walking the whole heap, trying to mark every possible object, 
+it only walk part of the heap, then resumes normal execution.
+
+
+A Pure Function is a function (a block of code) that always returns the 
+same result if the same arguments are passed.
+In pure function , the output is independent on an external variable.
+
+
+
+A WeakMap is a collection of key/value pairs whose keys must be objects
+an object's presence as a key in a WeakMap does not prevent the object from 
+being garbage collected,as long as they aren't strongly referred to elsewhere.
+weakmap does not support keys(), values(), entries()
+it has only 
+weakMap.get(key)
+weakMap.set(key, value)
+weakMap.delete(key)
+weakMap.has(key)
+
+
+Weakset
+It is analogous to Set.we can only add objects to WeakSet
+it supports add, has and delete, but not size, keys()
+
+
+useStrict
+"use strict”
+The first method of invoking strict mode is at the file level.  
+By adding the directive at the beginning of a file, strict mode is enabled in a 
+global context. 
+The second way to enable strict mode is at the function level.  
+To enable this level of strict mode, place the “use strict”; directive at 
+the beginning of the function body.
+Strict mode changes previously accepted “bad syntax” into real errors.
+In strict mode,a non-existing property will throw an error.
+
+ES5 function constructors are also used to create objects
+ES6 class constructors work quite the same as class constructors in other 
+object-oriented languages.wecan use extends,super,static
+
+class in ES6
+Class fields are public by default, but private class members can be created 
+by using a hash # prefix.
+
+
+There are multiple ways to make an object immutable, such as using the 
+“const” keyword, shallow freeze, and deep freeze.
+Object.freeze() method restricts a user from adding, deleting, or 
+modifying the object.
+if the object contains some nested objects or arrays, then in such situations, 
+the nested objects can still be updated,then we need deep freeze
+const deepF = (empDetails) => {
+    Object.keys(empDetails).forEach((objProp) => {
+      if (
+        typeof empDetails[objProp] === "object" &&
+        !Object.isFrozen(empDetails[objProp])
+      )
+        deepF(empDetails[objProp]);
+    });
+    return Object.freeze(empDetails);
+  };  
+deepF(empDetails);
+
+
+converts a string to a number when we use -, *, /
+// Number is converted into String
+console.log('5' + 3); // '53'
+// String is converted into Number for calculation
+console.log('5' - 3); // 2
+console.log('5' * 3); // 15
+
+
+loose equality operator == does both comparison and conversion if needed.
+One operator that does not trigger implicit type coercion is ===, 
+which is a strict equality operator
+
+manual type conversion are
+manual conversions we can use Boolean(), String(), Number(), parseInt()
+
+var str="ajskhjsdf sdhfjkd sdfjk"
+console.log(str)
+var ans=str.split("").reverse().join("")
+console.log(ans)  //"kjfds dkjfhds fdsjhksja"
+
+console.log(str.split(/\s/).reverse().join(" ")); //"sdfjk sdhfjkd ajskhjsdf"
+
+str2="nsdjf f g ndfjdjsf f  adfk"
+console.log(str2.split(/\s+/).reverse().join(" ")); //"sdfjk sdhfjkd ajskhjsdf"
+
+
+
+Event loop
 function call form a stack of frame
 heaps to store the object
 Queue  task queue(set time out) and micro task queue(promise)
+Web APIs which are provided by browsers, which handles request like the DOM, 
+AJAX, setTimeout and much more.
+
+Event loop
+it finds out that setTimeout() doesn’t belong to JS so it pops out the function
+ and puts in the WebAPI to get executed there.
+the WebAPI executes the timeout function and places the code in the callback 
+queue. The eventloop checks if the call stack is empty or not or whether there 
+is any statement in the callback queue that needs to be executed all the time. 
+As soon as the event loop checks that the call stack is empty and there is 
+something in the callback queue that needs to be executed, it places the statement 
+in the call stack and the call stack executes the statement and prints B in 
+the console of the browser.
+Each entry in the Call Stack is called a Stack Frame.
 
 
 closures
@@ -268,16 +423,7 @@ JavaScript is a single-thread language because of only one call stack.
 its really easy to implement as we don’t have to deal with the complicated 
 scenarios that arise in the multi-threaded environment like deadlock.
 
-Event loop
-it finds out that setTimeout() doesn’t belong to JS so it pops out the function
- and puts in the WebAPI to get executed there.
-the WebAPI executes the timeout function and places the code in the callback 
-queue. The eventloop checks if the call stack is empty or not or whether there 
-is any statement in the callback queue that needs to be executed all the time. 
-As soon as the event loop checks that the call stack is empty and there is 
-something in the callback queue that needs to be executed, it places the statement 
-in the call stack and the call stack executes the statement and prints B in 
-the console of the browser.
+
 
 var set = new Set();
 set.add("+0").add("-0").add(NaN).add(undefined).add(NaN); 
@@ -1564,6 +1710,7 @@ return s=s+ob+" "}
 );
 console.log(s) */
 
+
 /* var ans= new promise((res,rej)=>{
 if(true){
 return res("resolves")
@@ -1606,9 +1753,7 @@ function sum(a){
 }
 
 
-
 console.log(sum(1)(2)(3)(4)); // log 20
-
 
 
 const add = (function () {
@@ -1689,8 +1834,7 @@ user.sayHi = sayHi;
 
 var abc1= function fun1(a) { return {
             name:"hjkhjkh",              
-	    fun2() { return this.name;
-			
+	    fun2() { return this.name;		
 	    }
           };
 }
@@ -2695,6 +2839,49 @@ let regexp = /\.{3,}/g;
 alert( "Hello!... How goes?.....".match(regexp) ); // ..., .....
 For instance, [eao] means any of the 3 characters: 'a', 'e', or 'o'
 
+
+ allowed = "ab"
+ words = ["ad","bd","aaab","baa","badab"]
+ ans=[]
+ words.forEach((word)=>{
+ var flag=false
+   allowed.split("").forEach(char=>{
+   /*console.log(word,char,word.includes(char))*/
+      if(word.includes(char)){
+      }else{
+      flag=true
+      return
+      }  
+   })
+   console.log(flag)
+   if (flag==false){
+    ans.push(word)
+   }
+   
+ })
+ console.log(ans)		//["aaab", "baa", "badab"]
+ 
+ ans2=[]
+ words.forEach((word)=>{
+ var flag=false
+   word.split("").forEach(char=>{
+   	/*console.log(word,char,word.includes(char))*/
+        if(allowed.includes(char)){
+        }else{
+        flag=true
+        return
+        }  
+      })
+      /*console.log(flag)*/
+       if (flag==false){
+        ans2.push(word)
+       } 
+ })
+ console.log(ans2)		//["aaab", "baa"]
+
+
+
+
 let regexp = /Java|JavaScript|PHP|C|C\+\+/g;
 let str = "Java, JavaScript, PHP, C, C++";
 alert( str.match(regexp) ); // Java,Java,PHP,C,C
@@ -2793,6 +2980,36 @@ Infinity, -Infinity and NaN
 
 
 mathematical operation on NaN returns NaN
+
+
+There are three types of errors:
+(a) Syntax Errors, (b) Runtime Errors, and (c) Logical Errors.
+Syntax errors at interpret time in JavaScript.
+Runtime errors, also called exceptions, occur during execution
+for example trying to call a method that does not exist
+Logical Errors they occur when you make a mistake in the logic
+
+JavaScript implements the try...catch...finally construct as well as the 
+throw operator to handle exceptions.
+  try {
+    alert("Value of variable a is : " + a );
+    //throw( "Divide by zero error." ); 
+ }
+ catch ( e ) {
+    alert("Error: " + e.description );
+ }
+ finally {
+    alert("Finally block will always execute!" );
+ }
+You can use throw statement to raise your built-in exceptions or your 
+customized exceptions.
+
+The onerror event handler was the first feature to facilitate error handling in JavaScript.
+ window.onerror = function () {
+   alert("An error occurred.");
+}
+
+
 
 
 

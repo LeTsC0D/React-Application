@@ -103,38 +103,6 @@ What is React -Yes
 -Create  button after click the button should display the current time and update the time
 
 
-three phases
-Mounting, Updating, and Unmounting.
-
-
-Mounting
-constructor()
-getDerivedStateFromProps()
-render()
-componentDidMount()
-
-
-Updating
-getDerivedStateFromProps()
-shouldComponentUpdate()
-render()
-getSnapshotBeforeUpdate()
-componentDidUpdate()
-
-Unmounting
-componentWillUnmount()
-
-
-
-PURE COMPONENTS
-If the previous value of state or props and the new value of state or props is the 
-same, the component will not re-render itself. Since Pure Components restricts the 
-re-rendering when there is no use of re-rendering of the component. Pure Components 
-are Class Components which extends React.PureComponent. 
-
-
-
-
 concepts
 React Components - Answered / Correct
 State Managements- Answered / Correct
@@ -342,14 +310,9 @@ arrow functions- Answered / Correct
 JS concepts- Answered / Correct
 
 
-React componenets
-Components are independent and reusable bits of code.
 
-Four Kinds of React State
-Local state	useState,useReducer
-Global state	Context API,Redux 
-manage state across multiple components,
-Server state	useSWR
+
+
 Data that comes from an external server that must be integrated with our UI state.
 What happens when there is a network error? 
 Do I really need to hit my server every time my user visits the home page 
@@ -359,9 +322,124 @@ information we need about our location, history, and pathname.
 Data that exists on our URLs, including the pathname and query parameters.
 
 
+React componenets
+Components are independent and reusable bits of code.
+
+Four Kinds of React State
+Local state	useState,useReducer
+Global state	Context API,Redux 
+manage state across multiple components,
+Server state	useSWR
+
+
+
+Three phases
+Mounting, Updating, and Unmounting.
+
+Mounting
+constructor(),getDerivedStateFromProps(),render(),componentDidMount()
+
+Updating
+getDerivedStateFromProps(),shouldComponentUpdate(),render(),
+getSnapshotBeforeUpdate(),componentDidUpdate()
+
+Unmounting
+componentWillUnmount()
+
+
+Hooks
+Hooks allow function components to have access to state and other 
+React features without writing class
+Hooks can only be called inside React function components.
+Hooks can only be called at the top level of a component.
+Hooks cannot be conditional
+
+useState
+useState Hook allows us to track state in a function component
+useState accepts an initial state and returns two values:
+The current state.
+A function that updates the state.
+
+
+
 useEffect
 useEffect lets us perform side effects in function components
- It runs once our component mounts
+It runs once our component mounts.The Effect Hook allows us to perform side 
+effects (an action) in the function components.Effects Hooks are equivalent to 
+componentDidMount(), componentDidUpdate(), and componentWillUnmount() 
+Two types of side-effects:
+Effects Without Cleanup
+Effects With Cleanup,React performs the cleanup of memory when the 
+component unmounts.Effects run for every render method and not just once. 
+Therefore, React also cleans up effects from the previous render 
+before running the effects next time.
+
+useContext
+Context provides a way to pass data or state through the component tree 
+without having to pass props down manually through each nested component. 
+It is designed to share data that can be considered as global data for a 
+tree of React components.
+const authContext = useContext(initialValue);
+The useContext accepts the value provided by React.createContext and 
+then re-render the component whenever its value changes
+
+Context API/ Redux
+The main purpose of Redux is to have a central repository of all 
+the states in the app
+
+import React from 'react';
+ 
+// Creating the context object and passing the default values.
+const authContext = React.createContext({status:null,login:()=>{}});
+ 
+export default authContext;
+
+
+import React, { useState } from "react";
+import Auth from "./Auth";
+import AuthContext from "./auth-context";
+ 
+const App = () => {
+  //using the state to dynamicallly pass the values to the context
+ 
+  const [authstatus, setauthstatus] = useState(false);
+  const login = () => {
+    setauthstatus(true);
+  };
+  return (
+    <>
+      <AuthContext.Provider value={{ status: authstatus, login: login }}>
+        <Auth />
+      </AuthContext.Provider>
+    </>
+  );
+};
+export default App;
+
+
+import React, { useContext } from "react";
+import AuthContext from "./auth-context";
+ 
+const Auth = () => {
+  // Now all the data stored in the context can
+  // be accessed with the auth variable
+  const auth = useContext(AuthContext);
+  console.log(auth.status);
+  return (
+    <div>
+      <h1>Are you authenticated?</h1>
+      {auth.status }
+	<p>Yes you are</p>
+    </div>
+   )
+}
+
+
+To do this without Context, we will need to pass the state as "props" 
+through each nested component. This is called "prop drilling".
+React developers often encounter scenarios where they must 
+pass data/state from a top-level component to a deeply nested component. 
+Prop drilling refers to transporting this data/state as props to the intended destination through intermediate components.
 
 
 useMemo allows us to 'memoize', or remember the result of expensive calculations 
@@ -485,19 +563,40 @@ https://www.codingdeft.com/posts/react-fetch-data-api/
 ROUTERS
 Memory Router
 Memory router keeps the URL changes in memory not in the user browsers. 
+it does not read or write to the address bar so the user can not use the 
+browser’s back button as well as the forward button
 
 Browser Router
-It routes as a normal URL in the browser and assumes that the server is handling all the request URL
+It routes as a normal URL in the browser and assumes that the server is handling 
+all the request URL
 
 Hash Router
 Hash router uses client-side hash routing. 
-It uses the hash portion of the URL (i.e. window.location.hash) to keep your UI in sync with the URL
-Whenever, there is a new route get rendered, it updated the browser URL with hash routes.
+It uses the hash portion of the URL (i.e. window.location.hash) to keep your UI 
+in sync with the URLWhenever, there is a new route get rendered, it updated 
+the browser URL with hash routes.
 
 
 Pure Component
- Pure Component, there is no need for shouldComponentUpdate() Lifecycle Method. 
-ReactJS Pure Component Class compares current state and props with new props and states to decide whether the React component should re-render itself or  Not.
+Pure Component, there is no need for shouldComponentUpdate() Lifecycle Method. 
+ReactJS Pure Component Class compares current state and props with new props 
+and states to decide whether the React component should re-render itself or  Not.
+Pure components
+Its return value is only determined by its input values
+Its return value is always the same for the same input values
+If you want React to treat a functional component as a pure component, 
+you’ll have to convert the functional component to a class component 
+that extends React.PureComponent
+
+
+React.memo()
+
+React.PureComponent for class components and React.
+memo() for function components.
+The PureComponent and memo() use the default implementation of, 
+shouldComponentUpdate() with a shallow prop and state comparison. 
+So, a pure component is a component that only re-renders if props/state 
+is different from the previous props and state.
 
 
 
@@ -505,4 +604,45 @@ React memo
 export default memo(Todos);
 Now the Todos component only re-renders when the todos that are passed 
 to it through props are updated.
+
+
+HOC:Components take one or more components as arguments, and return a new 
+upgraded component.
+We don’t modify or mutate components. We create new ones.
+A HOC is used to compose components for code reuse.
+A HOC is a pure function. It has no side effects, returning only a new component.
+
+import React from 'react';
+function WithLoading(Component) {
+  return function WihLoadingComponent({ isLoading, ...props }) {
+    if (!isLoading) return <Component {...props} />;
+    return <p>Hold on, fetching data might take some time.</p>;
+  };
+}
+export default WithLoading;
+
+import React from 'react';
+import List from './components/List.js';
+import WithLoading from './components/withLoading.js';
+const ListWithLoading = WithLoading(List);
+
+const App=()=>{
+
+  render() {
+    return (
+      <ListWithLoading
+        isLoading={this.state.loading}
+        repos={this.state.repos}
+      />
+    );
+  }
+}
+
+export default App;
+
+
+
+
+
+
 
