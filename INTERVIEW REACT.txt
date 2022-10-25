@@ -1,0 +1,1207 @@
+Verzeo in collaboration with many partnered companies including  Autodesk and Many MNCs certification bring to you 2 month Internship program.
+
+Intro to Verzeo (1.5 min)
+
+https://www.youtube.com/watch?v=aZ8akB0zy1w
+
+?Internship domains offered are mentioned below branch wise:
+
+
+
+https://www.youtube.com/watch?v=RNneVr7aoSw&list=PLGZJDzu5NntRgpuqVtEb9e2tDaRYXRZFG
+https://www.youtube.com/playlist?list=PLGZJDzu5NntRmgwjCg0OwFpt9yHh68Muc
+https://www.youtube.com/playlist?list=PLGZJDzu5NntT7CrVD3D0WmJu31lGzrwhb
+
+
+https://scrimba.com/learn/learnreact
+
+ Countdown - https://codesandbox.io/s/focused-joliot-2xhxfs?file=/src/App.js
+
+
+DigitalIndia@753
+export default and exports
+react lifecycle
+
+looking forward to your approval for my leave
+
+in strict mode hosting is not done
+
+https://my.newtonschool.co/playground/project/v74bf7bvkw0w/
+
+
+What are the features of React?
+What do you mean by unidirectional?
+
+What is JSX?
+Can web browsers read JSX directly?
+ 
+What is virtual Dom?
+What is the difference between the ES5 and ES6 standards?
+
+What are the types of components in React?
+What is the use of render() in React?
+
+Explain the lifecycle methods of components.
+What are Pure Components?
+
+What are hooks in react? Can you name any hook that we frequently use ?
+
+What is the difference between state and props?
+
+What is a higher-order component in React?
+
+How can you embed two or more components into one?
+
+What are the differences between class and functional components?
+
+Differentiate between a controlled component and an uncontrolled component in React.
+
+
+1.What is React?
+2.What is the difference between Element and Component?
+3.What is the difference between state and props?
+4.What is "key" prop and what is the benefit of using it in arrays of elements?
+5.What is Virtual DOM?
+6.How Virtual DOM works?
+7.Life cycle methods in react. Best life cycle method for making API calls?
+8.Difference between class and functional component.
+9.Hooks. Give some example of hooks.
+10.Change the value.
+11.Disable a button
+12.What are Pure Components?
+13.Why should we not update the state directly?
+14.What is context?
+15.Controlled and uncontrolled component.
+16.What is fragment.
+
+
+
+Why we use react
+What is JSX
+Virtual DOM
+• reconciliation process
+• what is state and props –
+• functional component vs class component
+• Lifecycle methods in react
+What is fragments
+•Controlled vs uncontrolled component
+Counter
+Two way binding
+
+
+What is React -Yes
+-what is virtualDom and Dom in react -Yes
+-what is event capturing and event bubbling-No
+-What is a controlled and uncontrolled component? -Yes
+-what is useref in react-Yes
+-What is the difference between server side render and client side render -No
+-what is React Routers -Yes
+-Context Api-Yes
+-What is pure component - Yes
+
+-create todolist
+-Create  button after click the button should display the current time and update the time
+
+
+concepts
+React Components - Answered / Correct
+State Managements- Answered / Correct
+Hooks- Answered / Correct
+Use State- Answered / Correct
+Use Effect- Answered / Correct
+HTML Forms- Answered / Correct
+ES6 functions- Answered / Correct
+arrow functions- Answered / Correct
+JS concepts- Answered / Correct
+[06/08, 7:10 PM] +91 96894 61926: 1.  
+Write a JavaScript program to find the most frequent item of an array// Done.
+
+2.
+ Write code to find out Prime No., Even No, and Odd no form 1 To 100 as a list on button click. There will be three buttons on the page with names like 1. Prime No, 2. Even No. and 3. Odd No.  When you click on the prime no. button the Prime no. the list should be there from 1 to 100 and the same functionality should be for each button. and also find out the sum of each numbers.// Done.
+
+3). 
+"I made a mistake and overwrote a JSON file with some weird data, thankfully I had no back-up and I'm too lazy to fix it so now you guys can solve it for me!
+
+Get the strings out of those arrays. like input = ([[][][][][][][][[][] [[[[[[[""I have no idea what i'm doing""]]]]]]]]]) ""I have no idea what i'm doing// done"
+[06/08, 7:10 PM] +91 96894 61926: 4) 
+Write a JavaScript function that accept row, column, (to identify a particular cell) and a string to update the content of that cell// Not Done.
+
+
+
+[1:02 pm, 07/08/2022] shashank: [8/4, 8:32 AM] ALONE STAR LIPAN: 1. What is Prototype?
+2. What is Memoization?
+3. What is deep copy? 
+4. What is bind? 
+5. Explain Array.reduce?
+6. Explain Promises
+7. What is Event loop?
+[8/4, 8:32 AM] ALONE STAR LIPAN: paras kumar js hard
+[1:02 pm, 07/08/2022] shashank: 1. What is Prototype?
+2. What is Memoization?
+3. What is deep copy? 
+4. What is bind? 
+5. Explain Array.reduce?
+6. Explain Promises
+7. What is Event loop?
+
+https://www.codingame.com/playgrounds/8595/reactjs-higher-order-components-tutorial
+
+[8:06 pm, 10/08/2022] shashank: What is React.
+- The working of React
+Virtual DOM concept.
+[Partially Answered]
+
+- What is difference between Functional and Class Component ? In which Situation you will use ?
+[Partially Answered]
+
+- What is stateful and stateless
+[Not Answered]
+
+- What's the difference between a Controlled component and an Uncontrolled one in React?
+[Not Answered]
+
+- What is diff between props and state?
+[Answered]
+
+- What do mean by fragments?
+[Not Answered]
+
+- What is difference between JS and JSX ?
+[Partially Answered]
+
+- Have you worked with Hooks, different type of hooks?
+[Answered]
+
+- Have you worked with react-router?What is it?
+[Not Answered]
+
+- code to make two component one with list and another having heading
+[Coded]
+
+- Write a code to increment and decrement using hooks
+[Coded]
+[8:06 pm, 10/08/2022] shashank: What is React? Explain its features.
+what is virtual dom?
+What is JSX?
+Can I write if else condition in JSX?
+
+What are state and props in React? Give example with coding.
+What are the various lifecycle method names?
+What is default in export statement?
+What are React Hooks?
+What are the rules of using hooks?
+Write syntax for useEffect hook.
+What is React Fragments?
+Why React uses className over class attribute?
+Differentiate between stateful and stateless components.
+
+
+
+Ya .... He asked me .. 
+1. promise program... 
+2. Given array with different type of value.. like...
+Ar=[2,3,5,7,8,a,p,o,y,u,e,k,i,8,8]
+From array find..
+Most frequency digit
+Show even digits
+Show prime numbers
+Show vowels
+Show all consonants
+
+
+What is Virtual DOM? 
+Difference between stateless and statefull component
+What are Lifecycle methods in React?
+What is the use of React Context Api?
+Difference between states and props. 
+Create a counter app with increment decrement and capture button,
+ when user click on increment count value increase by 1,
+when you click on decrement count decrease by 1 and when 
+you click on capture the current count would be added to 
+list and we have to maintain list of captured value
+
+
+[8/4, 8:32 AM] ALONE STAR LIPAN: 1. What is Prototype?
+2. What is Memoization?
+3. What is deep copy? 
+4. What is bind? 
+5. Explain Array.reduce?
+6. Explain Promises
+7. What is Event loop?
+[8/4, 8:32 AM] ALONE STAR LIPAN: paras kumar js hard
+
+
+-What is React -Yes
+-what is virtualDom and Dom in react -Yes
+-what is event capturing and event bubbling-No
+-What is a controlled and uncontrolled component? -Yes
+-what is useref in react-Yes
+-What is the difference between server side render and client side render -No
+-what is React Routers -Yes
+-Context Api-Yes
+-What is pure component - Yes
+
+-create todolist
+-Create  button after click the button should display the current time and update the time
+
+
+Shubham Madheysia EASY REACT MOCK
+
+Open https://codesandbox.io/s/new and create a new React component with 2 input fields, input1 and input2. Users can type any number in either of these input fields. You need to ensure that (input2 minus input1) is equal to 1 always. Means if user type value 5 in input1 then input2 value should change to 6 (to make input2 - input1 = 1). And similarly, if input2 value is 100 then input1 value should change to 99. You need to just play around with input values
+
+Note: In the UI only 2 input fields should be present. No button needed.
+
+Problem 2: Optimize ‘Problem 1’ by making it a stateless component. Means solve problem 1 without using any state variable. You still need to play with input tags and values only.
+
+Note: Don’t write vanilla JS like document.getElementById etc. Use react hooks here.
+
+PS: Keep Problem 1 and Problem 2 solutions separately. Don’t just work on Problem 2 because it is an optimization of Problem 1. Start with 1st alone
+
+
+
+
+What are the features of React?
+What do you mean by unidirectional?
+What is JSX?
+Can web browsers read JSX directly? 
+What is virtual Dom?
+What is the difference between the ES5 and ES6 standards?
+What are the types of components in React?
+What is the use of render() in React?
+Explain the lifecycle methods of components.
+What are Pure Components?
+What are hooks in react? Can you name any hook that we frequently use ?
+What is the difference between state and props?
+What is a higher-order component in React?
+How can you embed two or more components into one?
+What are the differences between class and functional components?
+Differentiate between a controlled component and an uncontrolled component in React.
+
+
+
+1.What is React?
+2.What is the difference between Element and Component?
+3.What is the difference between state and props?
+4.What is "key" prop and what is the benefit of using it in arrays of elements?
+5.What is Virtual DOM?
+6.How Virtual DOM works?
+7.Life cycle methods in react. Best life cycle method for making API calls?
+8.Difference between class and functional component.
+9.Hooks. Give some example of hooks.
+10.Change the value.
+11.Disable a button
+12.What are Pure Components?
+13.Why should we not update the state directly?
+14.What is context?
+15.Controlled and uncontrolled component.
+16.What is fragment.
+
+
+
+Create a project with showcasing multiple concepts
+React Components - Answered / Correct
+State Managements- Answered / Correct
+Hooks- Answered / Correct
+Use State- Answered / Correct
+Use Effect- Answered / Correct
+HTML Forms- Answered / Correct
+ES6 functions- Answered / Correct
+arrow functions- Answered / Correct
+JS concepts- Answered / Correct
+
+
+
+
+
+Data that comes from an external server that must be integrated with our UI state.
+What happens when there is a network error? 
+Do I really need to hit my server every time my user visits the home page 
+if the data hasn’t changed?
+URL state	React Router ,useHistory or useLocation,useParams
+information we need about our location, history, and pathname.
+Data that exists on our URLs, including the pathname and query parameters.
+
+
+React componenets
+Components are independent and reusable bits of code.
+
+Four Kinds of React State
+Local state	useState,useReducer
+Global state	Context API,Redux 
+manage state across multiple components,
+Server state	useSWR
+
+
+
+Three phases
+Mounting, Updating, and Unmounting.
+
+Mounting
+constructor(),getDerivedStateFromProps(),render(),componentDidMount()
+
+Updating
+getDerivedStateFromProps(),shouldComponentUpdate(),render(),
+getSnapshotBeforeUpdate(),componentDidUpdate()
+
+Unmounting
+componentWillUnmount()
+
+
+Hooks
+Hooks allow function components to have access to state and other 
+React features without writing class
+Hooks can only be called inside React function components.
+Hooks can only be called at the top level of a component.
+Hooks cannot be conditional
+
+useState
+useState Hook allows us to track state in a function component
+useState accepts an initial state and returns two values:
+The current state.
+A function that updates the state.
+
+
+
+useEffect
+useEffect lets us perform side effects in function components
+It runs once our component mounts.The Effect Hook allows us to perform side 
+effects (an action) in the function components.Effects Hooks are equivalent to 
+componentDidMount(), componentDidUpdate(), and componentWillUnmount() 
+Two types of side-effects:
+Effects Without Cleanup
+Effects With Cleanup,React performs the cleanup of memory when the 
+component unmounts.Effects run for every render method and not just once. 
+Therefore, React also cleans up effects from the previous render 
+before running the effects next time.
+
+useContext
+Context provides a way to pass data or state through the component tree 
+without having to pass props down manually through each nested component. 
+It is designed to share data that can be considered as global data for a 
+tree of React components.
+const authContext = useContext(initialValue);
+The useContext accepts the value provided by React.createContext and 
+then re-render the component whenever its value changes
+
+Context API/ Redux
+The main purpose of Redux is to have a central repository of all 
+the states in the app
+
+import React from 'react';
+ 
+// Creating the context object and passing the default values.
+const authContext = React.createContext({status:null,login:()=>{}});
+ 
+export default authContext;
+
+
+import React, { useState } from "react";
+import Auth from "./Auth";
+import AuthContext from "./auth-context";
+ 
+const App = () => {
+  //using the state to dynamicallly pass the values to the context
+ 
+  const [authstatus, setauthstatus] = useState(false);
+  const login = () => {
+    setauthstatus(true);
+  };
+  return (
+    <>
+      <AuthContext.Provider value={{ status: authstatus, login: login }}>
+        <Auth />
+      </AuthContext.Provider>
+    </>
+  );
+};
+export default App;
+
+
+import React, { useContext } from "react";
+import AuthContext from "./auth-context";
+ 
+const Auth = () => {
+  // Now all the data stored in the context can
+  // be accessed with the auth variable
+  const auth = useContext(AuthContext);
+  console.log(auth.status);
+  return (
+    <div>
+      <h1>Are you authenticated?</h1>
+      {auth.status }
+	<p>Yes you are</p>
+    </div>
+   )
+}
+
+
+To do this without Context, we will need to pass the state as "props" 
+through each nested component. This is called "prop drilling".
+React developers often encounter scenarios where they must 
+pass data/state from a top-level component to a deeply nested component. 
+Prop drilling refers to transporting this data/state as props to the intended destination through intermediate components.
+
+
+useMemo allows us to 'memoize', or remember the result of expensive calculations 
+const ans=useMemo(() => getLetterCount(word), [word])
+
+useRef
+allow us to create a reference to a given element / component when the component mounts
+
+useReducer
+Reducers are simple, predictable (pure) functions that take a previous state object 
+and an action object and return a new state object
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "LOGIN":
+      return { username: action.payload.username, isAuth: true };
+    case "SIGNOUT":
+      // could also spread in initialState here
+      return { username: "", isAuth: false };
+    default:
+      return state;
+  }
+}
+
+function App(){
+const [state, dispatch] = useReducer(reducer, initialState);
+
+  function handleLogin() {
+    dispatch({ type: "LOGIN", payload: { username: "Ted" } });
+  }
+
+  function handleSignout() {
+    dispatch({ type: "SIGNOUT" });
+  }
+
+  return (
+    <>
+      Current user: {state.username}, isAuthenticated: {state.isAuth}
+      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleSignout}>Signout</button>
+    </>
+  );
+}
+
+
+What is React
+React is a JavaScript library, not a framework.
+
+featues
+JSX
+components	create reusable behavior
+React takes care of updating our UI when our data changes, 
+without the need to update the DOM manually ourselves
+
+
+pass data to React components
+Props
+Context API
+
+
+React Fragments
+React that let you write group children elements or components without 
+creating an actual node in the DOM.
+
+
+useCallback is to prevent functions that are declared within the body of function 
+components from being recreated on every render.
+useMemo, on the other hand, memoizes an expensive operation that we give it.
+
+
+Higher order Component
+higher-order component is a function that takes a component and returns a new component.
+
+
+fetch and axios
+  const fetchData = () => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setUsers(data)
+      })
+  }
+
+  const fetchData = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users")
+    const data = await response.json()
+    setUsers(data)
+  }
+
+
+  const fetchData = () => {
+    axios.get("https://jsonplaceholder.typicode.com/users").then(response => {
+      setUsers(response.data)
+    })
+  }
+
+    const postings = async () => {
+        try{
+            const res = await axios.get(url)
+            setPosts(res.data.data)
+        } catch (error) {
+            console.log('error')
+        }
+    }
+
+    const fetchData = async () => {
+      const result = await axios(
+        'https://hn.algolia.com/api/v1/search?query=redux',
+      );
+ 
+      setData(result.data);
+    };
+
+
+HOC
+https://www.codingdeft.com/posts/react-fetch-data-api/
+
+
+ROUTERS
+Memory Router
+Memory router keeps the URL changes in memory not in the user browsers. 
+it does not read or write to the address bar so the user can not use the 
+browser’s back button as well as the forward button
+
+Browser Router
+It routes as a normal URL in the browser and assumes that the server is handling 
+all the request URL
+
+Hash Router
+Hash router uses client-side hash routing. 
+It uses the hash portion of the URL (i.e. window.location.hash) to keep your UI 
+in sync with the URLWhenever, there is a new route get rendered, it updated 
+the browser URL with hash routes.
+
+
+Pure Component
+Pure Component, there is no need for shouldComponentUpdate() Lifecycle Method. 
+ReactJS Pure Component Class compares current state and props with new props 
+and states to decide whether the React component should re-render itself or  Not.
+Pure components
+Its return value is only determined by its input values
+Its return value is always the same for the same input values
+If you want React to treat a functional component as a pure component, 
+you’ll have to convert the functional component to a class component 
+that extends React.PureComponent
+
+
+React.memo()
+
+React.PureComponent for class components and React.
+memo() for function components.
+The PureComponent and memo() use the default implementation of, 
+shouldComponentUpdate() with a shallow prop and state comparison. 
+So, a pure component is a component that only re-renders if props/state 
+is different from the previous props and state.
+
+
+
+React memo
+export default memo(Todos);
+Now the Todos component only re-renders when the todos that are passed 
+to it through props are updated.
+
+
+HOC:Components take one or more components as arguments, and return a new 
+upgraded component.
+We don’t modify or mutate components. We create new ones.
+A HOC is used to compose components for code reuse.
+A HOC is a pure function. It has no side effects, returning only a new component.
+
+import React from 'react';
+function WithLoading(Component) {
+  return function WihLoadingComponent({ isLoading, ...props }) {
+    if (!isLoading) return <Component {...props} />;
+    return <p>Hold on, fetching data might take some time.</p>;
+  };
+}
+export default WithLoading;
+
+import React from 'react';
+import List from './components/List.js';
+import WithLoading from './components/withLoading.js';
+const ListWithLoading = WithLoading(List);
+
+const App=()=>{
+
+  render() {
+    return (
+      <ListWithLoading
+        isLoading={this.state.loading}
+        repos={this.state.repos}
+      />
+    );
+  }
+}
+
+export default App;
+
+
+
+REACT COMPONENT BASED
+function Dialog(props) {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        {props.title}
+      </h1>
+      <p className="Dialog-message">
+        {props.message}
+      </p>
+      {props.children}
+    </FancyBorder>
+  );
+}
+function CustomTextInput(props) {
+  return (
+    <div>
+      <input ref={props.inputRef} />
+    </div>
+  );
+}
+
+class LoginControl extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);		//bind in IMPORTANT
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {isLoggedIn: false};
+    this.handleChange = this.handleChange.bind(this);
+    this.textInput = React.createRef();
+    this.inputElement = React.createRef();
+  }
+
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});			//setState is IMPORTANT, how {} is USED is IMPORTANT
+  }
+
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
+  }
+	
+   handleChange(e) {
+    this.props.onTemperatureChange(e.target.value);
+  }
+
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+	
+    //ADDING EXTRA variable in STATE
+    this.setState({
+      [name]: value
+    });
+  }
+
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    let button;
+    if (isLoggedIn) {
+      button = <LogoutButton onClick={this.handleLogoutClick} />;
+    } else {
+      button = <LoginButton onClick={this.handleLoginClick} />;
+    }
+
+    return (
+      <div>
+        <Greeting isLoggedIn={isLoggedIn} />
+        {button}
+
+      <Dialog title="Mars Exploration Program"
+              message="How should we refer to you?">
+        <input value={this.state.login}
+               onChange={this.handleChange} />
+        <button onClick={this.handleSignUp}>
+          Sign Me Up!
+        </button>
+      </Dialog>
+
+      <input
+        type="text"
+        ref={this.textInput}
+      />
+	<CustomTextInput inputRef={this.inputElement} />
+      </div>
+    );
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<LoginControl />);
+
+
+
+
+
+Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, 
+log those errors, and display a fallback UI instead of the component tree that crashed. 
+Error boundaries do not catch errors for:
+Event handlers (learn more)
+Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks)
+Server side rendering
+Use static getDerivedStateFromError() to render a fallback UI after an error has been thrown. 
+Use componentDidCatch() to log error information.
+
+If you need to catch an error inside an event handler, use the regular JavaScript try / catch statement:
+
+
+React.PureComponent. It is equivalent to implementing shouldComponentUpdate() with a shallow comparison of current 
+and previous props and state. React.pureComponent will create problem during handling of complex datastructure such as array.
+
+  handleClick() {
+    // This section is bad style and causes a bug
+    const words = this.state.words;
+    words.push('marklar');
+    this.setState({words: words});
+  }
+
+better so;ution
+handleClick() {
+  this.setState(state => ({
+    words: [...state.words, 'marklar'],
+  }));
+};
+
+StrictMode currently helps with:
+
+Identifying components with unsafe lifecycles
+Warning about legacy string ref API usage
+Warning about deprecated findDOMNode usage
+Detecting unexpected side effects
+Detecting legacy context API
+Ensuring reusable state
+
+
+shouldComponentUpdate() is invoked before rendering when new props or state are being received.
+
+if shouldComponentUpdate() returns false, then UNSAFE_componentWillUpdate(), render(), and componentDidUpdate()
+
+getDerivedStateFromProps is invoked right before calling the render method
+
+If you need to perform a side effect use componentDidUpdate
+
+getSnapshotBeforeUpdate() is invoked right before the most recently rendered output is committed to e.g. the DOM.
+Any value returned by this lifecycle method will be passed as a third parameter to componentDidUpdate()
+
+getSnapshotBeforeUpdate(prevProps, prevState) { }
+
+componentDidUpdate(prevProps, prevState, snapshot) { }
+
+A class component becomes an error boundary, if we use static getDerivedStateFromError() or componentDidCatch()
+Updating state from these lifecycles lets you capture an unhandled JavaScript error in the below tree and display a 
+fallback UI.
+getDerivedStateFromError() is called during the “render” phase and 
+componentDidCatch() is called during the “commit” phase, so side-effects are permitted.
+
+static getDerivedStateFromError(error) {}
+componentDidCatch(error, info) {}
+
+
+setState() enqueues changes to the component state and tells React that this component and its children need to 
+be re-rendered with the updated state. 
+
+setState() will always lead to a re-render unless shouldComponentUpdate() returns false.
+
+
+
+useEffect, adds the ability to perform side effects from a function component. It serves the same purpose as
+componentDidMount, componentDidUpdate, and componentWillUnmount
+
+
+
+function FriendListItem(props) {
+  const isOnline = useFriendStatus(props.friend.id);
+
+  return (
+    <li style={{ color: isOnline ? 'green' : 'black' }}>
+      {props.friend.name}
+    </li>
+  );
+}
+
+
+If your effect returns a function, React will run it when it is time to clean up.
+React performs the cleanup when the component unmounts. 
+
+React will apply every effect used by the component, in the order they were specified.
+
+in older version i.e class component
+componentDidMount() {}
+componentDidUpdate(prevProps) {}
+componentWillUnmount() {}
+
+same effect can be done using useEffect
+  useEffect(() => {
+    // ...
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+
+
+You can tell React to skip applying an effect if certain values haven’t changed between re-renders. 
+To do so, pass an array as an optional second argument to useEffect.
+
+
+If you want to run an effect and clean it up only once (on mount and unmount), 
+you can pass an empty array ([]) as a second argument.
+
+
+Ethereum, Hyperledger Fabric, Solana, and layer 2 solutions like Matic, BSC
+web3,solidity
+
+
+const initialState = {count: 0};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}
+
+
+useCallback  Returns a memoized callback.
+
+useCallback(fn, deps) is equivalent to useMemo(() => fn, deps)
+useCallback will return a memoized version of the callback that only changes if one of the dependencies has changed.
+prevent unnecessary renders (e.g. shouldComponentUpdate).
+const memoizedCallback = useCallback(  () => {    doSomething(a, b);  },  [a, b]);
+
+
+useMemo
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+useMemo(() => {
+  // execute componentWillMount logic
+]}, []);
+
+
+Returns a memoized value.
+useMemo will only recompute the memoized value when one of the dependencies has changed. 
+This optimization helps to avoid expensive calculations on every render.
+function passed to useMemo runs during rendering.
+
+
+useRef
+const refContainer = useRef(initialValue);
+
+useRef returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). 
+The returned object will persist for the full lifetime of the component.
+useRef will give you the same ref object on every render.
+
+function TextInputWithFocusButton() {
+  const inputEl = useRef(null);
+  const onButtonClick = () => {
+    // `current` points to the mounted text input element
+    inputEl.current.focus();
+  };
+  return (
+    <>
+      <input ref={inputEl} type="text" />
+      <button onClick={onButtonClick}>Focus the input</button>
+    </>
+  );
+}
+
+
+useLayoutEffect
+The signature is identical to useEffect, but it fires synchronously after all DOM mutations
+useLayoutEffect fires in the same phase as componentDidMount and componentDidUpdate. 
+
+
+
+hooks and axios
+
+// mycomponent.js
+import React, { useEffect, useState} from 'react';
+import axios from 'axios';
+
+const MyComponent = () => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([])
+  const [data, setData2] = useState([])
+  const [data, setData3] = useState([])
+  const [data, setData4] = useState([])
+  const [data, setData5] = useState([])
+  const [data, setData6] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () =>{
+      setLoading(true);
+      try {
+        const {data: response} = await axios.get('/stuff/to/fetch');
+        setData(response);
+
+    	const result = await axios(
+      	'https://hn.algolia.com/api/v1/search?query=redux',
+    	);
+    	setData2(result.data);
+
+    	const result = await axios(
+      	'https://hn.algolia.com/api/v1/search?query=redux',
+    	).then((response)=>{setData3(response.data)})
+
+    	const result = await axios(
+      	'https://hn.algolia.com/api/v1/search?query=redux',
+    	).then(({data})=>{setData4(data)})
+
+    	const data = await axios(
+      	'https://hn.algolia.com/api/v1/search?query=redux',
+    	).then(async (response)=>{return response})'
+    	setData5(data)
+
+    	// get the data from the api
+    	const response = await fetch('https://yourapi.com');
+    	// convert the data to json
+    	const data = await response.json();
+    	// set state with the result
+    	setData6(data);
+
+      } catch (error) {
+        console.error(error.message);
+      }
+      setLoading(false);
+    }
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+    {loading && <div>Loading</div>}
+    {!loading && (
+      <div>
+        <h2>Doing stuff with data</h2>
+        {data.map(item => (<span>{item.name}</span>))}
+      </div>
+    )}
+    </div>
+  )
+}
+
+
+useEffect(() => {
+  // declare the async data fetching function
+  const fetchData = async () => {
+    // get the data from the api
+    const data = await fetch(`https://yourapi.com?param=${param}`);
+    // convert the data to json
+    const json = await response.json();
+
+    // set state with the result
+    setData(json);
+  }
+
+  // call the function
+  fetchData()
+    // make sure to catch any error
+    .catch(console.error);;
+}, [param])
+
+
+
+export default MyComponent;
+
+CUSTOM HOOKS
+
+import React, { Fragment, useState, useEffect } from 'react';
+import axios from 'axios';
+
+const useDataApi = (initialUrl, initialData) => {
+  const [data, setData] = useState(initialData);
+  const [url, setUrl] = useState(initialUrl);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsError(false);
+      setIsLoading(true);
+
+      try {
+        const result = await axios(url);
+
+        setData(result.data);
+      } catch (error) {
+        setIsError(true);
+      }
+
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, [url]);
+
+  return [{ data, isLoading, isError }, setUrl];
+};
+
+function App() {
+  const [query, setQuery] = useState('redux');
+  const [{ data, isLoading, isError }, doFetch] = useDataApi(
+    'https://hn.algolia.com/api/v1/search?query=redux',
+    { hits: [] },
+  );
+
+  return (
+    <Fragment>
+      <form
+        onSubmit={event => {
+          doFetch(
+            `http://hn.algolia.com/api/v1/search?query=${query}`,
+          );
+
+          event.preventDefault();
+        }}
+      >
+        <input
+          type="text"
+          value={query}
+          onChange={event => setQuery(event.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      {isError && <div>Something went wrong ...</div>}
+
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        <ul>
+          {data.hits.map(item => (
+            <li key={item.objectID}>
+              <a href={item.url}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </Fragment>
+  );
+}
+
+export default App;
+
+
+
+
+useCallback is the same as useMemo except that it remembers the function itself rather than its return value. 
+This means a useCallback function does not run immediately but can be run later (or not run at all), 
+while useMemo runs its function immediately and just saves its return value for later use.
+
+
+
+
+
+import { memo } from "react";
+
+const Todos = ({ todos }) => {
+  console.log("child render");
+  return (
+    <>
+      <h2>My Todos</h2>
+      {todos.map((todo, index) => {
+        return <p key={index}>{todo}</p>;
+      })}
+      <button onClick={addTodo}>Add Todo</button>
+    </>
+  );
+};
+
+export default memo(Todos);
+
+
+NOW THE FUNCTION GET RECREATED 
+import { memo } from "react";
+
+const Todos = ({ todos, addTodo }) => {
+  console.log("child render");
+  return (
+    <>
+      <h2>My Todos</h2>
+      {todos.map((todo, index) => {
+        return <p key={index}>{todo}</p>;
+      })}
+      <button onClick={addTodo}>Add Todo</button>
+    </>
+  );
+};
+
+export default memo(Todos);
+
+NOW THIS IS BUG BECAUSE EVERYTIME THE PARENT IS RERENDER THE FUNCTION addTodo IS RECREATED
+
+import { useState, useCallback } from "react";
+import ReactDOM from "react-dom/client";
+import Todos from "./Todos";
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  };
+
+  const addTodo = () => {
+    setTodos((t) => [...t, "New Todo"]);
+  };
+
+  NOW USE USECALLBACK TO AVOID RERENDER
+
+  const addTodo = useCallback(() => {
+    setTodos((t) => [...t, "New Todo"]);
+  }, [todos]);
+
+  return (
+    <>
+      <Todos todos={todos} addTodo={addTodo} />
+      <hr />
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+      </div>
+    </>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+  const addTodo = () => {
+    setTodos((t) => [...t, "New Todo"]);
+  };
+
+
+  const addTodo = useCallback(() => {
+    setTodos((t) => [...t, "New Todo"]);
+  }, [todos]);
+
+
+
+
+
+
+
+
+
