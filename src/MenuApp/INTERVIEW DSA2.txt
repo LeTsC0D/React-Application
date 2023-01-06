@@ -5,26 +5,20 @@ k closest number
 
 1. Introduce Yourself
 2.
-The DNA sequence is composed of a series of nucleotides abbreviated as 
-'A', 'C', 'G', and 'T'.
+The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.
 
 For example, "ACGAATTCCG" is a DNA sequence.
 When studying DNA, it is useful to identify repeated sequences within the DNA.
 
-Given a string s that represents a DNA sequence, return all 
-the 10-letter-long sequences (substrings) that occur more than once in a 
-DNA molecule.You may return the answer in any order.
+Given a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.
 
-Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+ Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
 Output: ["AAAAACCCCC","CCCCCAAAAA"]
 
 
 Input: s = "AAAAAAAAAAAAA"
 Output: ["AAAAAAAAAA"]
-3. Given a sorted array arr[] of integers and an integer k, the task is to 
-find the smallest elements in the array which is greater than k. 
-Note that k may or may not be present in the array. if No number 
-is greater than k then print -1
+3. Given a sorted array arr[] of integers and an integer k, the task is to find the smallest elements in the array which is greater than k. Note that k may or may not be present in the array. if No number is greater than k then print -1
 
 Input: arr[] = {2, 3, 5, 6, 6, 9,10}, k = 6 
 Output: 9
@@ -42,7 +36,7 @@ i)
 what is data structure??
 ii)What's algorithm??
 
-1.whats string?
+1. whats string?
 2.What is Linked List?
 
 3.What is the purpose of a Linked list?
@@ -347,7 +341,6 @@ RETURN NODE WHERE CYCLE EXIST
                 break;
             }
         }
-
         if(start==second){
          start=head;
             if(start!=second){
@@ -365,7 +358,7 @@ RETURN NODE WHERE CYCLE EXIST
 
 
 LONGEST VALID SUBSTRING
-                                                                                      
+
 Input: s = ")()())"
 Output: 4
 
@@ -597,72 +590,6 @@ Explanation: You need to sort [6, 4, 8, 10, 9]
 
         return end - start + 1;
     }
-
-k closes to a specific element in unsorted order 
-    public static void printKclosest(int[] arr, int n,
-                                     int x, int k)
-    {
-        // Make a max heap.
-        PriorityQueue<Pair> pq
-            = new PriorityQueue<>(new Comparator<Pair>() {
-                  public int compare(Pair p1, Pair p2)
-                  {
-                      return p2.getValue().compareTo(
-                          p1.getValue());
-                  }
-              });
- 
-        // Build heap of difference with
-        // first k elements
-        for (int i = 0; i < k; i++) {
-            pq.offer(
-                new Pair(arr[i], Math.abs(arr[i] - x)));
-        }
- 
-        // Now process remaining elements.
-        for (int i = k; i < n; i++) {
-            int diff = Math.abs(arr[i] - x);
- 
-            // If difference with current
-            // element is more than root,
-            // then ignore it.
-            if (diff > pq.peek().getValue())
-                continue;
- 
-            // Else remove root and insert
-            pq.poll();
-            pq.offer(new Pair(arr[i], diff));
-        }
- 
-        // Print contents of heap.
-        while (!pq.isEmpty()) {
-            System.out.print(pq.poll().getKey() + " ");
-        }
-    }
-
-
-k closes to specific element in sorted order
-
-    public List<Integer> findClosestElements(int[] arr, int k, int x) {
-
-        int start = 0;
-        int end = arr.length - 1;
-        while (end - start >= k) {
-            if (Math.abs(arr[start] - x) > Math.abs(arr[end] - x)) {
-                start++;
-            } else {
-                end--;
-            }
-        }
-
-        List<Integer> result = new ArrayList<>(k);
-        for (int i = start; i <= end; i++) {
-            result.add(arr[i]);
-        }
-        return result;
-    }
-
-
 
 
 Remove Zero Sum Consecutive Nodes from Linked List 

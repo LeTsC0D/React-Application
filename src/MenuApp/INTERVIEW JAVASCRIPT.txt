@@ -30,12 +30,6 @@ URL: https://jsonplaceholder.typicode.com/users Method: GET
 3. Implement a simple search filter using array filter method wherein you will accept the search term from the user in an input tag and display the most relevant products in the console
 
 
-JavaScript (JS) interpreted, or just-in-time compiled programming language.
-It is also a scripting language for Web pages.
-
-The DOM represents a document with a logical tree.
-Each branch of the tree ends in a node, and each node contains objects.
-
 
 Problem 2: Write a JS function which takes a JSON object and prints all the values present in the object. Example: for JSON {a: {b:1}, c:2, d:3} print 1 2 3. Remember this should be generic function
 
@@ -46,259 +40,9 @@ const printJson = (jsonObj) => {
 }
 
 
-var arr=["sdjf","sdjfd","sdjkfhsdlf"]
-ans=[]
-arr.forEach((word)=>{
-ans=[...ans,...word]
-})
-console.log(ans)  //["s", "d", "j", "f", "s", "d", "j", "f", "d", "s", "d", "j", "k", "f", "h", "s", "d", "l", "f"]
-
-
-var arr=["hello", "how","are","you"]
-var ans=new Map()
-function findoccurance(array){
-	array.forEach((word)=>{
-  		var wordsplit=word.split("")
-      wordsplit.forEach((char)=>{
-      	if(ans.has(char)){
-        ans.set(char,ans.get(char)+1)
-        }else{
-        ans.set(char,1)
-        }
-      })
-  })
-}
-findoccurance(arr)
-console.log(ans)
-
-0: {"h" => 2}1: {"e" => 2}2: {"l" => 2}3: {"o" => 3}4: {"w" => 1}5: {"a" => 1}
-6: {"r" => 1}7: {"y" => 1}8: {"u" => 1}
-
-Higher-order functions in JavaScript take some functions as arguments and 
-return another function.
-
-
-javascript is A script or scripting language is a computer language that 
-does not need the compilation step and is rather interpreted one by one at runtime.
-Server-Side Scripting Languages		Python, PHP, and Perl
-Client-Side Scripting Languages		JavaScript
-
-V8 used to have two compilers, 
-full-codegen:compiler that produced simple and relatively slow machine code.
-Crankshaft:optimizing compiler that produced highly-optimized code.
-A JavaScript engine interpreter,which converts JavaScript to bytecode
-For garbage collection, V8 uses a traditional generational approach of 
-mark-and-sweep to clean the old generation. V8 uses incremental marking: 
-instead of walking the whole heap, trying to mark every possible object, 
-it only walk part of the heap, then resumes normal execution.
-
-
-A Pure Function is a function (a block of code) that always returns the 
-same result if the same arguments are passed.
-In pure function , the output is independent on an external variable.
-
-
-
-A WeakMap is a collection of key/value pairs whose keys must be objects
-an object's presence as a key in a WeakMap does not prevent the object from 
-being garbage collected,as long as they aren't strongly referred to elsewhere.
-weakmap does not support keys(), values(), entries()
-it has only 
-weakMap.get(key)
-weakMap.set(key, value)
-weakMap.delete(key)
-weakMap.has(key)
-
-
-Weakset
-It is analogous to Set.we can only add objects to WeakSet
-it supports add, has and delete, but not size, keys()
-
-
-useStrict
-"use strict”
-The first method of invoking strict mode is at the file level.  
-By adding the directive at the beginning of a file, strict mode is enabled in a 
-global context. 
-The second way to enable strict mode is at the function level.  
-To enable this level of strict mode, place the “use strict”; directive at 
-the beginning of the function body.
-Strict mode changes previously accepted “bad syntax” into real errors.
-In strict mode,a non-existing property will throw an error.
-
-ES5 function constructors are also used to create objects
-ES6 class constructors work quite the same as class constructors in other 
-object-oriented languages.wecan use extends,super,static
-
-class in ES6
-Class fields are public by default, but private class members can be created 
-by using a hash # prefix.
-
-
-There are multiple ways to make an object immutable, such as using the 
-“const” keyword, shallow freeze, and deep freeze.
-Object.freeze() method restricts a user from adding, deleting, or 
-modifying the object.
-if the object contains some nested objects or arrays, then in such situations, 
-the nested objects can still be updated,then we need deep freeze
-const deepF = (empDetails) => {
-    Object.keys(empDetails).forEach((objProp) => {
-      if (
-        typeof empDetails[objProp] === "object" &&
-        !Object.isFrozen(empDetails[objProp])
-      )
-        deepF(empDetails[objProp]);
-    });
-    return Object.freeze(empDetails);
-  };  
-deepF(empDetails);
-
-
-converts a string to a number when we use -, *, /
-// Number is converted into String
-console.log('5' + 3); // '53'
-// String is converted into Number for calculation
-console.log('5' - 3); // 2
-console.log('5' * 3); // 15
-
-
-loose equality operator == does both comparison and conversion if needed.
-One operator that does not trigger implicit type coercion is ===, 
-which is a strict equality operator
-
-manual type conversion are
-manual conversions we can use Boolean(), String(), Number(), parseInt()
-
-var str="ajskhjsdf sdhfjkd sdfjk"
-console.log(str)
-var ans=str.split("").reverse().join("")
-console.log(ans)  //"kjfds dkjfhds fdsjhksja"
-
-console.log(str.split(/\s/).reverse().join(" ")); //"sdfjk sdhfjkd ajskhjsdf"
-
-str2="nsdjf f g ndfjdjsf f  adfk"
-console.log(str2.split(/\s+/).reverse().join(" ")); //"sdfjk sdhfjkd ajskhjsdf"
-
-
-
-Event loop
-function call form a stack of frame
-heaps to store the object
-Queue  task queue(set time out) and micro task queue(promise)
-Web APIs which are provided by browsers, which handles request like the DOM, 
-AJAX, setTimeout and much more.
-
-Event loop
-it finds out that setTimeout() doesn’t belong to JS so it pops out the function
- and puts in the WebAPI to get executed there.
-the WebAPI executes the timeout function and places the code in the callback 
-queue. The eventloop checks if the call stack is empty or not or whether there 
-is any statement in the callback queue that needs to be executed all the time. 
-As soon as the event loop checks that the call stack is empty and there is 
-something in the callback queue that needs to be executed, it places the statement 
-in the call stack and the call stack executes the statement and prints B in 
-the console of the browser.
-Each entry in the Call Stack is called a Stack Frame.
-
-
-closures
-In other words, a closure gives you access to an outer function's scope from 
-an inner function
-var are either function-scoped or global-scoped,
-let and const declarations, which, among other things like temporal dead zones, 
-allow you to create block-scoped variables
-The shared lexical environment is created in the body of an anonymous function, 
-which is executed as soon as it has been defined (also known as an IIFE).
-
-bind
-The bind() method creates a new function that, when called, has its this 
-keyword set to the provided value
-
-The call() method calls the function with a given this value and arguments 
-provided
-
-The apply() method calls the specified function with a given this value, 
-and arguments provided as an array 
-
-promise
-A Promise is an object representing the eventual completion or failure of an 
-asynchronous operation.
-then() function returns a new promise.
-n the old days, doing several asynchronous operations in a row would lead to 
-the classic callback pyramid of doom:
-
-doSomething(function (result) {
-  doSomethingElse(result, function (newResult) {
-    doThirdThing(newResult, function (finalResult) {
-      console.log(`Got the final result: ${finalResult}`);
-    }, failureCallback);
-  }, failureCallback);
-}, failureCallback);
-
-With modern functions, we attach our callbacks to the returned promises instead, 
-forming a promise chain:
-
-doSomething()
-  .then(function (result) {
-    return doSomethingElse(result);
-  })
-  .then(function (newResult) {
-    return doThirdThing(newResult);
-  })
-  .then(function (finalResult) {
-    console.log(`Got the final result: ${finalResult}`);
-  })
-  .catch(failureCallback);
-
-
-There are two objects for data storage on the client provided by HTML web storage:
-Local storage object - Stores data with no expiration date,key/value pairs,
-data remains in the browser until and unless the browser's memory is cleared
-setItem(),getItem(key),clear(),removeItem(key),storage limit is about 10MB,
-data is plain text; hence it is not secure by design
-
-
-
-Session storage object - Stores data for one session 
-(data is lost when the browser tab is closed), session storage stores up to 5 MB
-sessionstorage.setItem() 
-sessionstorage.getItem()
-
-cookies
-Cookies are sent with requests to the server and are sent to the client on 
-response; hence the cookies data is exchanged with the server on every request. 
-session cookies and persistent cookies.small storage capacity of 4 kilobytes
-document.cookie = "username=Max Brown; expires=Wed, 05 Aug 2020 23:00:00 UTC; path=/"
-Session Cookies
-It do not specify the attributes such as Expires or Max-Age and hence are 
-removed when the browser is closed.
-Persistent Cookies
-Persistent cookies specify the Expires or Max-Age attributes. 
-These cookies do not expire on closing the browser but will expire at a specific 
-date (Expires) or length of time (Max-Age).
-
-Higher order function
-Higher Orders Functions are functions that perform operations on other functions.
-const numbers = [1, 2, 3, 4, 5];
-
-numbers.forEach((number) => console.log(number + 1));'
-const numbers = [1, 2, 3, 4, 5];
-
-const oddArray = numbers.filter((number) => number % 2 !== 0);
-console.log(oddArray);
-const numbers = [1, 2, 3, 4, 5];
-
-const newArray = numbers.map((number) => number + 1);
-console.log(numbers);
-
-const numbers = [1, 2, 3, 4, 5];
-
-const totalValue = numbers.reduce((sum, number) => sum + number);
-console.log(totalValue);
-
-There are 7 types of primitive data types.All primitives are immutable
+There are 7 types of primitive data types.
 string
-number 64 bit floating point format
+number
 boolean
 null
 undefined
@@ -341,7 +85,6 @@ console.log(+""); // 0
 var ans=[1,1,2,4,5,4,3,5,3]
 console.log([...new Set(ans)]); // [1, 2, 4, 5, 3]
 
-
 Babel is a JavaScript transpiler to convert ECMAScript 2015+ code 
 into a backwards compatible version of JavaScript in current and older 
 browsers or environments.
@@ -377,8 +120,8 @@ console.log(10 - "10");		// 0
 
 async function processArray(array) {
   array.forEach(item => {
-    await delayedLog(item);  
-    //ERROR await inside a synchronous function then it throws a syntax error.
+    await delayedLog(item);  //ERROR await inside a synchronous function then it throws a syntax error.
+
   })
 }
 
@@ -390,53 +133,15 @@ async function process(array) {
 }
 
 
-NaN    representing Not-A-Number.'
-
-JavaScript Hoisting refers to the process whereby the interpreter appears to move 
-the declaration of functions, variables or classes to the top of their scope, 
-prior to execution of the code.
-Hoisting allows functions to be safely used in code before they are declared.
-
-variable hosting
-The default initialization of the var is undefined.
-
-Variables declared with let and const are also hoisted but, unlike var, are not 
-initialized with a default value. An exception will be thrown if a variable 
-declared with let or const is read before it is initialized.
-
-
-Generator
-function* generator() {
-  yield 1;
-  yield 2;
-  yield 3;
-}
-
-const gen = generator(); // "Generator { }"
-
-console.log(gen.next().value); // 1
-console.log(gen.next().value); // 2
-console.log(gen.next().value); // 3
-
-
-JavaScript is a single-thread language because of only one call stack.
-its really easy to implement as we don’t have to deal with the complicated 
-scenarios that arise in the multi-threaded environment like deadlock.
-
-
-
 var set = new Set();
-set.add("+0").add("-0").add(NaN).add(undefined).add(NaN); 
-//: Set(4) {"+0", "-0", NaN, undefined}
+set.add("+0").add("-0").add(NaN).add(undefined).add(NaN); //: Set(4) {"+0", "-0", NaN, undefined}
 console.log(set);
-
-
-Unlike var,let variable can be updated but cannot be re-declared within its scope
-const variable cannot be updated and cannot be re-declared within its scope
 
 
 The typeof operator on any primitive returns a string value.
 console.log(typeof typeof typeof true); //string
+
+
 
 var array=[1,2]
 var elements=[1,2,3]
@@ -465,6 +170,7 @@ class Square {
   }
 }
 
+
 const arr = [1, 2, 3];
 const max = Math.max(...arr);
 console.log(max)	//3
@@ -475,7 +181,7 @@ function abc(){
 this.name="sdfd"
 console.log(this)
 }
-abc();				//windows object
+abc();		//windows object
 var c=new abc();		//abc object
 
 
@@ -489,6 +195,7 @@ var retrieve=module.getx;
 console.log(retrieve())		//9
 var newcopy=retrieve.bind(module)
 console.log(newcopy())		//81
+
 
 If this arg is passed to call, bind, or apply on invocation of an arrow function it will be ignored.
 Inside arrow function "this" retains the value of the enclosing lexical context's this
@@ -504,8 +211,8 @@ let company = { // the same object, compressed for brevity
   }
 };
 
-
 IIFE
+
 function cachingDecorator() {
   let cache = new Map();
 
@@ -513,7 +220,7 @@ function cachingDecorator() {
     if (cache.has(x)) {    // if there's such key in cache
       return cache.get(x); // read the result from it
     }
-    cache.set(x, "a");     // and cache (remember) the result
+    cache.set(x, "a");  // and cache (remember) the result
     alert(JSON.stringify(Array.from(cache.entries())))
   };
 }
@@ -783,6 +490,8 @@ return f
 abcde()(1)(2)
 
 
+
+
 let user = {
   firstName: "John",
   sayHi() {
@@ -867,7 +576,7 @@ console.log(res)		//"E3y d7r l3s to mix k8s and j8t "
 
 
 
- const input = [
+  const input = [
     ['a', 'b', 'c'],
     ['c', 'd', 'f'],
     ['d', 'f', 'g'],
@@ -875,15 +584,17 @@ console.log(res)		//"E3y d7r l3s to mix k8s and j8t "
  var ans=new Map()
  var count=0
  input.forEach((data)=>data.map((ele)=>{
+ /* console.log(ele) */
  if(!ans.has(ele)){
  ans.set(ele,1);
+ //ans[ele]=1;
  }else{
+ // console.log("yes")
  ans.set(ele,ans.get(ele)+1);
  }
  }))
  console.log(ans)
  
-
  //Alternate 
  var ans2=input.flat().reduce((prev,ele)=>{
  if(prev[ele]){
@@ -932,6 +643,8 @@ rabbit.walk = function() {
 
 rabbit.walk(); // Rabbit! Bounce-bounce!
 animal.walk();  //hi
+
+
 
 
 let animal = {
@@ -1097,18 +810,22 @@ class User {
 let user = new User("John");
 
 class Animal {
+
   constructor(name) {
     this.speed = 0;
     this.name = name;
   }
+
   // ...
 }
 
 class Rabbit extends Animal {
+
   constructor(name, earLength) {
     super(name);
     this.earLength = earLength;
   }
+
   // ...
 }
 
@@ -1116,6 +833,7 @@ class Rabbit extends Animal {
 let rabbit = new Rabbit("White Rabbit", 10);
 alert(rabbit.name); // White Rabbit
 alert(rabbit.earLength); // 10
+
 
 
 set
@@ -1710,7 +1428,6 @@ return s=s+ob+" "}
 );
 console.log(s) */
 
-
 /* var ans= new promise((res,rej)=>{
 if(true){
 return res("resolves")
@@ -1753,7 +1470,9 @@ function sum(a){
 }
 
 
+
 console.log(sum(1)(2)(3)(4)); // log 20
+
 
 
 const add = (function () {
@@ -1834,7 +1553,8 @@ user.sayHi = sayHi;
 
 var abc1= function fun1(a) { return {
             name:"hjkhjkh",              
-	    fun2() { return this.name;		
+	    fun2() { return this.name;
+			
 	    }
           };
 }
@@ -1918,6 +1638,7 @@ function isBigEnough(value) {
   return value >= 10
 }
 
+
 var employee1 = { firstName: "John", lastName: "Rodson" };
 var employee2 = { firstName: "Jimmy", lastName: "Baily" };
 
@@ -1974,6 +1695,8 @@ Object.assign(obj1, { x: 1337 });
 console.log(obj1); // Object { foo: "bar", x: 1337 }
 
 
+
+
 const obj1 = { foo: 'bar', x: 42 };
 const obj2 = { foo: 'baz', y: 13 };
 const merge = (...objects) => ({ ...objects });
@@ -2009,6 +1732,7 @@ fetch('/article/promise-chaining/user.json')
     img.src = githubUser.avatar_url;
     img.className = "promise-avatar-example";
     document.body.append(img);
+
     setTimeout(() => {
       img.remove();
       resolve(githubUser); // (**)
@@ -2145,7 +1869,7 @@ async function foo() {
    return 1
 }
 
-It is similar to but not exactly the same:
+It is similar to:
 
 function foo() {
    return Promise.resolve(1)
@@ -2165,10 +1889,12 @@ async function parallel() {
 
 
 
-polyfills  if function is not present we make our own 
+polyfills  if function is not present we make ou own 
 if (!Promise.allSettled) {
   const rejectHandler = reason => ({ status: 'rejected', reason });
+
   const resolveHandler = value => ({ status: 'fulfilled', value });
+
   Promise.allSettled = function (promises) {
     const convertedPromises = promises.map(p => Promise.resolve(p).then(resolveHandler, rejectHandler));
     return Promise.all(convertedPromises);
@@ -2588,17 +2314,46 @@ event, the attached function will be executed only once in a given time interval
 Scrolling,Mouse move,API calls
 helps in avoiding lots of async call to fetch.
 
-function throttle(callback, delay) {
-    var timeoutHandler = null;
-    return function () {
-        if (timeoutHandler == null) {
-            timeoutHandler = setTimeout(function () {
-                callback();
-                timeoutHandler = null;
-            }, delay);
-        }
+const throttle = (func, delay) => { 
+  let toThrottle = false;
+  return function(...args) { 
+    if(!toThrottle) {
+      toThrottle = true;
+      func.apply(this, args)
+      setTimeout(() => {
+        toThrottle = false
+      }, delay);
     }
+  }; 
+};
+
+Another way 
+
+function throttle(callback, interval) {
+  let enableCall = true;
+
+  return (...args)=> {
+    if (!enableCall) return;
+
+    enableCall = false;
+    callback.apply(this, args);
+    setTimeout(() => enableCall = true, interval);
+  }
 }
+
+const throttle= (fn, delay = 500) => {
+    let timeoutId;
+    return (...args) => {
+        // cancel the previous timer
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        // setup a new timer
+        timeoutId = setTimeout(() => {
+            fn.apply(this, args)
+        }, delay);
+    };
+};
 
 function helloFromThrottle(){
   console.log("Jesus is saying hi!!!")
@@ -2611,14 +2366,24 @@ In the debouncing technique, no matter how many times the user fires the event,
 the attached function will be executed only after the specified time once the 
 user stops firing the event.Typing,Animation
 
-function debounce(callback, delay) {
-    var timeoutHandler = null;
-    return function () {
-        clearTimeout(timeoutHandler);
-        timeoutHandler = setTimeout(function () {
-            callback();
-        }, delay);
-    }
+var  debounceFunction  =  function (func, delay) {
+	// Cancels the setTimeout method execution
+	clearTimeout(timerId)
+
+	// Executes the func after delay time.
+	timerId  =  setTimeout(func, delay)
+}
+
+
+
+Another way 
+
+function debounce(func,wait){
+  let timeout
+  return(...arg) =>{
+    clearTimeout(timeout);
+    timeout= setTimeout(()=>func.apply(this,arg),wait)
+  }
 }
 
 function SayHello(){
@@ -2794,6 +2559,7 @@ let ingredients_list_deepcopy = JSON.parse(JSON.stringify(ingredients_list));
 
 
 /* // [1,1,2,2,2,3,3,3,3]
+
 // [3,3,3,3,2,2,2,1,1]
 var arr=[6,5,5]
 var ans=new Map()
@@ -2805,8 +2571,6 @@ ans.set(data,ans.get(data)+1)
 }
 })
 console.log(ans)
-
-
 var arr2=[]
 for(const key of ans.keys()){
 arr2.push([key,ans.get(key)])
@@ -2814,8 +2578,6 @@ arr2.push([key,ans.get(key)])
 console.log(arr2)
 arr2.sort((a,b)=>b[1]-a[1])
 console.log(arr2)
-
-
 var ans2=[]
 for(var i=0;i<arr2.length;i++){
   for(var j=0;j<arr2[i][1];j++){
@@ -2824,193 +2586,4 @@ for(var i=0;i<arr2.length;i++){
   }
 }
 console.log(ans2) */
-
-
-alert( "I love HTML".replace(/HTML/, "$& and JavaScript") ); // I love HTML and JavaScript
-alert( "We will, we will".replace(/we/i, "I") ); // I will, we will
-alert( "Voila".match(/V[oi]la/) ); // null, no matches  For instance, [eao] means any of the 3 characters: 'a', 'e', or 'o'.
-alert( "Exception 0xAF".match(/x[0-9A-F][0-9A-F]/g) ); // xAF
-[^aeyo] – any character except 'a', 'e', 'y' or 'o'.
-[^0-9] – any character except a digit,
-\d{5} denotes exactly 5 digits, the same as \d\d\d\d\d.
-\d+ looks for numbers  one or more
-\d0* looks for a digit followed by any number of zeroes (may be many or none):
-let regexp = /\.{3,}/g;
-alert( "Hello!... How goes?.....".match(regexp) ); // ..., .....
-For instance, [eao] means any of the 3 characters: 'a', 'e', or 'o'
-
-
- allowed = "ab"
- words = ["ad","bd","aaab","baa","badab"]
- ans=[]
- words.forEach((word)=>{
- var flag=false
-   allowed.split("").forEach(char=>{
-   /*console.log(word,char,word.includes(char))*/
-      if(word.includes(char)){
-      }else{
-      flag=true
-      return
-      }  
-   })
-   console.log(flag)
-   if (flag==false){
-    ans.push(word)
-   }
-   
- })
- console.log(ans)		//["aaab", "baa", "badab"]
- 
- ans2=[]
- words.forEach((word)=>{
- var flag=false
-   word.split("").forEach(char=>{
-   	/*console.log(word,char,word.includes(char))*/
-        if(allowed.includes(char)){
-        }else{
-        flag=true
-        return
-        }  
-      })
-      /*console.log(flag)*/
-       if (flag==false){
-        ans2.push(word)
-       } 
- })
- console.log(ans2)		//["aaab", "baa"]
-
-
-
-
-let regexp = /Java|JavaScript|PHP|C|C\+\+/g;
-let str = "Java, JavaScript, PHP, C, C++";
-alert( str.match(regexp) ); // Java,Java,PHP,C,C
-
-
-Cookies are usually set by a web-server using the response 
-Set-Cookie HTTP-header. Then, the browser automatically adds 
-them to (almost) every request to the same domain using the Cookie HTTP-header.
-
-By default, if a cookie doesn’t have one of these options, 
-it disappears when the browser is closed. Such cookies are called “session cookies”
-
-
-A cookie is called “third-party” if it’s placed by a domain other 
-than the page the user is visiting.
-
-
-local storage and session storage
-setItem(key, value) – store key/value pair.
-getItem(key) – get the value by key.
-removeItem(key) – remove the key with its value.
-clear() – delete everything.
-key(index) – get the key on a given position.
-length – the number of stored items.
-
-Also unlike cookies, the server can’t manipulate storage objects via HTTP headers.
- Everything’s done in JavaScript.
-
-
-The idea is that if we have a lot of elements handled in a similar way, 
-then instead of assigning a handler to each of them – we put a single 
-handler on their common ancestor.
-
-
-When an event happens on an element, it first runs the handlers on it, 
-then on its parent, then all the way up on other ancestors.
-
-bubbling
-When an event happens on an element, it first runs the handlers on it, 
-then on its parent, then all the way up on other ancestors.
-
-A bubbling event goes from the target element straight up. 
-Normally it goes upwards till <html>, and then to document object, 
-and some events even reach window, calling all handlers on the path.
-event.stopPropagation()
-
-
-The standard DOM Events describes 3 phases of event propagation:
-
-Capturing phase – the event goes down to the element.
-Target phase – the event reached the target element.
-Bubbling phase – the event bubbles up from the element.
-
-addEventListener(event, handler) don’t know anything about capturing, 
-they only run on the 2nd and 3rd phases.
-
-There’s a special built-in function method func.call(context, …args) 
-that allows to call a function explicitly setting this.
-
-The result of func.bind(context) is a special function-like “exotic object”, 
-that is callable as function and transparently passes the call to 
-func setting this=context.
-
-
-JavaScript Hoisting refers to the process whereby the interpreter appears 
-to move the declaration of functions, variables or classes to the top of 
-their scope, prior to execution of the code.
-One of the advantages of hoisting is that it lets you use a function before 
-you declare it in your code.
-
-However, JavaScript only hoists declarations, not initializations! This means that 
-initialization doesn't happen until the associated line of code is executed, 
-even if the variable was originally initialized then declared, or declared and 
-initialized in the same line.
-
-Variables declared with let and const are also hoisted but, unlike var, are not 
-initialized with a default value
-
-closure gives you access to an outer function's scope from an inner function. 
-
-JavaScript only had two kinds of scopes: function scope and global scope.
-
-
-{ // TDZ starts at beginning of scope
-  console.log(bar); // undefined
-  console.log(foo); // ReferenceError
-  var bar = 1;
-  let foo = 2; // End of TDZ (for foo)
-}
-
-"Currying is the process of taking a function with multiple arguments and 
-turning it into a sequence of functions each with only a single argument."
-
-special numeric values” which also belong to this data type: 
-Infinity, -Infinity and NaN
-
-
-mathematical operation on NaN returns NaN
-
-
-There are three types of errors:
-(a) Syntax Errors, (b) Runtime Errors, and (c) Logical Errors.
-Syntax errors at interpret time in JavaScript.
-Runtime errors, also called exceptions, occur during execution
-for example trying to call a method that does not exist
-Logical Errors they occur when you make a mistake in the logic
-
-JavaScript implements the try...catch...finally construct as well as the 
-throw operator to handle exceptions.
-  try {
-    alert("Value of variable a is : " + a );
-    //throw( "Divide by zero error." ); 
- }
- catch ( e ) {
-    alert("Error: " + e.description );
- }
- finally {
-    alert("Finally block will always execute!" );
- }
-You can use throw statement to raise your built-in exceptions or your 
-customized exceptions.
-
-The onerror event handler was the first feature to facilitate error handling in JavaScript.
- window.onerror = function () {
-   alert("An error occurred.");
-}
-
-
-
-
-
 

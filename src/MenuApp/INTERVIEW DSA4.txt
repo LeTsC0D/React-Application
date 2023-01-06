@@ -120,9 +120,11 @@ mirror image
         /* Base case : Both empty */
         if (a == null && b == null)
             return true;
+ 
         // If only one is empty
         if (a == null || b == null)
             return false;
+
         return a.data == b.data
                 && areMirror(a.left, b.right)
                 && areMirror(a.right, b.left);
@@ -326,10 +328,13 @@ static void printPathsUtil(Node curr_node, int sum,int sum_so_far,ArrayList<Inte
 {
 	if (curr_node == null)
 		return;
+		
 	// Add the current node's value
 	sum_so_far += curr_node.key;
+
 	// Add the value to path
 	path.add(curr_node.key);
+
 	// Print the required path
 	if (sum_so_far == sum)
 	{
@@ -363,7 +368,7 @@ Flatten a binary tree into linked list
       }
 
 
-Number of path from root to leaf with path sum equals target
+No of path from root to leaf with path sum equals target
 
       public static void findpath(Node node,int sum,int target){
       if(node==null){
@@ -426,8 +431,7 @@ static int kLeaves(Node ptr,int k)
 			// dequeue the front node from the queue
 			Node temp = q.peek();
 			q.poll();
-			//If it is leftmost corner value or rightmost corner value 
-			//then print it
+			//If it is leftmost corner value or rightmost corner value then print it
 			if(i==0 || i==n-1)
 				System.out.print(temp.key + " ");
 			//push the left and right children of the temp node
@@ -435,30 +439,31 @@ static int kLeaves(Node ptr,int k)
 				q.add(temp.left);
 			if (temp.right != null)
 				q.add(temp.right);
-			}
+		}
 		}
 
 	}
 
 
 
-LCA(Least Common Ancestor)
-
+LCA
     public static Node LCA(Node root, int n1, int n2)
     {
         if (root == null)
             return root;
         if (root.value == n1 || root.value == n2)
             return root;
+ 
         Node left = LCA(root.left, n1, n2);
         Node right = LCA(root.right, n1, n2);
+ 
         if (left != null && right != null)
             return root;
         if (left == null && right == null)
             return null;
         if (left != null)
-            return left ;
+            return LCA(root.left, n1, n2);
         else
-            return right ;
+            return LCA(root.right, n1, n2);
     }
 

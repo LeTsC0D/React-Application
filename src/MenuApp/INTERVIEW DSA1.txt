@@ -21,7 +21,7 @@ https://leetcode.com/problems/binary-tree-maximum-path-sum/
 
 [8:06 pm, 10/08/2022] shashank: 1. What is Array
 2. Can we store different data types at a same time
-3. Some of the sorting technique names
+3.  Some of the sorting technique names
 4. Write a code to sort an int array use any of the Sorting technique and then write a code to find an element in it (inside sorted array)
 5. Can we create HashMap with int,int instead of Integer,Integer
 6. What is Difference between Integer and int
@@ -118,10 +118,8 @@ Q. What is an array in Java? Types of arrays in java?
 4) how to create hash function
 5) why we need hashing when we already have a linked list?
 
-1) Given an array of size N containing only 0s, 1s, and 2s. 
-Sort the array in ascending orders.
-2) You are given an unsorted array with both positive and negative elements. 
-You have to find the smallest positive number missing from the array.
+1) Given an array of size N containing only 0s, 1s, and 2s. Sort the array in ascending orders.
+2) You are given an unsorted array with both positive and negative elements. You have to find the smallest positive number missing from the array.
 input {2,3,7,6,8,-1,-10,15} output: 1
 
 
@@ -199,11 +197,10 @@ arr.removeFirst()
 arr.removeLast()
 arr.size()
 
-
 STACK
 Stack<Integer> STACK = new Stack<Integer>();
 stk.clear()
-stk.push()
+stk.push(0)
 stk.peek()
 stack.pop()
 stack.clear();
@@ -418,21 +415,22 @@ for(int i=2;i<n;i++){
 
 USING COMPARATOR 
 
+        HashMap<Integer, Integer> temp = new LinkedHashMap<Integer, Integer>();
         for (Map.Entry<Integer, Integer> aa : list.entrySet()) {
             temp.put(aa.getKey(), aa.getValue());
         }
 
-	hm.put(i,hm.getOrDefault(i,0)+1);
+	//hm.put(i,hm.getOrDefault(i,0)+1);
 
 	/**
         for(Integer k:s.keySet()){       
-           System.out.print(k+" "+s.get(k)+" ");
+                 System.out.print(k+" "+s.get(k)+" ");
         }
 	**/
 
 	/**
-	for( Map.Entry<String, Tab> entry : hash.entrySet()) {
-	   System.out.println(entry.getkey()+" "+entry.getValue());
+	for ( Map.Entry<String, Tab> entry : hash.entrySet()) {
+	System.out.println(entry.getkey()+" "+entry.getValue());
 	}
 	**/
 
@@ -442,15 +440,16 @@ USING COMPARATOR
         }
 	**/
 
-class SortbykeyValue implements Comparator<Entry<Integer, Integer>> {
-    	public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2)
-    	{
-        	return o2.getValue().compareTo(o1.getValue());
-    	}
-}
 
-ArrayList<Map.Entry<Integer,Integer>>list = new ArrayList<Map.Entry<Integer,Integer>>(m.entrySet());
-Collections.sort(list, new SortbykeyValue());
+	class SortbykeyValue implements Comparator<Entry<Integer, Integer>> {
+    		public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2)
+    		{
+        		return o2.getValue().compareTo(o1.getValue());
+    		}
+	}
+
+        ArrayList<Map.Entry<Integer,Integer>>list = new ArrayList<Map.Entry<Integer,Integer>>(m.entrySet());
+        Collections.sort(list, new SortbykeyValue());
 	
 OR
 
@@ -460,20 +459,22 @@ OR
 
         for(Map.Entry<Integer,Integer> a:list){
             for(int j=0;j<a.getValue();j++){
-            	System.out.print(a.getKey()+" ");
+            System.out.print(a.getKey()+" ");
             }            
         }
+
+
 
 			class Sortbyroll implements Comparator<Student> {
 				// Used for sorting in ascending order of
 				// roll number
 				public int compare(Student a, Student b)
 				{
-					return a.rollno - b.rollno;
+				return a.rollno - b.rollno;
 				}
 			}
 
-			Student[] arr
+		Student[] arr
 			= { new Student(111, "bbbb", "london"),
 				new Student(131, "aaaa", "nyc"),
 				new Student(121, "cccc", "jaipur") };
@@ -499,6 +500,7 @@ LENGTH OF LONGEST SUBSTRING UNIQUE CHARACTER
                     if(max<h.size()){
                     	// String result = String.join("",h.toString());
                     	// System.out.println("\n"+result +" "+max);
+                    	// System.out.println();
                     	// s1=new StringBuilder(result);  
                         max=h.size();
                     }
@@ -958,28 +960,6 @@ Find the closest pair from two sorted arrays
         return newString;
     }
 
-
-DNS SEQUENCE (substrings) that occur more than once in a DNA molecule
-        List<String> li =new ArrayList<String>();
-        if(s.length()<10){
-            return li;
-        }
-        else{
-            String temp="";
-            HashMap<String,Integer> mp=new HashMap<String,Integer>();
-            for(int i=0;i<=s.length()-10;i++){
-                temp=s.substring(i,i+10);
-                mp.put(temp,mp.getOrDefault(temp,0)+1);
-            }
-            // System.out.println(mp);
-            for(String t:mp.keySet()){
-                if(mp.get(t)>1){
-                    li.add(t);
-                }
-                
-            }
-            return li;
-        }
 
 repeating character least index from start
 Word Break Problem
